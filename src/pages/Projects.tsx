@@ -16,6 +16,14 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: "Interactive Digit Classifier",
+    description: "Draw on a canvas digit and the CNN model will predict the digit interactively. The model has 421k parameters and trained on MNIST dataset. The interactive program is uses TkInter.",
+    topic: "Machine Learning",
+    technologies: ["Python", "TensorFlow", "TkInter", "Neural Networks"],
+    imageUrl: "/lovable-uploads/f9e09425-49c4-4dfb-b749-c1b62375de95.png",
+    githubUrl: "https://github.com/ShlomiRex/interactive_digit_classifier"
+  },
+  {
     title: "Interactive VAE Digit Interpolation",
     description: "I implemented and trained variational autoencoder from scratch and used it to interactively interpolate between two images with slider. The model has only 1.1M parameters, which is significantly less than previous autoencoder-only models that I created.",
     topic: "Machine Learning",
