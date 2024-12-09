@@ -25,9 +25,9 @@ const Resume = () => {
                 <CardHeader>
                   <CardTitle>
                     <div className="flex justify-between items-start flex-wrap gap-2">
-                      <div>
-                        <span className="text-xl">Meta</span>
-                        <span className="text-muted-foreground ml-2">Production Engineer (Internship)</span>
+                      <div className="space-y-1">
+                        <h3 className="text-2xl font-bold">Meta</h3>
+                        <p className="text-sm text-muted-foreground">Production Engineer (Internship)</p>
                       </div>
                       <span className="text-sm text-muted-foreground">07/2022 — 10/2022</span>
                     </div>
@@ -51,9 +51,9 @@ const Resume = () => {
                 <CardHeader>
                   <CardTitle>
                     <div className="flex justify-between items-start flex-wrap gap-2">
-                      <div>
-                        <span className="text-xl">Bank Hapoalim</span>
-                        <span className="text-muted-foreground ml-2">Backend Software Developer</span>
+                      <div className="space-y-1">
+                        <h3 className="text-2xl font-bold">Bank Hapoalim</h3>
+                        <p className="text-sm text-muted-foreground">Backend Software Developer</p>
                       </div>
                       <span className="text-sm text-muted-foreground">01/2022 - 07/2022</span>
                     </div>
@@ -74,9 +74,9 @@ const Resume = () => {
                 <CardHeader>
                   <CardTitle>
                     <div className="flex justify-between items-start flex-wrap gap-2">
-                      <div>
-                        <span className="text-xl">Check Point</span>
-                        <span className="text-muted-foreground ml-2">Security Analyst</span>
+                      <div className="space-y-1">
+                        <h3 className="text-2xl font-bold">Check Point</h3>
+                        <p className="text-sm text-muted-foreground">Security Analyst</p>
                       </div>
                       <span className="text-sm text-muted-foreground">04/2020 - 01/2022</span>
                     </div>
