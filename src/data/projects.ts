@@ -11,6 +11,14 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: "Chip-8 Emulator",
+    description: "A chip-8 emulator written in Java. I wrote it as prerequisites for my Nintendo Entertainment System emulator (NES). CHIP-8 is an interpreted programming language that runs on a virtual machine. It runs on 1802 microprocessor.",
+    topic: "Emulator",
+    technologies: ["Java", "Assembly", "Hardware Emulation"],
+    imageUrl: "/lovable-uploads/76f4d991-699a-46bd-bc41-6ed32c2d78f4.png",
+    githubUrl: "https://github.com/ShlomiRex/chip-8-emulator"
+  },
+  {
     title: "Interactive Digit Classifier",
     description: "Draw on a canvas digit and the CNN model will predict the digit interactively. The model has 421k parameters and trained on MNIST dataset. The interactive program is uses TkInter.",
     topic: "Machine Learning",

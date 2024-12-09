@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
-type BlogTopic = "Machine Learning" | "Emulator" | "Operating Systems" | "Other";
+type BlogTopic = "Machine Learning" | "Emulator" | "Operating Systems";
 
 interface BlogPost {
   title: string;
@@ -44,8 +44,7 @@ const blogPosts: BlogPost[] = [
 const topics: BlogTopic[] = [
   "Machine Learning",
   "Emulator",
-  "Operating Systems",
-  "Other"
+  "Operating Systems"
 ];
 
 const Blog = () => {
@@ -65,7 +64,7 @@ const Blog = () => {
             href="https://blog.shlomidom.com" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="text-primary hover:underline"
+            className="text-primary font-medium hover:underline hover:text-primary/90 transition-colors duration-200 border-b-2 border-primary/20 hover:border-primary/60 pb-0.5"
           >
             blog.shlomidom.com
           </a>
