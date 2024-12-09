@@ -1,5 +1,7 @@
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
+import { Skeleton } from "@/components/ui/skeleton";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 interface Project {
   title: string;
@@ -13,6 +15,8 @@ interface Project {
 export type ProjectTopic = "Machine Learning" | "Application" | "Operating Systems" | "Emulator" | "Cyber";
 
 export const ProjectCard = ({ project, index }: { project: Project; index: number }) => {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -21,18 +25,26 @@ export const ProjectCard = ({ project, index }: { project: Project; index: numbe
     >
       <Card className="h-full hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
         {project.imageUrl && (
-          <a 
-            href={project.githubUrl} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="block overflow-hidden rounded-t-lg"
-          >
-            <img 
-              src={project.imageUrl} 
-              alt={project.title}
-              className="w-full h-48 object-cover transition-transform duration-300 hover:scale-105"
-            />
-          </a>
+          <div className="relative">
+            {!imageLoaded && (
+              <Skeleton className="w-full h-48 rounded-t-lg" />
+            )}
+            <a 
+              href={project.githubUrl} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="block overflow-hidden rounded-t-lg"
+            >
+              <img 
+                src={project.imageUrl} 
+                alt={project.title}
+                className={`w-full h-48 object-cover transition-transform duration-300 hover:scale-105 ${
+                  !imageLoaded ? 'opacity-0' : 'opacity-100'
+                }`}
+                onLoad={() => setImageLoaded(true)}
+              />
+            </a>
+          </div>
         )}
         <CardHeader className="p-4 sm:p-6">
           <CardTitle className="text-lg sm:text-xl">{project.title}</CardTitle>
