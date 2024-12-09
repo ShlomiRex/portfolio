@@ -1,10 +1,13 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+
+type BlogTopic = "Machine Learning" | "Emulator" | "Operating Systems" | "Other";
 
 interface BlogPost {
   title: string;
-  topic: string;
+  topic: BlogTopic;
   publishDate: string;
   description: string;
   imageUrl: string;
@@ -14,15 +17,36 @@ interface BlogPost {
 const blogPosts: BlogPost[] = [
   {
     title: "Fixing VAE model reconstructions - training with different loss function: why and why it works",
-    topic: "machine learning",
+    topic: "Machine Learning",
     publishDate: "Nov 25, 2024",
     description: "I've fixed a VAE model that had bad reconstructions. I've trained the model with different loss functions and I understood the reason why it works. In this post, I'll explain my small victory over loss functions.",
     imageUrl: "/lovable-uploads/72e69079-e029-475c-8681-201eb118906c.png",
     link: "https://blog.shlomidom.com/Fixing-VAE-model-reconstructions"
+  },
+  {
+    title: "How I optimized Java Swing pixel drawing in terms of CPU, memory, and GPU",
+    topic: "Emulator",
+    publishDate: "Aug 02, 2023",
+    description: "In this post, I'll show you how I optimize code for drawing pixels in Java Swing, I am trying to squash CPU and memory regressions in my NES emulator.",
+    imageUrl: "/lovable-uploads/979cd772-d378-48a3-855e-4c26463b0865.png",
+    link: "https://blog.shlomidom.com/How-I-optimized-Java-Swing-pixel-drawing"
   }
 ];
 
+const topics: BlogTopic[] = [
+  "Machine Learning",
+  "Emulator",
+  "Operating Systems",
+  "Other"
+];
+
 const Blog = () => {
+  const [selectedTopic, setSelectedTopic] = useState<BlogTopic | "All">("All");
+
+  const filteredPosts = selectedTopic === "All" 
+    ? blogPosts 
+    : blogPosts.filter(post => post.topic === selectedTopic);
+
   return (
     <div className="container max-w-4xl mx-auto px-4 py-24">
       <div className="mb-8 text-center">
@@ -40,8 +64,28 @@ const Blog = () => {
         </p>
       </div>
 
+      <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-6 sm:mb-8">
+        <Button
+          variant={selectedTopic === "All" ? "default" : "outline"}
+          onClick={() => setSelectedTopic("All")}
+          className="transition-colors text-sm sm:text-base"
+        >
+          All
+        </Button>
+        {topics.map((topic) => (
+          <Button
+            key={topic}
+            variant={selectedTopic === topic ? "default" : "outline"}
+            onClick={() => setSelectedTopic(topic)}
+            className="transition-colors text-sm sm:text-base"
+          >
+            {topic}
+          </Button>
+        ))}
+      </div>
+
       <div className="space-y-8">
-        {blogPosts.map((post, index) => (
+        {filteredPosts.map((post, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, y: 20 }}
