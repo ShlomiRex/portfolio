@@ -113,6 +113,14 @@ export const projects: Project[] = [
     technologies: ["Wifi", "Network Security", "Social Engineering"],
     imageUrl: "/lovable-uploads/4dbf8418-c743-477a-95ab-d3139e57eee0.png",
     githubUrl: "https://github.com/ShlomiRex/WiFi-EvilTwin"
+  },
+  {
+    title: "SeeFood Android App",
+    description: "A silicon valley parody app that tells you if your food is a hotdog or not a hotdog, using state of the art machine learning. The app is built using Android SDK and Java. The app communicates with a server that runs the machine learning model (ResNet-50) with simple REST API. The server that runs the machine learning model is built using Flask and Python.",
+    topic: "Application",
+    technologies: ["Android", "Java", "Python", "Flask", "Machine Learning"],
+    imageUrl: "/lovable-uploads/040a1257-f475-4459-9668-1f5546de74db.png",
+    githubUrl: "https://github.com/ShlomiRex/seefood-app"
   }
 ];
 
