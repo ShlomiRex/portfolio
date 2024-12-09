@@ -110,16 +110,7 @@ const About = () => {
             ))}
           </div>
           
-          <motion.p 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8 }}
-            className="text-lg leading-relaxed"
-          >
-            When I'm not coding or debugging, I'm sharing knowledge and helping others level up their skills. I'm all about delivering results that exceed expectations and make clients go "Wow!"
-          </motion.p>
-
-          <div className="space-y-6 mt-8">
+          <div className="space-y-6">
             <h2 className="text-2xl font-semibold">Contact Information</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {contactInfo.map((info, index) => (
@@ -128,7 +119,7 @@ const About = () => {
                   href={info.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center space-x-3 p-4 rounded-lg hover:bg-secondary/50 transition-colors bg-secondary/20 border border-border/50 hover:border-primary/20"
+                  className="flex items-center space-x-3 p-4 rounded-lg hover:bg-secondary/50 transition-colors"
                   whileHover={{ scale: 1.02 }}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -143,6 +134,15 @@ const About = () => {
               ))}
             </div>
           </div>
+
+          <motion.p 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.8 }}
+            className="text-lg leading-relaxed"
+          >
+            When I'm not coding or debugging, I'm sharing knowledge and helping others level up their skills. I'm all about delivering results that exceed expectations and make clients go "Wow!"
+          </motion.p>
         </motion.div>
       </div>
     </div>
