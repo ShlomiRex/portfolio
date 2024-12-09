@@ -30,6 +30,14 @@ const blogPosts: BlogPost[] = [
     description: "In this post, I'll show you how I optimize code for drawing pixels in Java Swing, I am trying to squash CPU and memory regressions in my NES emulator.",
     imageUrl: "/lovable-uploads/979cd772-d378-48a3-855e-4c26463b0865.png",
     link: "https://blog.shlomidom.com/How-I-optimized-Java-Swing-pixel-drawing"
+  },
+  {
+    title: "How to create an operation system from scratch",
+    topic: "Operating Systems",
+    publishDate: "Jul 02, 2023",
+    description: "A step-by-step guide to create your own operating system from scratch. The bootloader is written in Assembly x86 and the kernel in C++.",
+    imageUrl: "/lovable-uploads/f8132bcb-1fad-4467-a896-fbda54efb708.png",
+    link: "https://blog.shlomidom.com/how-to-create-an-operation-system-from-scratch"
   }
 ];
 
