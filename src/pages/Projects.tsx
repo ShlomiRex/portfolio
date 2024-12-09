@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 
 type ProjectTopic = "Machine Learning" | "Application" | "Operating Systems" | "Emulator" | "Cyber" | "Other";
 
@@ -98,10 +98,17 @@ const Projects = () => {
             ))}
           </div>
 
-          <Carousel className="w-full max-w-5xl mx-auto">
-            <CarouselContent>
+          <Carousel
+            opts={{
+              align: "start",
+              dragFree: true,
+              containScroll: "trimSnaps"
+            }}
+            className="w-full max-w-5xl mx-auto"
+          >
+            <CarouselContent className="gap-4">
               {filteredProjects.map((project, index) => (
-                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 pl-0 sm:pl-4">
                   <Card className="h-full hover:shadow-lg transition-shadow">
                     <CardHeader>
                       <CardTitle className="text-xl">{project.title}</CardTitle>
@@ -132,8 +139,6 @@ const Projects = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
           </Carousel>
         </motion.div>
       </div>
