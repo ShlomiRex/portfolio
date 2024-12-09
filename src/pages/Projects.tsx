@@ -52,6 +52,7 @@ const projects: Project[] = [
     description: "An OCR (optical character recognition) font classifier. It detects the font of the text in the image. The model is trained on 5 different fonts. It can predict correctly the font in 96% accuracy. The model was trained on 1684 images which contain 46,503 samples (characters and their font). I used Python and Tensorflow.",
     topic: "Machine Learning",
     technologies: ["Python", "TensorFlow", "OCR", "Machine Learning"],
+    imageUrl: "/lovable-uploads/8d2c4389-4b0b-4bba-b92c-8c7778cb46c3.png",
     githubUrl: "https://github.com/ShlomiRex/ocr-font-classifier-model"
   }
 ];
