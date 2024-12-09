@@ -54,6 +54,14 @@ const projects: Project[] = [
     technologies: ["Python", "TensorFlow", "OCR", "Machine Learning"],
     imageUrl: "/lovable-uploads/8d2c4389-4b0b-4bba-b92c-8c7778cb46c3.png",
     githubUrl: "https://github.com/ShlomiRex/ocr-font-classifier-model"
+  },
+  {
+    title: "NES Emulator",
+    description: "This is my attempt to create basic NES emulator in Java. My goal is to run NES games (particularly Super Mario Bros), and learn how to write emulators. I learned 6502 assembly, hardware emulation and optimizations. This emulator comes with a debugger for CPU and PPU and assembly viewer.",
+    topic: "Emulator",
+    technologies: ["Java", "Assembly", "Hardware Emulation"],
+    imageUrl: "/lovable-uploads/d4a72bbb-9a15-45e5-94f8-53bd3855d3b0.png",
+    githubUrl: "https://github.com/ShlomiRex/nes-emulator-java"
   }
 ];
 

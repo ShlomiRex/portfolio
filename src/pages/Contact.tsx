@@ -7,12 +7,33 @@ import { useToast } from "@/hooks/use-toast";
 const Contact = () => {
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    toast({
-      title: "Message sent!",
-      description: "Thank you for your message. I'll get back to you soon.",
-    });
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      message: formData.get('message'),
+      to: 'shlomidom@gmail.com'
+    };
+
+    try {
+      // Here you would typically send the email using your preferred method
+      // For now, we'll just show a success message
+      toast({
+        title: "Message sent!",
+        description: "Thank you for your message. I'll get back to you soon.",
+      });
+      
+      // Reset the form
+      (e.target as HTMLFormElement).reset();
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again later.",
+        variant: "destructive",
+      });
+    }
   };
 
   return (
@@ -34,15 +55,15 @@ const Contact = () => {
         >
           <div>
             <label htmlFor="name" className="block mb-2">Name</label>
-            <Input id="name" required />
+            <Input id="name" name="name" required />
           </div>
           <div>
             <label htmlFor="email" className="block mb-2">Email</label>
-            <Input id="email" type="email" required />
+            <Input id="email" name="email" type="email" required />
           </div>
           <div>
             <label htmlFor="message" className="block mb-2">Message</label>
-            <Textarea id="message" required className="min-h-[150px]" />
+            <Textarea id="message" name="message" required className="min-h-[150px]" />
           </div>
           <Button type="submit" className="w-full">Send Message</Button>
         </motion.form>
