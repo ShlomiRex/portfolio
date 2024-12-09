@@ -15,7 +15,7 @@ const Navbar = () => {
             Portfolio
           </Link>
           
-          <div className="flex items-center gap-4 overflow-x-auto scrollbar-hide px-4 -mx-4">
+          <div className="flex items-center gap-4 overflow-x-auto scrollbar-hide px-4 -mx-4 mr-4">
             <div className="flex items-center gap-4 min-w-max">
               <Link 
                 to="/about" 

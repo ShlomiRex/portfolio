@@ -62,6 +62,14 @@ const projects: Project[] = [
     technologies: ["Java", "Assembly", "Hardware Emulation"],
     imageUrl: "/lovable-uploads/d4a72bbb-9a15-45e5-94f8-53bd3855d3b0.png",
     githubUrl: "https://github.com/ShlomiRex/nes-emulator-java"
+  },
+  {
+    title: "Kaminsky Attack",
+    description: "The kaminsky-attack is a DNS cache poisoning attack - my implementation is written in pure C with extremely high performance. We attack the nameservers of the target domain, and inject malicious DNS records into the cache of the nameserver. The attack was first presented in blackhat 2008, and allows the attacker to redirect traffic to malicious servers. The attack is based on the fact that DNS uses UDP protocol, and is vulnerable to spoofing.",
+    topic: "Cyber",
+    technologies: ["C", "DNS", "Network Security"],
+    imageUrl: "/lovable-uploads/7946a024-eb86-460b-aacf-91c1cb878ead.png",
+    githubUrl: "https://github.com/ShlomiRex/kaminsky-attack"
   }
 ];
 
