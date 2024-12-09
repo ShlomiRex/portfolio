@@ -47,37 +47,7 @@ const projects: Project[] = [
     technologies: ["Assembly", "C++", "Operating Systems"],
     imageUrl: "/lovable-uploads/b73b8160-39af-4416-96a6-b952058a0d9e.png",
     githubUrl: "https://github.com/ShlomiRex/shlomios"
-  },
-  {
-    title: "Task Management App",
-    description: "A full-stack web application for managing tasks and projects with real-time collaboration.",
-    topic: "Application",
-    technologies: ["React", "Node.js", "MongoDB"],
-  },
-  {
-    title: "Custom Linux Kernel Module",
-    description: "Developed a custom kernel module for enhanced system monitoring.",
-    topic: "Operating Systems",
-    technologies: ["C", "Linux", "Kernel Development"],
-  },
-  {
-    title: "GameBoy Color Emulator",
-    description: "A cycle-accurate GameBoy Color emulator written in Rust.",
-    topic: "Emulator",
-    technologies: ["Rust", "SDL2"],
-  },
-  {
-    title: "Network Intrusion Detection System",
-    description: "Real-time network traffic analysis and threat detection system.",
-    topic: "Cyber",
-    technologies: ["Python", "Wireshark", "Machine Learning"],
-  },
-  {
-    title: "Portfolio Website",
-    description: "Personal portfolio website built with modern web technologies.",
-    topic: "Other",
-    technologies: ["React", "TypeScript", "Tailwind CSS"],
-  },
+  }
 ];
 
 const topics: ProjectTopic[] = [
