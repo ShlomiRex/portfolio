@@ -45,6 +45,34 @@ const Research = () => {
               </div>
             </CardContent>
           </Card>
+
+          <Card className="hover:shadow-lg transition-shadow duration-300">
+            <CardHeader>
+              <CardTitle className="text-2xl">
+                Final Paper - Lecture 6 - Video-LDM - 2024 November
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <p className="leading-relaxed">
+                In my final paper, I lectured my research supervisor about Video-LDM paper. Video-LDM is a video synthesis model that uses a text-to-image model and modifies it by adding temporal layers (3D convolutions and temporal attention) between spatial frozen layers.
+              </p>
+              <div className="relative w-full aspect-video rounded-lg overflow-hidden">
+                <iframe
+                  src="https://www.youtube.com/embed/0aZzEMPUwrk"
+                  title="Video-LDM Presentation"
+                  className="absolute top-0 left-0 w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+              <div className="mt-4 p-4 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-2">Reference</h3>
+                <p className="text-sm text-muted-foreground">
+                  Blattmann, A., Rombach, R., Ling, H., Dockhorn, T., Kim, S.W., Fidler, S. and Kreis, K., 2023. Align your latents: High-resolution video synthesis with latent diffusion models. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (pp. 22563-22575).
+                </p>
+              </div>
+            </CardContent>
+          </Card>
         </motion.div>
       </div>
     </div>
