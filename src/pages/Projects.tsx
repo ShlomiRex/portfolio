@@ -25,6 +25,14 @@ const projects: Project[] = [
     githubUrl: "https://github.com/ShlomiRex/interactive_vae_digit_interpolation"
   },
   {
+    title: "Interactive Denoiser",
+    description: "Interactively and automatically load image from MNIST, add noise to the image, and the model will automatically denoise the image (run the trained model). Trained a CNN autoencoder with 5.6M parameters.",
+    topic: "Machine Learning",
+    technologies: ["Python", "PyTorch", "Neural Networks"],
+    imageUrl: "/lovable-uploads/7f326a4a-894f-4566-9e8f-33a1deaca70d.png",
+    githubUrl: "https://github.com/ShlomiRex/interactive_denoiser"
+  },
+  {
     title: "AI-Powered Image Recognition",
     description: "Deep learning model for real-time object detection using TensorFlow and OpenCV.",
     topic: "Machine Learning",
