@@ -11,6 +11,14 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: "Raspberry Pi Wardrive",
+    description: "Deauthenticate all networks with Raspberry Pi Zero-W with minimal effort. Just run 1 command and put raspberry pi zero w in your backpack and the raspberry pi won't stop de-authenticating. When you get further away from WiFi AP, the script will adjust the best network target to de-authenticate. The script also saves information about Access Points you visited in your travels as CSV so you can later at home analyze all MAC's, ESSID's, and more.",
+    topic: "Cyber",
+    technologies: ["Python", "Raspberry Pi", "WiFi", "Network Security"],
+    imageUrl: "/lovable-uploads/1ec23322-94c5-4b59-8417-b0f2dd6c7fbf.png",
+    githubUrl: "https://github.com/ShlomiRex/wifi-deauth-rpi-wardrive"
+  },
+  {
     title: "Chip-8 Emulator",
     description: "A chip-8 emulator written in Java. I wrote it as prerequisites for my Nintendo Entertainment System emulator (NES). CHIP-8 is an interpreted programming language that runs on a virtual machine. It runs on 1802 microprocessor.",
     topic: "Emulator",

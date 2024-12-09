@@ -29,7 +29,27 @@ const Projects = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {filteredProjects.map((project, index) => (
-              <ProjectCard key={index} project={project} index={index} />
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ 
+                  duration: 0.5,
+                  delay: index * 0.1,
+                  ease: [0.21, 1.11, 0.81, 0.99] // spring-like animation
+                }}
+                whileInView={{ 
+                  opacity: 1,
+                  y: 0,
+                  transition: {
+                    duration: 0.5,
+                    delay: index * 0.1
+                  }
+                }}
+                viewport={{ once: true, margin: "-100px" }}
+              >
+                <ProjectCard project={project} index={index} />
+              </motion.div>
             ))}
           </div>
         </motion.div>
