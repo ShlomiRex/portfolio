@@ -69,20 +69,20 @@ const Projects = () => {
     : projects.filter(project => project.topic === selectedTopic);
 
   return (
-    <div className="min-h-screen w-full py-20 px-4">
+    <div className="min-h-screen w-full py-12 px-2 sm:py-20 sm:px-4">
       <div className="container max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="space-y-8"
+          className="space-y-6 sm:space-y-8"
         >
           <h1 className="text-4xl font-bold">Projects</h1>
           
-          <div className="flex flex-wrap gap-2 mb-8">
+          <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-6 sm:mb-8">
             <Button
               variant={selectedTopic === "All" ? "default" : "outline"}
               onClick={() => setSelectedTopic("All")}
-              className="transition-colors"
+              className="transition-colors text-sm sm:text-base"
             >
               All
             </Button>
@@ -91,7 +91,7 @@ const Projects = () => {
                 key={topic}
                 variant={selectedTopic === topic ? "default" : "outline"}
                 onClick={() => setSelectedTopic(topic)}
-                className="transition-colors"
+                className="transition-colors text-sm sm:text-base"
               >
                 {topic}
               </Button>
@@ -104,25 +104,25 @@ const Projects = () => {
               dragFree: true,
               containScroll: "trimSnaps"
             }}
-            className="w-full max-w-5xl mx-auto"
+            className="w-full max-w-5xl mx-auto -ml-2 sm:ml-0"
           >
-            <CarouselContent className="gap-4">
+            <CarouselContent className="gap-3 sm:gap-4">
               {filteredProjects.map((project, index) => (
-                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 pl-0 sm:pl-4">
+                <CarouselItem key={index} className="pl-2 sm:pl-4 md:basis-1/2 lg:basis-1/3">
                   <Card className="h-full hover:shadow-lg transition-shadow">
-                    <CardHeader>
-                      <CardTitle className="text-xl">{project.title}</CardTitle>
+                    <CardHeader className="p-4 sm:p-6">
+                      <CardTitle className="text-lg sm:text-xl">{project.title}</CardTitle>
                       <CardDescription>{project.description}</CardDescription>
                     </CardHeader>
-                    <CardContent>
-                      <div className="space-y-4">
+                    <CardContent className="p-4 sm:p-6">
+                      <div className="space-y-3 sm:space-y-4">
                         <div>
                           <span className="text-sm font-medium">Topic:</span>
                           <span className="ml-2 text-sm text-muted-foreground">{project.topic}</span>
                         </div>
                         <div>
                           <span className="text-sm font-medium">Technologies:</span>
-                          <div className="flex flex-wrap gap-2 mt-2">
+                          <div className="flex flex-wrap gap-1.5 sm:gap-2 mt-2">
                             {project.technologies.map((tech, techIndex) => (
                               <span
                                 key={techIndex}
