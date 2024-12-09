@@ -9,19 +9,19 @@ const Index = () => {
   
   const featuredProjects = [
     {
-      title: "Facebook Lite Infrastructure",
-      description: "Optimized backend services for 500M+ users across 14 regions globally",
-      tech: ["Java", "Netty", "Apache Mina"]
+      title: "Interactive VAE Digit Interpolation",
+      description: "A web application that demonstrates digit morphing using Variational Autoencoders (VAE) in real-time",
+      tech: ["Python", "PyTorch", "React"]
     },
     {
-      title: "Bank Hapoalim Business Site",
-      description: "Developed and maintained RESTful APIs for business banking platform",
-      tech: ["Java", "Spring Boot", "REST"]
+      title: "Sorting Algorithms Visualizer",
+      description: "Interactive visualization of various sorting algorithms to help understand their mechanics",
+      tech: ["JavaScript", "React", "Algorithms"]
     },
     {
-      title: "Threat Response System",
-      description: "Built automated malware protection system improving security by 12%",
-      tech: ["Python", "Docker", "Jenkins"]
+      title: "Interactive Denoiser",
+      description: "Real-time image denoising using deep learning, with interactive comparison features",
+      tech: ["Python", "PyTorch", "Deep Learning"]
     }
   ];
 
