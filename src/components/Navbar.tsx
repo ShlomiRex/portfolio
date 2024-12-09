@@ -15,34 +15,34 @@ const Navbar = () => {
             Portfolio
           </Link>
           
-          <div className="hidden md:flex items-center gap-6">
+          <div className="flex items-center gap-4 overflow-x-auto no-scrollbar">
             <Link 
               to="/about" 
-              className={`transition-colors ${location.pathname === '/about' ? 'text-primary font-medium' : 'hover:text-primary text-muted-foreground'}`}
+              className={`transition-colors whitespace-nowrap ${location.pathname === '/about' ? 'text-primary font-medium' : 'hover:text-primary text-muted-foreground'}`}
             >
               About
             </Link>
             <Link 
               to="/resume" 
-              className={`transition-colors ${location.pathname === '/resume' ? 'text-primary font-medium' : 'hover:text-primary text-muted-foreground'}`}
+              className={`transition-colors whitespace-nowrap ${location.pathname === '/resume' ? 'text-primary font-medium' : 'hover:text-primary text-muted-foreground'}`}
             >
               Resume
             </Link>
             <Link 
               to="/research" 
-              className={`transition-colors ${location.pathname === '/research' ? 'text-primary font-medium' : 'hover:text-primary text-muted-foreground'}`}
+              className={`transition-colors whitespace-nowrap ${location.pathname === '/research' ? 'text-primary font-medium' : 'hover:text-primary text-muted-foreground'}`}
             >
               Research
             </Link>
             <Link 
               to="/projects" 
-              className={`transition-colors ${location.pathname === '/projects' ? 'text-primary font-medium' : 'hover:text-primary text-muted-foreground'}`}
+              className={`transition-colors whitespace-nowrap ${location.pathname === '/projects' ? 'text-primary font-medium' : 'hover:text-primary text-muted-foreground'}`}
             >
               Projects
             </Link>
             <Link 
               to="/contact" 
-              className={`transition-colors ${location.pathname === '/contact' ? 'text-primary font-medium' : 'hover:text-primary text-muted-foreground'}`}
+              className={`transition-colors whitespace-nowrap ${location.pathname === '/contact' ? 'text-primary font-medium' : 'hover:text-primary text-muted-foreground'}`}
             >
               Contact
             </Link>

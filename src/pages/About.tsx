@@ -56,7 +56,7 @@ const About = () => {
           className="prose dark:prose-invert max-w-none space-y-6"
         >
           <p className="text-lg leading-relaxed">
-            Yo bitches! I'm a badass code warrior who eats complex challenges for breakfast and shits elegant solutions by lunch. With a track record that'll make your puny head explode, I've been crafting digital magic that actually works, not just some fancy PowerPoint bullshit.
+            I'm a passionate code warrior who loves tackling complex challenges and turning them into elegant solutions. With a track record of successful projects, I've been crafting digital experiences that make a real impact, not just fancy presentations.
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 py-8">
@@ -89,7 +89,7 @@ const About = () => {
             transition={{ delay: 0.8 }}
             className="text-lg leading-relaxed"
           >
-            When I'm not pushing pixels or debugging code, I'm probably teaching others how to be as awesome as me (impossible, but they can try). I believe in delivering results that make clients say "Holy shit!"
+            When I'm not coding or debugging, I'm sharing knowledge and helping others level up their skills. I'm all about delivering results that exceed expectations and make clients go "Wow!"
           </motion.p>
         </motion.div>
       </div>
