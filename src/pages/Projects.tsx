@@ -41,6 +41,14 @@ const projects: Project[] = [
     githubUrl: "https://shlomirex.github.io/sorting-algo-visualizer/"
   },
   {
+    title: "OS From Scratch",
+    description: "A basic bootloader written in assembly and basic kernel written in C++. I was always fascinated with the linux kernel, and I wanted to learn how to write one completely from scratch. This projects allows me to write full kernel with memory management, process management, and drivers.",
+    topic: "Operating Systems",
+    technologies: ["Assembly", "C++", "Operating Systems"],
+    imageUrl: "/lovable-uploads/b73b8160-39af-4416-96a6-b952058a0d9e.png",
+    githubUrl: "https://github.com/ShlomiRex/shlomios"
+  },
+  {
     title: "Task Management App",
     description: "A full-stack web application for managing tasks and projects with real-time collaboration.",
     topic: "Application",
