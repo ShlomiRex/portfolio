@@ -25,9 +25,9 @@ const Resume = () => {
                 <CardHeader>
                   <CardTitle>
                     <div className="flex justify-between items-start flex-wrap gap-2">
-                      <div className="space-y-1">
+                      <div className="flex items-center gap-2">
                         <h3 className="text-2xl font-bold">Meta</h3>
-                        <p className="text-sm text-muted-foreground">Production Engineer (Internship)</p>
+                        <span className="text-muted-foreground">Production Engineer (Internship)</span>
                       </div>
                       <span className="text-sm text-muted-foreground">07/2022 — 10/2022</span>
                     </div>
@@ -51,9 +51,9 @@ const Resume = () => {
                 <CardHeader>
                   <CardTitle>
                     <div className="flex justify-between items-start flex-wrap gap-2">
-                      <div className="space-y-1">
+                      <div className="flex items-center gap-2">
                         <h3 className="text-2xl font-bold">Bank Hapoalim</h3>
-                        <p className="text-sm text-muted-foreground">Backend Software Developer</p>
+                        <span className="text-muted-foreground">Backend Software Developer</span>
                       </div>
                       <span className="text-sm text-muted-foreground">01/2022 - 07/2022</span>
                     </div>
@@ -74,12 +74,13 @@ const Resume = () => {
                 <CardHeader>
                   <CardTitle>
                     <div className="flex justify-between items-start flex-wrap gap-2">
-                      <div className="space-y-1">
+                      <div className="flex items-center gap-2">
                         <h3 className="text-2xl font-bold">Check Point</h3>
-                        <p className="text-sm text-muted-foreground">Security Analyst</p>
+                        <span className="text-muted-foreground">Security Analyst</span>
                       </div>
                       <span className="text-sm text-muted-foreground">04/2020 - 01/2022</span>
                     </div>
+                    <div className="text-sm text-muted-foreground">Tel-Aviv</div>
                     <div className="text-sm font-medium mt-1">Threat Response Core Group, R&D</div>
                   </CardTitle>
                 </CardHeader>
