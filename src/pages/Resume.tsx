@@ -29,9 +29,12 @@ const Resume = () => {
                         <h3 className="text-2xl font-bold">Meta</h3>
                         <span className="text-muted-foreground">Production Engineer (Internship)</span>
                       </div>
-                      <span className="text-sm text-muted-foreground">07/2022 — 10/2022</span>
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <span>Tel-Aviv</span>
+                        <span>•</span>
+                        <span>07/2022 — 10/2022</span>
+                      </div>
                     </div>
-                    <div className="text-sm text-muted-foreground">Tel-Aviv</div>
                     <div className="text-sm font-medium mt-1">Facebook Lite Group, Service Infrastructure Team</div>
                   </CardTitle>
                 </CardHeader>
@@ -55,9 +58,12 @@ const Resume = () => {
                         <h3 className="text-2xl font-bold">Bank Hapoalim</h3>
                         <span className="text-muted-foreground">Backend Software Developer</span>
                       </div>
-                      <span className="text-sm text-muted-foreground">01/2022 - 07/2022</span>
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <span>Tel-Aviv</span>
+                        <span>•</span>
+                        <span>01/2022 - 07/2022</span>
+                      </div>
                     </div>
-                    <div className="text-sm text-muted-foreground">Tel-Aviv</div>
                     <div className="text-sm font-medium mt-1">Backend Java Developer, responsible for the developing the buisness site</div>
                   </CardTitle>
                 </CardHeader>
@@ -78,9 +84,12 @@ const Resume = () => {
                         <h3 className="text-2xl font-bold">Check Point</h3>
                         <span className="text-muted-foreground">Security Analyst</span>
                       </div>
-                      <span className="text-sm text-muted-foreground">04/2020 - 01/2022</span>
+                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <span>Tel-Aviv</span>
+                        <span>•</span>
+                        <span>04/2020 - 01/2022</span>
+                      </div>
                     </div>
-                    <div className="text-sm text-muted-foreground">Tel-Aviv</div>
                     <div className="text-sm font-medium mt-1">Threat Response Core Group, R&D</div>
                   </CardTitle>
                 </CardHeader>

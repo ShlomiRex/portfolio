@@ -45,7 +45,7 @@ const Index = () => {
             transition={{ delay: 0.2 }}
             className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto"
           >
-            Hi, I'm Shlomi. Explore my work, research, and journey through technology and innovation.
+            Hi, I'm David Mayer. Explore my work, research, and journey through technology and innovation.
           </motion.p>
 
           <motion.div
