@@ -82,14 +82,14 @@ const Projects = () => {
     : projects.filter(project => project.topic === selectedTopic);
 
   return (
-    <div className="min-h-screen w-full py-12 px-2 sm:py-20 sm:px-4">
+    <div className="min-h-screen w-full py-12 sm:py-20 px-0 sm:px-4">
       <div className="container max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="space-y-6 sm:space-y-8"
+          className="space-y-6 sm:space-y-8 px-4 sm:px-0"
         >
-          <h1 className="text-4xl font-bold">Projects</h1>
+          <h1 className="text-4xl font-bold pt-16 sm:pt-0">Projects</h1>
           
           <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-6 sm:mb-8">
             <Button
