@@ -52,6 +52,7 @@ const Navbar = () => {
             variant="ghost"
             size="icon"
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="transition-colors"
           >
             {theme === "dark" ? (
               <Sun className="h-5 w-5" />
