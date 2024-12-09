@@ -41,12 +41,6 @@ const Navbar = () => {
               Projects
             </Link>
             <Link 
-              to="/features" 
-              className={`transition-colors ${location.pathname === '/features' ? 'text-primary font-medium' : 'hover:text-primary text-muted-foreground'}`}
-            >
-              Features
-            </Link>
-            <Link 
               to="/contact" 
               className={`transition-colors ${location.pathname === '/contact' ? 'text-primary font-medium' : 'hover:text-primary text-muted-foreground'}`}
             >

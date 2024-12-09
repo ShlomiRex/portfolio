@@ -11,7 +11,6 @@ import Resume from "./pages/Resume";
 import Research from "./pages/Research";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
-import Features from "./pages/Features";
 
 const queryClient = new QueryClient();
 
@@ -30,7 +29,6 @@ const App = () => (
             <Route path="/research" element={<Research />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/features" element={<Features />} />
           </Routes>
         </BrowserRouter>
       </TooltipProvider>
