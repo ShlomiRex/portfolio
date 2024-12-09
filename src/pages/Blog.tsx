@@ -98,38 +98,37 @@ const Blog = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
-            whileHover={{ scale: 1.02 }}
+            whileHover={{ scale: 1.01 }}
             className="transition-all duration-300"
           >
-            <a 
-              href={post.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block"
-            >
-              <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-                <div className="aspect-video relative overflow-hidden">
+            <Card className="overflow-hidden">
+              <div className="aspect-video relative overflow-hidden">
+                <a 
+                  href={post.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img
                     src={post.imageUrl}
                     alt={post.title}
                     className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                   />
+                </a>
+              </div>
+              <CardHeader>
+                <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
+                  <span className="bg-secondary px-2 py-1 rounded-full">
+                    {post.topic}
+                  </span>
+                  <span>•</span>
+                  <span>{post.publishDate}</span>
                 </div>
-                <CardHeader>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
-                    <span className="bg-secondary px-2 py-1 rounded-full">
-                      {post.topic}
-                    </span>
-                    <span>•</span>
-                    <span>{post.publishDate}</span>
-                  </div>
-                  <CardTitle className="text-2xl">{post.title}</CardTitle>
-                  <CardDescription className="text-base">
-                    {post.description}
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            </a>
+                <CardTitle className="text-2xl text-left">{post.title}</CardTitle>
+                <CardDescription className="text-base text-left">
+                  {post.description}
+                </CardDescription>
+              </CardHeader>
+            </Card>
           </motion.div>
         ))}
       </div>
