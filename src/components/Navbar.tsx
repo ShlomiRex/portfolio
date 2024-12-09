@@ -41,6 +41,12 @@ const Navbar = () => {
               Projects
             </Link>
             <Link 
+              to="/blog" 
+              className={`transition-colors whitespace-nowrap ${location.pathname === '/blog' ? 'text-primary font-medium' : 'hover:text-primary text-muted-foreground'}`}
+            >
+              Blog
+            </Link>
+            <Link 
               to="/contact" 
               className={`transition-colors whitespace-nowrap ${location.pathname === '/contact' ? 'text-primary font-medium' : 'hover:text-primary text-muted-foreground'}`}
             >
