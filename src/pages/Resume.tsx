@@ -25,9 +25,16 @@ const Resume = () => {
                 <CardHeader>
                   <CardTitle>
                     <div className="flex justify-between items-start flex-wrap gap-2">
-                      <div className="flex items-center gap-2">
-                        <h3 className="text-2xl font-bold">Meta</h3>
-                        <span className="text-muted-foreground">Production Engineer (Internship)</span>
+                      <div className="flex items-center gap-4">
+                        <img 
+                          src="/lovable-uploads/83cb6dc8-aa17-4bdb-9cc7-57591af59656.png" 
+                          alt="Meta logo" 
+                          className="h-8 w-auto"
+                        />
+                        <div>
+                          <h3 className="text-2xl font-bold">Meta</h3>
+                          <span className="text-muted-foreground">Production Engineer (Internship)</span>
+                        </div>
                       </div>
                       <div className="flex items-center gap-2 text-sm text-muted-foreground">
                         <span>Tel-Aviv</span>
@@ -54,9 +61,16 @@ const Resume = () => {
                 <CardHeader>
                   <CardTitle>
                     <div className="flex justify-between items-start flex-wrap gap-2">
-                      <div className="flex items-center gap-2">
-                        <h3 className="text-2xl font-bold">Bank Hapoalim</h3>
-                        <span className="text-muted-foreground">Backend Software Developer</span>
+                      <div className="flex items-center gap-4">
+                        <img 
+                          src="/lovable-uploads/ddc41406-9b37-4971-8a84-733dd50147c8.png" 
+                          alt="Bank Hapoalim logo" 
+                          className="h-8 w-auto"
+                        />
+                        <div>
+                          <h3 className="text-2xl font-bold">Bank Hapoalim</h3>
+                          <span className="text-muted-foreground">Backend Software Developer</span>
+                        </div>
                       </div>
                       <div className="flex items-center gap-2 text-sm text-muted-foreground">
                         <span>Tel-Aviv</span>
@@ -80,9 +94,16 @@ const Resume = () => {
                 <CardHeader>
                   <CardTitle>
                     <div className="flex justify-between items-start flex-wrap gap-2">
-                      <div className="flex items-center gap-2">
-                        <h3 className="text-2xl font-bold">Check Point</h3>
-                        <span className="text-muted-foreground">Security Analyst</span>
+                      <div className="flex items-center gap-4">
+                        <img 
+                          src="/lovable-uploads/d723c970-5953-419f-b9d9-ac93f4d442a3.png" 
+                          alt="Check Point logo" 
+                          className="h-8 w-auto"
+                        />
+                        <div>
+                          <h3 className="text-2xl font-bold">Check Point</h3>
+                          <span className="text-muted-foreground">Security Analyst</span>
+                        </div>
                       </div>
                       <div className="flex items-center gap-2 text-sm text-muted-foreground">
                         <span>Tel-Aviv</span>

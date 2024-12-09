@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Skeleton } from "@/components/ui/skeleton";
 
 type BlogTopic = "Machine Learning" | "Emulator" | "Operating Systems";
 
@@ -46,6 +47,53 @@ const topics: BlogTopic[] = [
   "Emulator",
   "Operating Systems"
 ];
+
+const BlogPostCard = ({ post, index }: { post: BlogPost; index: number }) => {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: index * 0.1 }}
+      whileHover={{ scale: 1.02 }}
+      className="transition-all duration-300"
+    >
+      <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+        <div className="relative aspect-video">
+          {!imageLoaded && (
+            <Skeleton className="absolute inset-0" />
+          )}
+          <img
+            src={post.imageUrl}
+            alt={post.title}
+            className={`w-full h-full object-cover transition-opacity duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+            onLoad={() => setImageLoaded(true)}
+          />
+          <a 
+            href={post.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="absolute inset-0"
+          />
+        </div>
+        <CardHeader>
+          <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
+            <span className="bg-secondary px-2 py-1 rounded-full">
+              {post.topic}
+            </span>
+            <span>•</span>
+            <span>{post.publishDate}</span>
+          </div>
+          <CardTitle className="text-2xl">{post.title}</CardTitle>
+          <CardDescription className="text-base">
+            {post.description}
+          </CardDescription>
+        </CardHeader>
+      </Card>
+    </motion.div>
+  );
+};
 
 const Blog = () => {
   const [selectedTopic, setSelectedTopic] = useState<BlogTopic | "All">("All");
@@ -93,42 +141,7 @@ const Blog = () => {
 
       <div className="space-y-8">
         {filteredPosts.map((post, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1 }}
-            whileHover={{ scale: 1.02 }}
-            className="transition-all duration-300"
-          >
-            <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-              <a 
-                href={post.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block aspect-video relative overflow-hidden"
-              >
-                <img
-                  src={post.imageUrl}
-                  alt={post.title}
-                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-                />
-              </a>
-              <CardHeader>
-                <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
-                  <span className="bg-secondary px-2 py-1 rounded-full">
-                    {post.topic}
-                  </span>
-                  <span>•</span>
-                  <span>{post.publishDate}</span>
-                </div>
-                <CardTitle className="text-2xl">{post.title}</CardTitle>
-                <CardDescription className="text-base">
-                  {post.description}
-                </CardDescription>
-              </CardHeader>
-            </Card>
-          </motion.div>
+          <BlogPostCard key={index} post={post} index={index} />
         ))}
       </div>
     </div>
