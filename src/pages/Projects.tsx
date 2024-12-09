@@ -2,7 +2,6 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 
 type ProjectTopic = "Machine Learning" | "Application" | "Operating Systems" | "Emulator" | "Cyber" | "Other";
 
@@ -47,6 +46,13 @@ const projects: Project[] = [
     technologies: ["Assembly", "C++", "Operating Systems"],
     imageUrl: "/lovable-uploads/b73b8160-39af-4416-96a6-b952058a0d9e.png",
     githubUrl: "https://github.com/ShlomiRex/shlomios"
+  },
+  {
+    title: "OCR Font Classifier",
+    description: "An OCR (optical character recognition) font classifier. It detects the font of the text in the image. The model is trained on 5 different fonts. It can predict correctly the font in 96% accuracy. The model was trained on 1684 images which contain 46,503 samples (characters and their font). I used Python and Tensorflow.",
+    topic: "Machine Learning",
+    technologies: ["Python", "TensorFlow", "OCR", "Machine Learning"],
+    githubUrl: "https://github.com/ShlomiRex/ocr-font-classifier-model"
   }
 ];
 
