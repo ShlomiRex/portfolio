@@ -33,10 +33,12 @@ const projects: Project[] = [
     githubUrl: "https://github.com/ShlomiRex/interactive_denoiser"
   },
   {
-    title: "AI-Powered Image Recognition",
-    description: "Deep learning model for real-time object detection using TensorFlow and OpenCV.",
-    topic: "Machine Learning",
-    technologies: ["Python", "TensorFlow", "OpenCV"],
+    title: "Sorting Algorithms Visualizer",
+    description: "A website that visualizes sorting algorithms. Written in pure JavaScript, you can see how sorting algorithms work in real time. It also comes with sound effects.",
+    topic: "Application",
+    technologies: ["JavaScript", "HTML", "CSS"],
+    imageUrl: "/lovable-uploads/3fb15bc2-81e0-43d9-ac91-1b44df98f66f.png",
+    githubUrl: "https://shlomirex.github.io/sorting-algo-visualizer/"
   },
   {
     title: "Task Management App",
