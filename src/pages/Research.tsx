@@ -73,6 +73,34 @@ const Research = () => {
               </div>
             </CardContent>
           </Card>
+
+          <Card className="hover:shadow-lg transition-shadow duration-300">
+            <CardHeader>
+              <CardTitle className="text-2xl">
+                Final Paper - Lecture 5 - Imagen - 2024 October
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <p className="leading-relaxed">
+                In my final paper, I lectured my research supervisor about Imagen paper by Google. Imagen is an image synthesis model that is based on cascaded diffusion models: one base diffusion model and two super-resolution models based on SR3 (by Google, which is also a cascaded model).
+              </p>
+              <div className="relative w-full aspect-video rounded-lg overflow-hidden">
+                <iframe
+                  src="https://www.youtube.com/embed/HshCIWigR3I"
+                  title="Imagen Presentation"
+                  className="absolute top-0 left-0 w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+              <div className="mt-4 p-4 bg-muted rounded-lg">
+                <h3 className="font-semibold mb-2">Reference</h3>
+                <p className="text-sm text-muted-foreground">
+                  Saharia, C., Chan, W., Saxena, S., Li, L., Whang, J., Denton, E.L., Ghasemipour, K., Gontijo Lopes, R., Karagol Ayan, B., Salimans, T. and Ho, J., 2022. Photorealistic text-to-image diffusion models with deep language understanding. Advances in neural information processing systems, 35, pp.36479-36494.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
         </motion.div>
       </div>
     </div>
