@@ -6,8 +6,8 @@ const About = () => {
   const highlights = [
     {
       icon: <Briefcase className="size-8" />,
-      title: "High-Traffic Systems",
-      description: "Built scalable systems serving 500M+ users, because go big or go home, right?"
+      title: "Network Infrastructure Scaling",
+      description: "Scaled Meta's network infrastructure across 14 regions globally, supporting 500M+ users"
     },
     {
       icon: <Brain className="size-8" />,
@@ -16,13 +16,13 @@ const About = () => {
     },
     {
       icon: <GraduationCap className="size-8" />,
-      title: "Self-Taught Badass",
-      description: "Mastered the art of learning how to learn, because who needs formal education?"
+      title: "Continuous Learner",
+      description: "Always exploring new technologies and sharing knowledge with others"
     },
     {
       icon: <Target className="size-8" />,
       title: "Results Driven",
-      description: "Thrives under pressure like a diamond, delivering results that'll blow your mind"
+      description: "Focused on delivering high-impact solutions that make a real difference"
     }
   ];
 
@@ -35,9 +35,9 @@ const About = () => {
           className="space-y-6 text-center"
         >
           <motion.h1 
-            className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-600"
+            className="text-4xl md:text-5xl font-bold text-primary"
           >
-            About This Digital Mastermind
+            About This Tech Journey
           </motion.h1>
           <motion.p 
             className="text-xl text-muted-foreground"
@@ -89,7 +89,7 @@ const About = () => {
             transition={{ delay: 0.8 }}
             className="text-lg leading-relaxed"
           >
-            When I'm not pushing pixels or debugging code, I'm probably teaching others how to be as awesome as me (impossible, but they can try). I believe in delivering results that make clients say "Holy shit!" while keeping my cool under pressure like a cucumber in a freezer.
+            When I'm not pushing pixels or debugging code, I'm probably teaching others how to be as awesome as me (impossible, but they can try). I believe in delivering results that make clients say "Holy shit!"
           </motion.p>
         </motion.div>
       </div>
