@@ -121,6 +121,14 @@ export const projects: Project[] = [
     technologies: ["Android", "Java", "Python", "Flask", "Machine Learning"],
     imageUrl: "/lovable-uploads/040a1257-f475-4459-9668-1f5546de74db.png",
     githubUrl: "https://github.com/ShlomiRex/seefood-app"
+  },
+  {
+    title: "e-xterm",
+    description: "Cross-platform (Windows, Mac, Linux) electron based SSH client, with managed bookmarks, and tab system for managing sessions. Written in Electron framework, Typescript, and React. Also comes with SFTP support and drag-and-drop remote file explorer, and remote monitoring tools.",
+    topic: "Application",
+    technologies: ["Electron", "TypeScript", "React", "SSH", "SFTP"],
+    imageUrl: "/lovable-uploads/c747f1ab-310f-492a-b33c-0f80e8718a8b.png",
+    githubUrl: "https://github.com/ShlomiRex/e-xterm"
   }
 ];
 
