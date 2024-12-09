@@ -25,12 +25,18 @@ const Research = () => {
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              <p className="text-muted-foreground">
-                In my final paper, I lectured my research supervisor about Imagen-Video paper.
-              </p>
               <p className="leading-relaxed">
-                Imagen Video is a video synthesis model by Google that is based on the Imagen model, which I explained in my 5th lecture. Its a cascaded diffusion model; the pipeline contains 7 diffusion models. It includes spatial super-resolution model (SR3 by Google) to increase spatial resolution and temporal super-resolution model to increase frame rate.
+                In my final paper, I lectured my research supervisor about Imagen-Video paper. Imagen Video is a video synthesis model by Google that is based on the Imagen model, which I explained in my 5th lecture. Its a cascaded diffusion model; the pipeline contains 7 diffusion models. It includes spatial super-resolution model (SR3 by Google) to increase spatial resolution and temporal super-resolution model to increase frame rate.
               </p>
+              <div className="relative w-full aspect-video rounded-lg overflow-hidden">
+                <iframe
+                  src="https://www.youtube.com/embed/_UqlkxSgayQ"
+                  title="Imagen Video Presentation"
+                  className="absolute top-0 left-0 w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
               <div className="mt-4 p-4 bg-muted rounded-lg">
                 <h3 className="font-semibold mb-2">Reference</h3>
                 <p className="text-sm text-muted-foreground">
