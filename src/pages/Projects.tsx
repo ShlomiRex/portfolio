@@ -19,7 +19,7 @@ const projects: Project[] = [
     title: "Interactive Digit Classifier",
     description: "Draw on a canvas digit and the CNN model will predict the digit interactively. The model has 421k parameters and trained on MNIST dataset. The interactive program is uses TkInter.",
     topic: "Machine Learning",
-    technologies: ["Python", "TensorFlow", "TkInter", "Neural Networks"],
+    technologies: ["Python", "PyTorch", "TkInter", "Neural Networks"],
     imageUrl: "/lovable-uploads/f9e09425-49c4-4dfb-b749-c1b62375de95.png",
     githubUrl: "https://github.com/ShlomiRex/interactive_digit_classifier"
   },
@@ -27,7 +27,7 @@ const projects: Project[] = [
     title: "Interactive VAE Digit Interpolation",
     description: "I implemented and trained variational autoencoder from scratch and used it to interactively interpolate between two images with slider. The model has only 1.1M parameters, which is significantly less than previous autoencoder-only models that I created.",
     topic: "Machine Learning",
-    technologies: ["Python", "PyTorch", "Neural Networks"],
+    technologies: ["Python", "PyTorch", "Neural Networks", "TkInter"],
     imageUrl: "/lovable-uploads/1d5b7d7b-5f12-4908-8a7d-931bf870ccca.png",
     githubUrl: "https://github.com/ShlomiRex/interactive_vae_digit_interpolation"
   },
@@ -35,9 +35,17 @@ const projects: Project[] = [
     title: "Interactive Denoiser",
     description: "Interactively and automatically load image from MNIST, add noise to the image, and the model will automatically denoise the image (run the trained model). Trained a CNN autoencoder with 5.6M parameters.",
     topic: "Machine Learning",
-    technologies: ["Python", "PyTorch", "Neural Networks"],
+    technologies: ["Python", "PyTorch", "Neural Networks", "TkInter"],
     imageUrl: "/lovable-uploads/7f326a4a-894f-4566-9e8f-33a1deaca70d.png",
     githubUrl: "https://github.com/ShlomiRex/interactive_denoiser"
+  },
+  {
+    title: "TypingBot-OCR",
+    description: "Python bot that automatically beats any human in website tests. It uses tesseract to read the text from the image, and then it types the text using PyAutoGUI. Very easy and simple application.",
+    topic: "Machine Learning",
+    technologies: ["Python", "Tesseract", "PyAutoGUI", "OCR"],
+    imageUrl: "/lovable-uploads/ff26392e-d9a8-4745-be63-a0234cf7d196.png",
+    githubUrl: "https://github.com/ShlomiRex/TypingBOT-OCR"
   },
   {
     title: "Sorting Algorithms Visualizer",
