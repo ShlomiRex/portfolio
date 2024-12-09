@@ -37,7 +37,7 @@ const About = () => {
           <motion.h1 
             className="text-4xl md:text-5xl font-bold text-primary"
           >
-            About This Tech Journey
+            About Me
           </motion.h1>
           <motion.p 
             className="text-xl text-muted-foreground"
@@ -56,7 +56,7 @@ const About = () => {
           className="prose dark:prose-invert max-w-none space-y-6"
         >
           <p className="text-lg leading-relaxed">
-            I'm a seasoned software engineer who eats complex challenges for breakfast. With a track record that'll make your head spin, I've been crafting digital solutions that actually work, not just look pretty on a PowerPoint.
+            Yo bitches! I'm a badass code warrior who eats complex challenges for breakfast and shits elegant solutions by lunch. With a track record that'll make your puny head explode, I've been crafting digital magic that actually works, not just some fancy PowerPoint bullshit.
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 py-8">
