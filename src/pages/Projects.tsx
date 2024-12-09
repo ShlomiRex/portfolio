@@ -70,6 +70,14 @@ const projects: Project[] = [
     technologies: ["C", "DNS", "Network Security"],
     imageUrl: "/lovable-uploads/7946a024-eb86-460b-aacf-91c1cb878ead.png",
     githubUrl: "https://github.com/ShlomiRex/kaminsky-attack"
+  },
+  {
+    title: "EvilTwin Wifi Attack",
+    description: "Create wifi AP that enables users to browse the internet, but in reality, the attacker can sniff all the traffic. This attack also creates evil-portal that can be used to steal credentials from users. For example, if the user tries to connect to Facebook, the user will be redirected to fake Facebook login page, and their credentials will be stolen.",
+    topic: "Cyber",
+    technologies: ["Wifi", "Network Security", "Social Engineering"],
+    imageUrl: "/lovable-uploads/4dbf8418-c743-477a-95ab-d3139e57eee0.png",
+    githubUrl: "https://github.com/ShlomiRex/WiFi-EvilTwin"
   }
 ];
 
