@@ -39,6 +39,14 @@ const blogPosts: BlogPost[] = [
     description: "A step-by-step guide to create your own operating system from scratch. The bootloader is written in Assembly x86 and the kernel in C++.",
     imageUrl: "/lovable-uploads/f8132bcb-1fad-4467-a896-fbda54efb708.png",
     link: "https://blog.shlomidom.com/how-to-create-an-operation-system-from-scratch"
+  },
+  {
+    title: "Why linux sucks for desktop users",
+    topic: "Operating Systems",
+    publishDate: "Jul 16, 2020",
+    description: "A comprehensive look at why Linux still struggles to gain widespread adoption among desktop users, exploring the challenges and limitations that make it less appealing for everyday use.",
+    imageUrl: "/lovable-uploads/a3b96d99-92bb-4326-96c9-7efd7ecff479.png",
+    link: "https://blog.shlomidom.com/Why-linux-sucks-for-desktop-users"
   }
 ];
 
