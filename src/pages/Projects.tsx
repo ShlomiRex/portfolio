@@ -11,9 +11,19 @@ interface Project {
   description: string;
   topic: ProjectTopic;
   technologies: string[];
+  imageUrl?: string;
+  githubUrl?: string;
 }
 
 const projects: Project[] = [
+  {
+    title: "Interactive VAE Digit Interpolation",
+    description: "I implemented and trained variational autoencoder from scratch and used it to interactively interpolate between two images with slider. The model has only 1.1M parameters, which is significantly less than previous autoencoder-only models that I created.",
+    topic: "Machine Learning",
+    technologies: ["Python", "PyTorch", "Neural Networks"],
+    imageUrl: "/lovable-uploads/1d5b7d7b-5f12-4908-8a7d-931bf870ccca.png",
+    githubUrl: "https://github.com/ShlomiRex/interactive_vae_digit_interpolation"
+  },
   {
     title: "AI-Powered Image Recognition",
     description: "Deep learning model for real-time object detection using TensorFlow and OpenCV.",
@@ -109,7 +119,21 @@ const Projects = () => {
             <CarouselContent className="gap-3 sm:gap-4">
               {filteredProjects.map((project, index) => (
                 <CarouselItem key={index} className="pl-2 sm:pl-4 md:basis-1/2 lg:basis-1/3">
-                  <Card className="h-full hover:shadow-lg transition-shadow">
+                  <Card className="h-full hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                    {project.imageUrl && (
+                      <a 
+                        href={project.githubUrl} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="block overflow-hidden rounded-t-lg"
+                      >
+                        <img 
+                          src={project.imageUrl} 
+                          alt={project.title}
+                          className="w-full h-48 object-cover transition-transform duration-300 hover:scale-105"
+                        />
+                      </a>
+                    )}
                     <CardHeader className="p-4 sm:p-6">
                       <CardTitle className="text-lg sm:text-xl">{project.title}</CardTitle>
                       <CardDescription>{project.description}</CardDescription>
