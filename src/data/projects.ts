@@ -11,6 +11,30 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: "Interactive VAE Digit Interpolation",
+    description: "I implemented and trained variational autoencoder from scratch and used it to interactively interpolate between two images with slider. The model has only 1.1M parameters, which is significantly less than previous autoencoder-only models that I created.",
+    topic: "Machine Learning",
+    technologies: ["Python", "PyTorch", "Neural Networks", "TkInter"],
+    imageUrl: "/lovable-uploads/1d5b7d7b-5f12-4908-8a7d-931bf870ccca.png",
+    githubUrl: "https://github.com/ShlomiRex/interactive_vae_digit_interpolation"
+  },
+  {
+    title: "Interactive Denoiser",
+    description: "Interactively and automatically load image from MNIST, add noise to the image, and the model will automatically denoise the image (run the trained model). Trained a CNN autoencoder with 5.6M parameters.",
+    topic: "Machine Learning",
+    technologies: ["Python", "PyTorch", "Neural Networks", "TkInter"],
+    imageUrl: "/lovable-uploads/7f326a4a-894f-4566-9e8f-33a1deaca70d.png",
+    githubUrl: "https://github.com/ShlomiRex/interactive_denoiser"
+  },
+  {
+    title: "Sorting Algorithms Visualizer",
+    description: "A website that visualizes sorting algorithms. Written in pure JavaScript, you can see how sorting algorithms work in real time. It also comes with sound effects.",
+    topic: "Application",
+    technologies: ["JavaScript", "HTML", "CSS"],
+    imageUrl: "/lovable-uploads/3fb15bc2-81e0-43d9-ac91-1b44df98f66f.png",
+    githubUrl: "https://shlomirex.github.io/sorting-algo-visualizer/"
+  },
+  {
     title: "Raspberry Pi Wardrive",
     description: "Deauthenticate all networks with Raspberry Pi Zero-W with minimal effort. Just run 1 command and put raspberry pi zero w in your backpack and the raspberry pi won't stop de-authenticating. When you get further away from WiFi AP, the script will adjust the best network target to de-authenticate. The script also saves information about Access Points you visited in your travels as CSV so you can later at home analyze all MAC's, ESSID's, and more.",
     topic: "Cyber",
@@ -33,46 +57,6 @@ export const projects: Project[] = [
     technologies: ["Python", "PyTorch", "TkInter", "Neural Networks"],
     imageUrl: "/lovable-uploads/f9e09425-49c4-4dfb-b749-c1b62375de95.png",
     githubUrl: "https://github.com/ShlomiRex/interactive_digit_classifier"
-  },
-  {
-    title: "Interactive VAE Digit Interpolation",
-    description: "I implemented and trained variational autoencoder from scratch and used it to interactively interpolate between two images with slider. The model has only 1.1M parameters, which is significantly less than previous autoencoder-only models that I created.",
-    topic: "Machine Learning",
-    technologies: ["Python", "PyTorch", "Neural Networks", "TkInter"],
-    imageUrl: "/lovable-uploads/1d5b7d7b-5f12-4908-8a7d-931bf870ccca.png",
-    githubUrl: "https://github.com/ShlomiRex/interactive_vae_digit_interpolation"
-  },
-  {
-    title: "Interactive Denoiser",
-    description: "Interactively and automatically load image from MNIST, add noise to the image, and the model will automatically denoise the image (run the trained model). Trained a CNN autoencoder with 5.6M parameters.",
-    topic: "Machine Learning",
-    technologies: ["Python", "PyTorch", "Neural Networks", "TkInter"],
-    imageUrl: "/lovable-uploads/7f326a4a-894f-4566-9e8f-33a1deaca70d.png",
-    githubUrl: "https://github.com/ShlomiRex/interactive_denoiser"
-  },
-  {
-    title: "TypingBot-OCR",
-    description: "Python bot that automatically beats any human in website tests. It uses tesseract to read the text from the image, and then it types the text using PyAutoGUI. Very easy and simple application.",
-    topic: "Machine Learning",
-    technologies: ["Python", "Tesseract", "PyAutoGUI", "OCR"],
-    imageUrl: "/lovable-uploads/ff26392e-d9a8-4745-be63-a0234cf7d196.png",
-    githubUrl: "https://github.com/ShlomiRex/TypingBOT-OCR"
-  },
-  {
-    title: "ScreenCropper: Screenshot Python Library",
-    description: "Simple python library that takes screenshot of region of the screen. Can also be used to determine coordinates of a region, or get the region image. Can be used as executable or as standalone library.",
-    topic: "Application",
-    technologies: ["Python", "PyAutoGUI", "Screenshot", "Library"],
-    imageUrl: "/lovable-uploads/902e22b2-cb46-4cfa-aa8f-c9765ec7b3db.png",
-    githubUrl: "https://github.com/ShlomiRex/screencropper"
-  },
-  {
-    title: "Sorting Algorithms Visualizer",
-    description: "A website that visualizes sorting algorithms. Written in pure JavaScript, you can see how sorting algorithms work in real time. It also comes with sound effects.",
-    topic: "Application",
-    technologies: ["JavaScript", "HTML", "CSS"],
-    imageUrl: "/lovable-uploads/3fb15bc2-81e0-43d9-ac91-1b44df98f66f.png",
-    githubUrl: "https://shlomirex.github.io/sorting-algo-visualizer/"
   },
   {
     title: "OS From Scratch",
