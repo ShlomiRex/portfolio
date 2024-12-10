@@ -35,20 +35,12 @@ export const projects: Project[] = [
     githubUrl: "https://shlomirex.github.io/sorting-algo-visualizer/"
   },
   {
-    title: "Raspberry Pi Wardrive",
-    description: "Deauthenticate all networks with Raspberry Pi Zero-W with minimal effort. Just run 1 command and put raspberry pi zero w in your backpack and the raspberry pi won't stop de-authenticating. When you get further away from WiFi AP, the script will adjust the best network target to de-authenticate. The script also saves information about Access Points you visited in your travels as CSV so you can later at home analyze all MAC's, ESSID's, and more.",
-    topic: "Cyber",
-    technologies: ["Python", "Raspberry Pi", "WiFi", "Network Security"],
-    imageUrl: "/lovable-uploads/1ec23322-94c5-4b59-8417-b0f2dd6c7fbf.png",
-    githubUrl: "https://github.com/ShlomiRex/wifi-deauth-rpi-wardrive"
-  },
-  {
-    title: "Chip-8 Emulator",
-    description: "A chip-8 emulator written in Java. I wrote it as prerequisites for my Nintendo Entertainment System emulator (NES). CHIP-8 is an interpreted programming language that runs on a virtual machine. It runs on 1802 microprocessor.",
-    topic: "Emulator",
-    technologies: ["Java", "Assembly", "Hardware Emulation"],
-    imageUrl: "/lovable-uploads/76f4d991-699a-46bd-bc41-6ed32c2d78f4.png",
-    githubUrl: "https://github.com/ShlomiRex/chip-8-emulator"
+    title: "OS From Scratch",
+    description: "A basic bootloader written in assembly and basic kernel written in C++. I was always fascinated with the linux kernel, and I wanted to learn how to write one completely from scratch. This projects allows me to write full kernel with memory management, process management, and drivers.",
+    topic: "Operating Systems",
+    technologies: ["Assembly", "C++", "Operating Systems"],
+    imageUrl: "/lovable-uploads/b73b8160-39af-4416-96a6-b952058a0d9e.png",
+    githubUrl: "https://github.com/ShlomiRex/shlomios"
   },
   {
     title: "Interactive Digit Classifier",
@@ -57,14 +49,6 @@ export const projects: Project[] = [
     technologies: ["Python", "PyTorch", "TkInter", "Neural Networks"],
     imageUrl: "/lovable-uploads/f9e09425-49c4-4dfb-b749-c1b62375de95.png",
     githubUrl: "https://github.com/ShlomiRex/interactive_digit_classifier"
-  },
-  {
-    title: "OS From Scratch",
-    description: "A basic bootloader written in assembly and basic kernel written in C++. I was always fascinated with the linux kernel, and I wanted to learn how to write one completely from scratch. This projects allows me to write full kernel with memory management, process management, and drivers.",
-    topic: "Operating Systems",
-    technologies: ["Assembly", "C++", "Operating Systems"],
-    imageUrl: "/lovable-uploads/b73b8160-39af-4416-96a6-b952058a0d9e.png",
-    githubUrl: "https://github.com/ShlomiRex/shlomios"
   },
   {
     title: "OCR Font Classifier",
