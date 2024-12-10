@@ -137,6 +137,14 @@ export const projects: Project[] = [
     technologies: ["Python", "Cellular Automaton", "Simulation"],
     imageUrl: "/lovable-uploads/cca0f325-e50a-4219-b10c-a08bee30e028.png",
     githubUrl: "https://github.com/ShlomiRex/GameOfLife_Python"
+  },
+  {
+    title: "OpenCV Demos",
+    description: "An OpenCV demonstration of various computer vision algorithms. The project is written in Python and OpenCV. The project includes the following algorithms: Canny edge detection, color tracking, stereo depth (convert images to 3D objects), fast fourier transform, filters, gradients, noise and histogram normalization.",
+    topic: "Application",
+    technologies: ["Python", "OpenCV", "Computer Vision", "Image Processing"],
+    imageUrl: "/lovable-uploads/83ad93c9-cb4b-4201-81d5-ee9de1f6411b.png",
+    githubUrl: "https://github.com/ShlomiRex/opencv-demos"
   }
 ];
 
