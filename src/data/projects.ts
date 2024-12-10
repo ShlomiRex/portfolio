@@ -145,6 +145,14 @@ export const projects: Project[] = [
     technologies: ["Python", "OpenCV", "Computer Vision", "Image Processing"],
     imageUrl: "/lovable-uploads/83ad93c9-cb4b-4201-81d5-ee9de1f6411b.png",
     githubUrl: "https://github.com/ShlomiRex/opencv-demos"
+  },
+  {
+    title: "MNIST Classifier",
+    description: "I built a CNN classifier to recognize handwritten digits using the MNIST dataset with 98% accuracy. This project demonstrates my ability to design, train, and evaluate CNN models for image classification tasks.",
+    topic: "Machine Learning",
+    technologies: ["Python", "PyTorch", "CNN", "Deep Learning"],
+    imageUrl: "/lovable-uploads/10bd9299-c47b-4870-81b3-2e32f6232992.png",
+    githubUrl: "https://github.com/ShlomiRex/mnist_classifier"
   }
 ];
 
