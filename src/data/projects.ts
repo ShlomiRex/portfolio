@@ -161,6 +161,14 @@ export const projects: Project[] = [
     technologies: ["Command Line", "Text Editor", "Terminal", "File I/O"],
     imageUrl: "/lovable-uploads/0d33913c-d45a-44d9-8d00-3c22cf4213cb.png",
     githubUrl: "https://github.com/ShlomiRex/line-oriented-text-editor"
+  },
+  {
+    title: "MessageU",
+    description: "This applications allow users to send and received end-to-end encrypted messages and files. Using RSA for key exchange and AES CBS for encryption. Plain text is also supported.",
+    topic: "Application",
+    technologies: ["End-to-End Encryption", "RSA", "AES", "File Transfer", "Messaging"],
+    imageUrl: "/lovable-uploads/d40ce6d2-99ff-4999-9252-2b191b4bbaa3.png",
+    githubUrl: "https://github.com/ShlomiRex/MessageU-Client"
   }
 ];
 
