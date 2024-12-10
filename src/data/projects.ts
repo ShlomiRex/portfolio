@@ -159,7 +159,7 @@ export const projects: Project[] = [
     description: "This is a command-line based text editor. Just like 'vi'. A user can view and edit files in the command line. The user can print lines and delete lines. The functionality is simillar to 'ed' - a text applicatiton for the terminal.",
     topic: "Application",
     technologies: ["Command Line", "Text Editor", "Terminal", "File I/O"],
-    imageUrl: "/lovable-uploads/d723c970-5953-419f-b9d9-ac93f4d442a3.png",
+    imageUrl: "/lovable-uploads/0d33913c-d45a-44d9-8d00-3c22cf4213cb.png",
     githubUrl: "https://github.com/ShlomiRex/line-oriented-text-editor"
   }
 ];
