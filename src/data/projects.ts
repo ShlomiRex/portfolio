@@ -129,6 +129,14 @@ export const projects: Project[] = [
     technologies: ["Electron", "TypeScript", "React", "SSH", "SFTP"],
     imageUrl: "/lovable-uploads/c747f1ab-310f-492a-b33c-0f80e8718a8b.png",
     githubUrl: "https://github.com/ShlomiRex/e-xterm"
+  },
+  {
+    title: "Game of Life",
+    description: "Game of Life game written in Python. Game of life is a cellular automaton devised by the British mathematician John Horton Conway in 1970. The game is a zero-player game, meaning that its evolution is determined by its initial state, requiring no further input. The result is interesting evolution patterns over time.",
+    topic: "Application",
+    technologies: ["Python", "Cellular Automaton", "Simulation"],
+    imageUrl: "/lovable-uploads/cca0f325-e50a-4219-b10c-a08bee30e028.png",
+    githubUrl: "https://github.com/ShlomiRex/GameOfLife_Python"
   }
 ];
 
