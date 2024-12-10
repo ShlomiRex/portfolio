@@ -153,6 +153,14 @@ export const projects: Project[] = [
     technologies: ["Python", "PyTorch", "CNN", "Deep Learning"],
     imageUrl: "/lovable-uploads/10bd9299-c47b-4870-81b3-2e32f6232992.png",
     githubUrl: "https://github.com/ShlomiRex/mnist_classifier"
+  },
+  {
+    title: "Command Line Text Editor",
+    description: "This is a command-line based text editor. Just like 'vi'. A user can view and edit files in the command line. The user can print lines and delete lines. The functionality is simillar to 'ed' - a text applicatiton for the terminal.",
+    topic: "Application",
+    technologies: ["Command Line", "Text Editor", "Terminal", "File I/O"],
+    imageUrl: "/lovable-uploads/d723c970-5953-419f-b9d9-ac93f4d442a3.png",
+    githubUrl: "https://github.com/ShlomiRex/line-oriented-text-editor"
   }
 ];
 
