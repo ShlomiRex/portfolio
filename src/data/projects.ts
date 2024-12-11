@@ -31,8 +31,16 @@ export const projects: Project[] = [
     description: "A simple screen cropping tool that allows you to crop any part of your screen and save it as an image. The tool is written in Python and uses PyQt5 for the GUI. It also includes a feature to automatically upload the cropped image to Imgur.",
     topic: "Application",
     technologies: ["Python", "PyQt5", "GUI", "Imgur API"],
-    imageUrl: "/lovable-uploads/83cb6dc8-aa17-4bdb-9cc7-57591af59656.png",
+    imageUrl: "/lovable-uploads/001d565c-d11f-4596-87ac-c2aafe2619bb.png",
     githubUrl: "https://github.com/ShlomiRex/screencropper"
+  },
+  {
+    title: "TypingBot OCR",
+    description: "A bot that uses OCR (Optical Character Recognition) to read text from images and type it automatically. The bot is written in Python and uses Tesseract OCR engine. It can be used to automatically type text from images, making it useful for transcription tasks.",
+    topic: "Application",
+    technologies: ["Python", "Tesseract OCR", "PyAutoGUI", "OpenCV"],
+    imageUrl: "/lovable-uploads/72e69079-e029-475c-8681-201eb118906c.png",
+    githubUrl: "https://github.com/ShlomiRex/TypingBot"
   },
   {
     title: "Interactive VAE Digit Interpolation",
