@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Eye } from "lucide-react";
+import { Eye, Loader } from "lucide-react";
 
 export type ProjectTopic = "Machine Learning" | "Application" | "Operating Systems" | "Emulator" | "Cyber";
 
@@ -22,6 +22,16 @@ interface ProjectCardProps {
 
 export const ProjectCard = ({ project, index }: ProjectCardProps) => {
   const [imageLoaded, setImageLoaded] = useState(false);
+  const [imageError, setImageError] = useState(false);
+
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  };
+
+  const handleImageError = () => {
+    setImageError(true);
+    setImageLoaded(true); // Remove skeleton on error
+  };
 
   return (
     <motion.div
@@ -33,13 +43,18 @@ export const ProjectCard = ({ project, index }: ProjectCardProps) => {
         {project.imageUrl && (
           <div className="relative group">
             {!imageLoaded && (
-              <Skeleton className="w-full h-48 rounded-t-lg" />
+              <div className="w-full h-48 rounded-t-lg flex items-center justify-center bg-muted">
+                <Loader className="w-6 h-6 animate-spin" />
+              </div>
             )}
             <img
               src={project.imageUrl}
               alt={project.title}
-              className={`w-full h-48 object-cover rounded-t-lg transition-opacity duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
-              onLoad={() => setImageLoaded(true)}
+              className={`w-full h-48 object-cover rounded-t-lg transition-opacity duration-300 ${
+                imageLoaded && !imageError ? 'opacity-100' : 'opacity-0'
+              }`}
+              onLoad={handleImageLoad}
+              onError={handleImageError}
             />
             <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-t-lg">
               <Eye className="w-8 h-8 text-white" />
