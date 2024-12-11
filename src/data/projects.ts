@@ -19,6 +19,14 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/ShlomiRex/chip-8-emulator"
   },
   {
+    title: "Raspberry Pi Wardrive",
+    description: "A wardriving project using Raspberry Pi. The project includes GPS module, external wifi adapter, and power bank. The project is used to collect data about wifi networks in the area. The data is then analyzed and visualized on a map.",
+    topic: "Cyber",
+    technologies: ["Python", "Raspberry Pi", "GPS", "Wifi", "Hardware"],
+    imageUrl: "/lovable-uploads/72e69079-e029-475c-8681-201eb118906c.png",
+    githubUrl: "https://github.com/ShlomiRex/raspberry-pi-wardrive"
+  },
+  {
     title: "Interactive VAE Digit Interpolation",
     description: "I implemented and trained variational autoencoder from scratch and used it to interactively interpolate between two images with slider. The model has only 1.1M parameters, which is significantly less than previous autoencoder-only models that I created.",
     topic: "Machine Learning",
