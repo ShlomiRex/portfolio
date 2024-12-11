@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Eye } from "lucide-react";
 
 interface Project {
   title: string;
@@ -23,7 +24,7 @@ export const ProjectCard = ({ project, index }: { project: Project; index: numbe
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1 }}
     >
-      <Card className="h-full hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+      <Card className="h-full hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 group">
         {project.imageUrl && (
           <div className="relative">
             {!imageLoaded && (
@@ -35,6 +36,9 @@ export const ProjectCard = ({ project, index }: { project: Project; index: numbe
               className={`w-full h-48 object-cover rounded-t-lg transition-opacity duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
               onLoad={() => setImageLoaded(true)}
             />
+            <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-t-lg">
+              <Eye className="w-8 h-8 text-white" />
+            </div>
             {project.githubUrl && (
               <a 
                 href={project.githubUrl} 

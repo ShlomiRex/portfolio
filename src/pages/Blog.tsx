@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Eye } from "lucide-react";
 
 type BlogTopic = "Machine Learning" | "Emulator" | "Operating Systems";
 
@@ -67,7 +68,7 @@ const BlogPostCard = ({ post, index }: { post: BlogPost; index: number }) => {
       whileHover={{ scale: 1.02 }}
       className="transition-all duration-300"
     >
-      <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+      <Card className="overflow-hidden hover:shadow-lg transition-shadow group">
         <div className="relative aspect-video">
           {!imageLoaded && (
             <Skeleton className="absolute inset-0" />
@@ -78,6 +79,9 @@ const BlogPostCard = ({ post, index }: { post: BlogPost; index: number }) => {
             className={`w-full h-full object-cover transition-opacity duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
             onLoad={() => setImageLoaded(true)}
           />
+          <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+            <Eye className="w-8 h-8 text-white" />
+          </div>
           <a 
             href={post.link}
             target="_blank"
