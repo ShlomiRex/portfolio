@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Eye } from "lucide-react";
 
+export type ProjectTopic = "Machine Learning" | "Application" | "Operating Systems" | "Emulator" | "Cyber";
+
 interface Project {
   title: string;
   description: string;
@@ -18,7 +20,7 @@ interface ProjectCardProps {
   index: number;
 }
 
-const ProjectCard = ({ project, index }: ProjectCardProps) => {
+export const ProjectCard = ({ project, index }: ProjectCardProps) => {
   const [imageLoaded, setImageLoaded] = useState(false);
 
   return (
