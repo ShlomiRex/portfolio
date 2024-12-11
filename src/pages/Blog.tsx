@@ -68,8 +68,8 @@ const BlogPostCard = ({ post, index }: { post: BlogPost; index: number }) => {
       whileHover={{ scale: 1.02 }}
       className="transition-all duration-300"
     >
-      <Card className="overflow-hidden hover:shadow-lg transition-shadow group">
-        <div className="relative aspect-video">
+      <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+        <div className="relative aspect-video group">
           {!imageLoaded && (
             <Skeleton className="absolute inset-0" />
           )}
