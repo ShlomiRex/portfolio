@@ -22,7 +22,7 @@ const blogPosts: BlogPost[] = [
     topic: "Machine Learning",
     publishDate: "Nov 25, 2024",
     description: "I've fixed a VAE model that had bad reconstructions. I've trained the model with different loss functions and I understood the reason why it works. In this post, I'll explain my small victory over loss functions.",
-    imageUrl: "/lovable-uploads/72e69079-e029-475c-8681-201eb118906c.png",
+    imageUrl: "/images/blog/mse.png",
     link: "https://blog.shlomidom.com/Fixing-VAE-model-reconstructions"
   },
   {
@@ -30,7 +30,7 @@ const blogPosts: BlogPost[] = [
     topic: "Emulator",
     publishDate: "Aug 02, 2023",
     description: "In this post, I'll show you how I optimize code for drawing pixels in Java Swing, I am trying to squash CPU and memory regressions in my NES emulator.",
-    imageUrl: "/lovable-uploads/979cd772-d378-48a3-855e-4c26463b0865.png",
+    imageUrl: "/images/blog/nes_emulator.gif",
     link: "https://blog.shlomidom.com/How-I-optimized-Java-Swing-pixel-drawing"
   },
   {
@@ -38,7 +38,7 @@ const blogPosts: BlogPost[] = [
     topic: "Operating Systems",
     publishDate: "Jul 02, 2023",
     description: "A step-by-step guide to create your own operating system from scratch. The bootloader is written in Assembly x86 and the kernel in C++.",
-    imageUrl: "/lovable-uploads/f8132bcb-1fad-4467-a896-fbda54efb708.png",
+    imageUrl: "/images/blog/os_from_scratch.png",
     link: "https://blog.shlomidom.com/how-to-create-an-operation-system-from-scratch"
   },
   {
@@ -46,7 +46,7 @@ const blogPosts: BlogPost[] = [
     topic: "Operating Systems",
     publishDate: "Jul 16, 2020",
     description: "A comprehensive look at why Linux still struggles to gain widespread adoption among desktop users, exploring the challenges and limitations that make it less appealing for everyday use.",
-    imageUrl: "/lovable-uploads/a3b96d99-92bb-4326-96c9-7efd7ecff479.png",
+    imageUrl: "/images/blog/why_linux_sucks.jpg",
     link: "https://blog.shlomidom.com/Why-linux-sucks-for-desktop-users"
   }
 ];

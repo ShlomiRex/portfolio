@@ -32,7 +32,7 @@ const Resume = () => {
                         {!isMobile && (
                           <div className="bg-white rounded-lg p-2 border">
                             <img 
-                              src="/lovable-uploads/83cb6dc8-aa17-4bdb-9cc7-57591af59656.png" 
+                              src="/images/work/meta.png" 
                               alt="Meta logo" 
                               className="h-8 w-auto"
                             />
@@ -74,7 +74,7 @@ const Resume = () => {
                         {!isMobile && (
                           <div className="bg-white rounded-lg p-2 border mt-2">
                             <img 
-                              src="/lovable-uploads/ddc41406-9b37-4971-8a84-733dd50147c8.png" 
+                              src="/images/work/bank_hapoalim.png" 
                               alt="Bank Hapoalim logo" 
                               className="h-8 w-auto"
                             />
@@ -107,7 +107,7 @@ const Resume = () => {
                         {!isMobile && (
                           <div className="bg-white rounded-lg p-2 border">
                             <img 
-                              src="/lovable-uploads/d723c970-5953-419f-b9d9-ac93f4d442a3.png" 
+                              src="/images/work/check_point.png" 
                               alt="Check Point logo" 
                               className="h-8 w-auto"
                             />

@@ -17,22 +17,23 @@ const Index = () => {
       title: "Interactive VAE Digit Interpolation",
       description: "A web application that demonstrates digit morphing using Variational Autoencoders (VAE) in real-time",
       tech: ["Python", "PyTorch", "React"],
-      imageUrl: "/lovable-uploads/1d5b7d7b-5f12-4908-8a7d-931bf870ccca.png",
+      imageUrl: "/images/projects/interactive_vae_digit_interpolation.gif",
       link: "https://github.com/ShlomiRex/interactive_vae_digit_interpolation"
     },
     {
       title: "Sorting Algorithms Visualizer",
       description: "Interactive visualization of various sorting algorithms to help understand their mechanics",
       tech: ["JavaScript", "React", "Algorithms"],
-      imageUrl: "/lovable-uploads/3fb15bc2-81e0-43d9-ac91-1b44df98f66f.png",
+      imageUrl: "/images/projects/sorting_algo_visualizer.gif",
       link: "https://shlomirex.github.io/sorting-algo-visualizer/"
     },
     {
-      title: "Interactive Denoiser",
-      description: "Real-time image denoising using deep learning, with interactive comparison features",
-      tech: ["Python", "PyTorch", "Deep Learning"],
-      imageUrl: "/lovable-uploads/7f326a4a-894f-4566-9e8f-33a1deaca70d.png",
-      link: "https://github.com/ShlomiRex/interactive_denoiser"
+      title: "NES Emulator",
+      description: "Basic NES emulator and debugger written in Java which can run NES games. I learned hardware emulation and optimizations. This emulator comes with a debugger for CPU and PPU and assembly viewer.",
+      topic: "Emulator",
+      technologies: ["Java", "Assembly", "Hardware Emulation"],
+      imageUrl: "/images/projects/nes_emulator.gif",
+      githubUrl: "https://github.com/ShlomiRex/nes-emulator-java"
     }
   ];
 
@@ -125,16 +126,6 @@ const Index = () => {
                   <CardHeader>
                     <CardTitle className="text-xl mb-2">{project.title}</CardTitle>
                     <CardDescription>{project.description}</CardDescription>
-                    <div className="flex flex-wrap gap-2 mt-4">
-                      {project.tech.map((tech) => (
-                        <span
-                          key={tech}
-                          className="px-2 py-1 bg-secondary text-secondary-foreground rounded-full text-xs"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
                   </CardHeader>
                 </Card>
               </a>
