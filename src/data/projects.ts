@@ -23,7 +23,7 @@ export const projects: Project[] = [
     description: "A wardriving project using Raspberry Pi. The project includes GPS module, external wifi adapter, and power bank. The project is used to collect data about wifi networks in the area. The data is then analyzed and visualized on a map.",
     topic: "Cyber",
     technologies: ["Python", "Raspberry Pi", "GPS", "Wifi", "Hardware"],
-    imageUrl: "/lovable-uploads/72e69079-e029-475c-8681-201eb118906c.png",
+    imageUrl: "/lovable-uploads/cb606d09-4099-4579-bb93-1ef588eb5dfb.png",
     githubUrl: "https://github.com/ShlomiRex/raspberry-pi-wardrive"
   },
   {
