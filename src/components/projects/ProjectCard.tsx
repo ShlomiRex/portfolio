@@ -9,10 +9,10 @@ export type ProjectTopic = "Machine Learning" | "Application" | "Operating Syste
 interface Project {
   title: string;
   description: string;
+  topic: ProjectTopic;
+  technologies: string[];
   imageUrl?: string;
   githubUrl?: string;
-  demoUrl?: string;
-  topics: string[];
 }
 
 interface ProjectCardProps {
@@ -60,12 +60,12 @@ export const ProjectCard = ({ project, index }: ProjectCardProps) => {
         </CardHeader>
         <CardContent>
           <div className="flex flex-wrap gap-2">
-            {project.topics.map((topic, index) => (
+            {project.technologies.map((tech, index) => (
               <span
                 key={index}
                 className="px-2 py-1 bg-secondary text-secondary-foreground rounded-full text-sm"
               >
-                {topic}
+                {tech}
               </span>
             ))}
           </div>
