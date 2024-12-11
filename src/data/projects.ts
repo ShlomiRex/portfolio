@@ -27,6 +27,14 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/ShlomiRex/raspberry-pi-wardrive"
   },
   {
+    title: "Screen Cropper",
+    description: "A simple screen cropping tool that allows you to crop any part of your screen and save it as an image. The tool is written in Python and uses PyQt5 for the GUI. It also includes a feature to automatically upload the cropped image to Imgur.",
+    topic: "Application",
+    technologies: ["Python", "PyQt5", "GUI", "Imgur API"],
+    imageUrl: "/lovable-uploads/83cb6dc8-aa17-4bdb-9cc7-57591af59656.png",
+    githubUrl: "https://github.com/ShlomiRex/screencropper"
+  },
+  {
     title: "Interactive VAE Digit Interpolation",
     description: "I implemented and trained variational autoencoder from scratch and used it to interactively interpolate between two images with slider. The model has only 1.1M parameters, which is significantly less than previous autoencoder-only models that I created.",
     topic: "Machine Learning",
