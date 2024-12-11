@@ -39,7 +39,7 @@ export const projects: Project[] = [
     description: "A bot that uses OCR (Optical Character Recognition) to read text from images and type it automatically. The bot is written in Python and uses Tesseract OCR engine. It can be used to automatically type text from images, making it useful for transcription tasks.",
     topic: "Application",
     technologies: ["Python", "Tesseract OCR", "PyAutoGUI", "OpenCV"],
-    imageUrl: "/lovable-uploads/4f975e1f-ca19-4043-bcd0-b12d3eec4eb0.png",
+    imageUrl: "/lovable-uploads/14f61372-2a96-4e8b-9983-3db032b3ed3d.png",
     githubUrl: "https://github.com/ShlomiRex/TypingBot"
   },
   {
