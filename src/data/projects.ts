@@ -11,6 +11,14 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: "Chip-8 Emulator",
+    description: "A chip-8 emulator written in Java. I wrote it as prerequisites for my Nintendo Entertainment System emulator (NES). CHIP-8 is an interpreted programming language that runs on a virtual machine. It runs on 1802 microprocessor.",
+    topic: "Emulator",
+    technologies: ["Java", "Emulation", "Virtual Machine"],
+    imageUrl: "/lovable-uploads/19e9d155-7a97-4e5f-9ecc-615bbd4d8f9a.png",
+    githubUrl: "https://github.com/ShlomiRex/chip-8-emulator"
+  },
+  {
     title: "Interactive VAE Digit Interpolation",
     description: "I implemented and trained variational autoencoder from scratch and used it to interactively interpolate between two images with slider. The model has only 1.1M parameters, which is significantly less than previous autoencoder-only models that I created.",
     topic: "Machine Learning",
