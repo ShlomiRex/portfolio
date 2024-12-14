@@ -45,14 +45,21 @@ const Contact = () => {
             <motion.div
               key={index}
               className="block"
-              whileHover={{ scale: 1.02 }}
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.4 + index * 0.1 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ 
+                delay: 0.1 * index,
+                duration: 0.3
+              }}
+              whileHover={{ 
+                scale: 1.02,
+                y: -5,
+                transition: { duration: 0.2 }
+              }}
             >
               {info.link ? (
                 <a href={info.link} target="_blank" rel="noopener noreferrer">
-                  <Card className="hover:bg-secondary/30 transition-all duration-300">
+                  <Card className="transition-all duration-300 hover:shadow-lg">
                     <CardContent className="p-6 flex items-center space-x-3">
                       <span className="text-primary">{info.icon}</span>
                       <div>
@@ -63,7 +70,7 @@ const Contact = () => {
                   </Card>
                 </a>
               ) : (
-                <Card className="transition-all duration-300">
+                <Card className="transition-all duration-300 hover:shadow-lg">
                   <CardContent className="p-6 flex items-center space-x-3">
                     <span className="text-primary">{info.icon}</span>
                     <div>
