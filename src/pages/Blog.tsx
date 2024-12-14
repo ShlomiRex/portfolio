@@ -124,7 +124,7 @@ const Blog = () => {
             href="https://blog.shlomidom.com" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="text-primary font-medium hover:underline hover:text-primary/90 transition-colors duration-200 border-b-2 border-primary/20 hover:border-primary/60 pb-0.5"
+            className="text-primary/90 font-medium px-2 py-1 rounded-md bg-primary/5 hover:bg-primary/10 transition-colors duration-200 border border-primary/20 hover:border-primary/40"
           >
             blog.shlomidom.com
           </a>
