@@ -14,14 +14,10 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="font-bold text-xl shrink-0">
-            {isMobile ? (
-              <Home className="h-5 w-5" />
-            ) : (
-              "Portfolio"
-            )}
+            <Home className="h-5 w-5" />
           </Link>
           
-          <div className="flex items-center gap-4 overflow-x-auto scrollbar-hide px-4 -mx-4 mr-4">
+          <div className="flex items-center gap-4 overflow-x-auto scrollbar-hide ml-4">
             <div className="flex items-center gap-4 min-w-max">
               <Link 
                 to="/about" 
