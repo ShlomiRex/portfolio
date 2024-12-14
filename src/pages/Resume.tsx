@@ -72,11 +72,11 @@ const Resume = () => {
                         <h3 className="text-2xl font-bold">Bank Hapoalim</h3>
                         <span className="text-muted-foreground">Backend Software Developer</span>
                         {!isMobile && (
-                          <div className="bg-white rounded-lg p-2 border mt-2">
+                          <div className="bg-white rounded-lg p-2 border mt-2" style={{width: "fit-content"}}>
                             <img 
                               src="/images/work/bank_hapoalim.png" 
                               alt="Bank Hapoalim logo" 
-                              className="h-8 w-auto"
+                              className="h-6"
                             />
                           </div>
                         )}
