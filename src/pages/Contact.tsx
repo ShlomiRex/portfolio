@@ -13,7 +13,7 @@ const Contact = () => {
     {
       icon: <Phone className="size-5" />,
       label: "Phone",
-      value: "(+972) 52-642-0066",
+      value: "(+972) 54-255-7736",
     },
     {
       icon: <Linkedin className="size-5" />,
