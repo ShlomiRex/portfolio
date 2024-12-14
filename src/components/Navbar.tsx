@@ -32,15 +32,11 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="font-bold text-xl shrink-0">
-            {isMobile ? (
-              <Home className="h-5 w-5" />
-            ) : (
-              "Portfolio"
-            )}
+            <Home className="h-5 w-5" />
           </Link>
           
           <div className="relative flex-1 mx-4">
-            {isMobile && showLeftScroll && (
+            {showLeftScroll && (
               <div className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-gradient-to-r from-background/80 to-transparent px-2 py-4">
                 <ChevronLeft className="h-4 w-4 text-muted-foreground" />
               </div>
@@ -91,7 +87,7 @@ const Navbar = () => {
               </div>
             </div>
 
-            {isMobile && showRightScroll && (
+            {showRightScroll && (
               <div className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-gradient-to-l from-background/80 to-transparent px-2 py-4">
                 <ChevronRight className="h-4 w-4 text-muted-foreground" />
               </div>

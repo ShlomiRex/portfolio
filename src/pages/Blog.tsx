@@ -86,7 +86,7 @@ const BlogPostCard = ({ post, index }: { post: BlogPost; index: number }) => {
             href={post.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="absolute inset-0"
+            className="absolute inset-0 no-underline hover:no-underline"
           />
         </div>
         <CardHeader>

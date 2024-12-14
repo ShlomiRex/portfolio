@@ -14,7 +14,6 @@ const Contact = () => {
       icon: <Phone className="size-5" />,
       label: "Phone",
       value: "(+972) 52-642-0066",
-      link: "tel:+97252-642-0066"
     },
     {
       icon: <Linkedin className="size-5" />,
@@ -43,27 +42,38 @@ const Contact = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {contactInfo.map((info, index) => (
-            <motion.a
+            <motion.div
               key={index}
-              href={info.link}
-              target="_blank"
-              rel="noopener noreferrer"
               className="block"
               whileHover={{ scale: 1.02 }}
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.4 + index * 0.1 }}
             >
-              <Card className="hover:bg-secondary/30 transition-all duration-300">
-                <CardContent className="p-6 flex items-center space-x-3">
-                  <span className="text-primary">{info.icon}</span>
-                  <div>
-                    <p className="text-sm text-muted-foreground">{info.label}</p>
-                    <p className="font-medium">{info.value}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.a>
+              {info.link ? (
+                <a href={info.link} target="_blank" rel="noopener noreferrer">
+                  <Card className="hover:bg-secondary/30 transition-all duration-300">
+                    <CardContent className="p-6 flex items-center space-x-3">
+                      <span className="text-primary">{info.icon}</span>
+                      <div>
+                        <p className="text-sm text-muted-foreground">{info.label}</p>
+                        <p className="font-medium">{info.value}</p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </a>
+              ) : (
+                <Card className="transition-all duration-300">
+                  <CardContent className="p-6 flex items-center space-x-3">
+                    <span className="text-primary">{info.icon}</span>
+                    <div>
+                      <p className="text-sm text-muted-foreground">{info.label}</p>
+                      <p className="font-medium">{info.value}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              )}
+            </motion.div>
           ))}
         </div>
       </div>

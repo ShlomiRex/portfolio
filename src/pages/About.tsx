@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { GraduationCap, Briefcase, Brain, Target, Mail, Phone, Linkedin, Github } from "lucide-react";
+import { GraduationCap, Briefcase, Brain, Target } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const About = () => {
@@ -23,33 +23,6 @@ const About = () => {
       icon: <Target className="size-8" />,
       title: "Results Driven",
       description: "Focused on delivering high-impact solutions that make a real difference"
-    }
-  ];
-
-  const contactInfo = [
-    {
-      icon: <Mail className="size-5" />,
-      label: "Email",
-      value: "shlomidom@gmail.com",
-      link: "mailto:shlomidom@gmail.com"
-    },
-    {
-      icon: <Phone className="size-5" />,
-      label: "Phone",
-      value: "(+972) 54-2557736",
-      link: "tel:+97254-2557736"
-    },
-    {
-      icon: <Linkedin className="size-5" />,
-      label: "LinkedIn",
-      value: "Shlomi Domnenko",
-      link: "https://www.linkedin.com/in/shlomi-domnenko/"
-    },
-    {
-      icon: <Github className="size-5" />,
-      label: "GitHub",
-      value: "ShlomiRex",
-      link: "https://github.com/ShlomiRex"
     }
   ];
 
@@ -118,31 +91,6 @@ const About = () => {
           >
             When I'm not coding or debugging, I'm sharing knowledge and helping others level up their skills. I'm all about delivering results that exceed expectations and make clients go "Wow!"
           </motion.p>
-          
-          <div className="space-y-6 mt-8">
-            <h2 className="text-2xl font-semibold">Contact Information</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {contactInfo.map((info, index) => (
-                <motion.a
-                  key={index}
-                  href={info.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center space-x-3 p-4 rounded-lg bg-secondary/30 hover:bg-secondary/50 border border-border/50 transition-all duration-300"
-                  whileHover={{ scale: 1.02 }}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.4 + index * 0.1 }}
-                >
-                  <span className="text-primary">{info.icon}</span>
-                  <div>
-                    <p className="text-sm text-muted-foreground">{info.label}</p>
-                    <p className="font-medium">{info.value}</p>
-                  </div>
-                </motion.a>
-              ))}
-            </div>
-          </div>
         </motion.div>
       </div>
     </div>
