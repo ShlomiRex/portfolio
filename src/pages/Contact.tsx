@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { Mail, Phone, Linkedin, Github } from "lucide-react";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -18,14 +19,11 @@ const Contact = () => {
     };
 
     try {
-      // Here you would typically send the email using your preferred method
-      // For now, we'll just show a success message
       toast({
         title: "Message sent!",
         description: "Thank you for your message. I'll get back to you soon.",
       });
       
-      // Reset the form
       (e.target as HTMLFormElement).reset();
     } catch (error) {
       toast({
@@ -46,6 +44,31 @@ const Contact = () => {
         >
           Contact Me
         </motion.h1>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.1 }}
+          className="grid gap-6 mb-12"
+        >
+          <div className="flex items-center gap-3 text-lg">
+            <Mail className="h-5 w-5" />
+            <a href="mailto:shlomidom@gmail.com" className="hover:text-primary">shlomidom@gmail.com</a>
+          </div>
+          <div className="flex items-center gap-3 text-lg">
+            <Phone className="h-5 w-5" />
+            <a href="tel:+972526420066" className="hover:text-primary">+972 52-642-0066</a>
+          </div>
+          <div className="flex items-center gap-3 text-lg">
+            <Linkedin className="h-5 w-5" />
+            <a href="https://www.linkedin.com/in/shlomi-domnenko/" target="_blank" rel="noopener noreferrer" className="hover:text-primary">linkedin.com/in/shlomi-domnenko</a>
+          </div>
+          <div className="flex items-center gap-3 text-lg">
+            <Github className="h-5 w-5" />
+            <a href="https://github.com/ShlomiRex" target="_blank" rel="noopener noreferrer" className="hover:text-primary">github.com/ShlomiRex</a>
+          </div>
+        </motion.div>
+
         <motion.form 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
