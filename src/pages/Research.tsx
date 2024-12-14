@@ -19,6 +19,12 @@ const Research = () => {
           transition={{ delay: 0.2 }}
           className="space-y-6"
         >
+          <p className="text-muted-foreground">
+            My main research area revolves around the vision domain. Specifically, image and video synthesis models. I mostly use PyTorch for my research work.
+          </p>
+          <p className="text-muted-foreground">
+            Here are some of the research papers and seminars I have presented in my academic career.
+          </p>
           {researchData.map((item, index) => (
             <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
               <CardHeader>

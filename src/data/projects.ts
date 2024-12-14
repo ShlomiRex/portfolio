@@ -11,6 +11,62 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: "NES Emulator",
+    description: "This is my attempt to create basic NES emulator in Java. My goal is to run NES games (particularly Super Mario Bros), and learn how to write emulators. I learned 6502 assembly, hardware emulation and optimizations. This emulator comes with a debugger for CPU and PPU and assembly viewer.",
+    topic: "Emulator",
+    technologies: ["Java", "Assembly", "Hardware Emulation"],
+    imageUrl: "/images/projects/nes_emulator.gif",
+    githubUrl: "https://github.com/ShlomiRex/nes-emulator-java"
+  },
+  {
+    title: "Interactive VAE Digit Interpolation",
+    description: "I implemented and trained variational autoencoder from scratch and used it to interactively interpolate between two images with slider. The model has only 1.1M parameters, which is significantly less than previous autoencoder-only models that I created.",
+    topic: "Machine Learning",
+    technologies: ["Python", "PyTorch", "Neural Networks", "TkInter"],
+    imageUrl: "/images/projects/interactive_vae_digit_interpolation.gif",
+    githubUrl: "https://github.com/ShlomiRex/interactive_vae_digit_interpolation"
+  },
+  {
+    title: "Sorting Algorithms Visualizer",
+    description: "A website that visualizes sorting algorithms. Written in pure JavaScript, you can see how sorting algorithms work in real time. It also comes with sound effects.",
+    topic: "Application",
+    technologies: ["JavaScript", "HTML", "CSS"],
+    imageUrl: "/images/projects/sorting_algo_visualizer.gif",
+    githubUrl: "https://shlomirex.github.io/sorting-algo-visualizer/"
+  },
+  {
+    title: "Interactive Digit Classifier",
+    description: "Draw on a canvas digit and the CNN model will predict the digit interactively. The model has 421k parameters and trained on MNIST dataset. The interactive program is uses TkInter.",
+    topic: "Machine Learning",
+    technologies: ["Python", "PyTorch", "TkInter", "Neural Networks"],
+    imageUrl: "/images/projects/interactive_digit_classifier.gif",
+    githubUrl: "https://github.com/ShlomiRex/interactive_digit_classifier"
+  },
+  {
+    title: "OS From Scratch",
+    description: "A basic bootloader written in assembly and basic kernel written in C++. I was always fascinated with the linux kernel, and I wanted to learn how to write one completely from scratch. This projects allows me to write full kernel with memory management, process management, and drivers.",
+    topic: "Operating Systems",
+    technologies: ["Assembly", "C++", "Operating Systems"],
+    imageUrl: "/images/projects/os_from_scratch.png",
+    githubUrl: "https://github.com/ShlomiRex/shlomios"
+  },
+  {
+    title: "SeeFood Android App",
+    description: "A silicon valley parody app that tells you if your food is a hotdog or not a hotdog, using state of the art machine learning. The app is built using Android SDK and Java. The app communicates with a server that runs the machine learning model (ResNet-50) with simple REST API. The server that runs the machine learning model is built using Flask and Python.",
+    topic: "Application",
+    technologies: ["Android", "Java", "Python", "Flask", "Machine Learning"],
+    imageUrl: "/images/projects/seefood.gif",
+    githubUrl: "https://github.com/ShlomiRex/seefood-app"
+  },
+  {
+    title: "EvilTwin Wifi Attack",
+    description: "Create wifi AP that enables users to browse the internet, but in reality, the attacker can sniff all the traffic. This attack also creates evil-portal that can be used to steal credentials from users. For example, if the user tries to connect to Facebook, the user will be redirected to fake Facebook login page, and their credentials will be stolen.",
+    topic: "Cyber",
+    technologies: ["Wifi", "Network Security", "Social Engineering"],
+    imageUrl: "/images/projects/wifi_evil_twin.jpg",
+    githubUrl: "https://github.com/ShlomiRex/WiFi-EvilTwin"
+  },
+  {
     title: "Chip-8 Emulator",
     description: "A chip-8 emulator written in Java. I wrote it as prerequisites for my Nintendo Entertainment System emulator (NES). CHIP-8 is an interpreted programming language that runs on a virtual machine. It runs on 1802 microprocessor.",
     topic: "Emulator",
@@ -27,14 +83,6 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/ShlomiRex/raspberry-pi-wardrive"
   },
   {
-    title: "Screen Cropper",
-    description: "A simple screen cropping tool that allows you to crop any part of your screen and save it as an image. The tool is written in Python and uses PyQt5 for the GUI. It also includes a feature to automatically upload the cropped image to Imgur.",
-    topic: "Application",
-    technologies: ["Python", "PyQt5", "GUI", "Imgur API"],
-    imageUrl: "/images/projects/screencropper.gif",
-    githubUrl: "https://github.com/ShlomiRex/screencropper"
-  },
-  {
     title: "Typing Bot",
     description: "A bot that uses OCR (Optical Character Recognition) to read text from images and type it automatically. The bot is written in Python and uses Tesseract OCR engine. It can be used to automatically type text from images, making it useful for transcription tasks.",
     topic: "Application",
@@ -43,44 +91,12 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/ShlomiRex/TypingBot"
   },
   {
-    title: "Interactive VAE Digit Interpolation",
-    description: "I implemented and trained variational autoencoder from scratch and used it to interactively interpolate between two images with slider. The model has only 1.1M parameters, which is significantly less than previous autoencoder-only models that I created.",
-    topic: "Machine Learning",
-    technologies: ["Python", "PyTorch", "Neural Networks", "TkInter"],
-    imageUrl: "/images/projects/interactive_vae_digit_interpolation.gif",
-    githubUrl: "https://github.com/ShlomiRex/interactive_vae_digit_interpolation"
-  },
-  {
-    title: "Interactive Denoiser",
-    description: "Interactively and automatically load image from MNIST, add noise to the image, and the model will automatically denoise the image (run the trained model). Trained a CNN autoencoder with 5.6M parameters.",
-    topic: "Machine Learning",
-    technologies: ["Python", "PyTorch", "Neural Networks", "TkInter"],
-    imageUrl: "/images/projects/interactive_denoiser.gif",
-    githubUrl: "https://github.com/ShlomiRex/interactive_denoiser"
-  },
-  {
-    title: "Sorting Algorithms Visualizer",
-    description: "A website that visualizes sorting algorithms. Written in pure JavaScript, you can see how sorting algorithms work in real time. It also comes with sound effects.",
+    title: "Screen Cropper",
+    description: "A simple screen cropping tool that allows you to crop any part of your screen and save it as an image. The tool is written in Python and uses PyQt5 for the GUI. It also includes a feature to automatically upload the cropped image to Imgur.",
     topic: "Application",
-    technologies: ["JavaScript", "HTML", "CSS"],
-    imageUrl: "/images/projects/sorting_algo_visualizer.gif",
-    githubUrl: "https://shlomirex.github.io/sorting-algo-visualizer/"
-  },
-  {
-    title: "OS From Scratch",
-    description: "A basic bootloader written in assembly and basic kernel written in C++. I was always fascinated with the linux kernel, and I wanted to learn how to write one completely from scratch. This projects allows me to write full kernel with memory management, process management, and drivers.",
-    topic: "Operating Systems",
-    technologies: ["Assembly", "C++", "Operating Systems"],
-    imageUrl: "/images/projects/os_from_scratch.png",
-    githubUrl: "https://github.com/ShlomiRex/shlomios"
-  },
-  {
-    title: "Interactive Digit Classifier",
-    description: "Draw on a canvas digit and the CNN model will predict the digit interactively. The model has 421k parameters and trained on MNIST dataset. The interactive program is uses TkInter.",
-    topic: "Machine Learning",
-    technologies: ["Python", "PyTorch", "TkInter", "Neural Networks"],
-    imageUrl: "/images/projects/interactive_digit_classifier.gif",
-    githubUrl: "https://github.com/ShlomiRex/interactive_digit_classifier"
+    technologies: ["Python", "PyQt5", "GUI", "Imgur API"],
+    imageUrl: "/images/projects/screencropper.gif",
+    githubUrl: "https://github.com/ShlomiRex/screencropper"
   },
   {
     title: "OCR Font Classifier",
@@ -91,14 +107,6 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/ShlomiRex/ocr-font-classifier-model"
   },
   {
-    title: "NES Emulator",
-    description: "This is my attempt to create basic NES emulator in Java. My goal is to run NES games (particularly Super Mario Bros), and learn how to write emulators. I learned 6502 assembly, hardware emulation and optimizations. This emulator comes with a debugger for CPU and PPU and assembly viewer.",
-    topic: "Emulator",
-    technologies: ["Java", "Assembly", "Hardware Emulation"],
-    imageUrl: "/images/projects/nes_emulator.gif",
-    githubUrl: "https://github.com/ShlomiRex/nes-emulator-java"
-  },
-  {
     title: "Kaminsky Attack",
     description: "The kaminsky-attack is a DNS cache poisoning attack - my implementation is written in pure C with extremely high performance. We attack the nameservers of the target domain, and inject malicious DNS records into the cache of the nameserver. The attack was first presented in blackhat 2008, and allows the attacker to redirect traffic to malicious servers. The attack is based on the fact that DNS uses UDP protocol, and is vulnerable to spoofing.",
     topic: "Cyber",
@@ -107,20 +115,12 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/ShlomiRex/kaminsky-attack"
   },
   {
-    title: "EvilTwin Wifi Attack",
-    description: "Create wifi AP that enables users to browse the internet, but in reality, the attacker can sniff all the traffic. This attack also creates evil-portal that can be used to steal credentials from users. For example, if the user tries to connect to Facebook, the user will be redirected to fake Facebook login page, and their credentials will be stolen.",
-    topic: "Cyber",
-    technologies: ["Wifi", "Network Security", "Social Engineering"],
-    imageUrl: "/images/projects/wifi_evil_twin.jpg",
-    githubUrl: "https://github.com/ShlomiRex/WiFi-EvilTwin"
-  },
-  {
-    title: "SeeFood Android App",
-    description: "A silicon valley parody app that tells you if your food is a hotdog or not a hotdog, using state of the art machine learning. The app is built using Android SDK and Java. The app communicates with a server that runs the machine learning model (ResNet-50) with simple REST API. The server that runs the machine learning model is built using Flask and Python.",
-    topic: "Application",
-    technologies: ["Android", "Java", "Python", "Flask", "Machine Learning"],
-    imageUrl: "/images/projects/seefood.gif",
-    githubUrl: "https://github.com/ShlomiRex/seefood-app"
+    title: "Interactive Denoiser",
+    description: "Interactively and automatically load image from MNIST, add noise to the image, and the model will automatically denoise the image (run the trained model). Trained a CNN autoencoder with 5.6M parameters.",
+    topic: "Machine Learning",
+    technologies: ["Python", "PyTorch", "Neural Networks", "TkInter"],
+    imageUrl: "/images/projects/interactive_denoiser.gif",
+    githubUrl: "https://github.com/ShlomiRex/interactive_denoiser"
   },
   {
     title: "e-xterm",
