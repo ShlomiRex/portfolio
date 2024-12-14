@@ -31,6 +31,9 @@ const Research = () => {
                 <CardTitle className="text-2xl">
                   {item.title}
                 </CardTitle>
+                <p className="text-sm text-muted-foreground mt-1">
+                  {item.date}
+                </p>
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="leading-relaxed">
