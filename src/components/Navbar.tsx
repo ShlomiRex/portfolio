@@ -21,6 +21,17 @@ const Navbar = () => {
     }
   };
 
+  const handleScroll = (direction: 'left' | 'right') => {
+    if (scrollContainerRef.current) {
+      const scrollAmount = 200;
+      const newScrollLeft = scrollContainerRef.current.scrollLeft + (direction === 'left' ? -scrollAmount : scrollAmount);
+      scrollContainerRef.current.scrollTo({
+        left: newScrollLeft,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   useEffect(() => {
     checkScroll();
     window.addEventListener('resize', checkScroll);
@@ -37,14 +48,17 @@ const Navbar = () => {
           
           <div className="relative flex-1 mx-4">
             {showLeftScroll && (
-              <div className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-gradient-to-r from-background/80 to-transparent px-2 py-4">
+              <button 
+                onClick={() => handleScroll('left')}
+                className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-gradient-to-r from-background/80 to-transparent px-2 py-4 cursor-pointer"
+              >
                 <ChevronLeft className="h-4 w-4 text-muted-foreground" />
-              </div>
+              </button>
             )}
             
             <div 
               ref={scrollContainerRef}
-              className="flex items-center gap-4 overflow-x-auto scrollbar-hide px-4 -mx-4"
+              className="flex items-center gap-4 overflow-x-auto scrollbar-hide px-4 -mx-4 scroll-smooth"
               onScroll={checkScroll}
             >
               <div className="flex items-center gap-4 min-w-max">
@@ -88,9 +102,12 @@ const Navbar = () => {
             </div>
 
             {showRightScroll && (
-              <div className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-gradient-to-l from-background/80 to-transparent px-2 py-4">
+              <button 
+                onClick={() => handleScroll('right')}
+                className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-gradient-to-l from-background/80 to-transparent px-2 py-4 cursor-pointer"
+              >
                 <ChevronRight className="h-4 w-4 text-muted-foreground" />
-              </div>
+              </button>
             )}
           </div>
 
