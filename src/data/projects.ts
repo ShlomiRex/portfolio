@@ -67,6 +67,14 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/ShlomiRex/WiFi-EvilTwin"
   },
   {
+    title: "Portfolio Website",
+    description: "This project is this website that you are currently on. Created using TypeScript, React, Vite, and Tailwind CSS. The website is responsive and includes a dark mode.",
+    topic: "Website",
+    technologies: ["TypeScript", "React", "JavaScript", "Vite", "Tailwind"],
+    imageUrl: "/images/projects/portfolio_website.gif",
+    githubUrl: "https://github.com/ShlomiRex/portfolio"
+  },
+  {
     title: "Chip-8 Emulator",
     description: "A chip-8 emulator written in Java. I wrote it as prerequisites for my Nintendo Entertainment System emulator (NES). CHIP-8 is an interpreted programming language that runs on a virtual machine. It runs on 1802 microprocessor.",
     topic: "Emulator",
@@ -177,5 +185,6 @@ export const topics: ProjectTopic[] = [
   "Application",
   "Operating Systems",
   "Emulator",
-  "Cyber"
+  "Cyber",
+  "Website"
 ];
