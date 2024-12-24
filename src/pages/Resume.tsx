@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { Button } from "@/components/ui/button";
+import { Download } from "lucide-react";
 
 const Resume = () => {
   const isMobile = useIsMobile();
@@ -21,6 +23,10 @@ const Resume = () => {
           transition={{ delay: 0.2 }}
           className="space-y-6"
         >
+          <Button variant="outline">
+              <Download className="mr-2" />
+              <a href="/files/pdf/resume.pdf" target="_blank">Download Resume</a>
+          </Button>
           <section>
             <h2 className="text-2xl font-semibold mb-4">Work Experience</h2>
             <div className="space-y-6">
