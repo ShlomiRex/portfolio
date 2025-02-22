@@ -1,4 +1,3 @@
-
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -140,7 +139,7 @@ const Index = () => {
         </div>
       </motion.div>
 
-      {/* NES Emulator Parallax Section with striped transition */}
+      {/* NES Emulator Section with static background */}
       <div className="relative min-h-screen">
         {/* Striped transition overlay */}
         <div 
@@ -160,24 +159,40 @@ const Index = () => {
           style={{ y: nesY }}
           className="absolute inset-0"
         >
-          {/* Background with diagonal stripes */}
+          {/* Cool static background */}
           <div 
-            className="absolute inset-0 z-10"
+            className="absolute inset-0"
             style={{
-              background: `repeating-linear-gradient(
-                45deg,
-                rgba(0, 0, 0, 0.7) 0%,
-                rgba(0, 0, 0, 0.7) 10%,
-                rgba(0, 0, 0, 0.4) 10%,
-                rgba(0, 0, 0, 0.4) 20%
-              )`
+              background: `
+                linear-gradient(
+                  135deg,
+                  #1A1F2C 0%,
+                  #221F26 50%,
+                  #1A1F2C 100%
+                ),
+                repeating-linear-gradient(
+                  45deg,
+                  rgba(155, 135, 245, 0.1) 0%,
+                  rgba(155, 135, 245, 0.1) 10%,
+                  transparent 10%,
+                  transparent 20%
+                )
+              `
             }}
           />
           
-          <img 
-            src="/images/projects/nes_emulator.gif" 
-            alt="NES Emulator"
-            className="w-full h-full object-cover opacity-30"
+          {/* Additional background patterns */}
+          <div 
+            className="absolute inset-0"
+            style={{
+              background: `
+                radial-gradient(
+                  circle at 50% 50%,
+                  rgba(155, 135, 245, 0.15) 0%,
+                  transparent 60%
+                )
+              `
+            }}
           />
         </motion.div>
         
