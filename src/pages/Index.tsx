@@ -105,7 +105,7 @@ const Index = () => {
       </div>
 
       <motion.div 
-        className="container max-w-6xl mx-auto px-4 py-20 relative z-10"
+        className="container max-w-6xl mx-auto px-4 py-20"
       >
         <h2 className="text-3xl font-bold mb-10 text-center">Featured Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -140,17 +140,39 @@ const Index = () => {
         </div>
       </motion.div>
 
-      {/* NES Emulator Parallax Section with improved blending */}
+      {/* NES Emulator Parallax Section with striped transition */}
       <div className="relative min-h-screen">
-        {/* Gradient overlay for smooth transition */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-transparent z-10" />
+        {/* Striped transition overlay */}
+        <div 
+          className="absolute inset-0 z-10"
+          style={{
+            background: `repeating-linear-gradient(
+              45deg,
+              var(--background) 0%,
+              var(--background) 10%,
+              transparent 10%,
+              transparent 20%
+            )`
+          }}
+        />
         
         <motion.div 
           style={{ y: nesY }}
           className="absolute inset-0"
         >
-          {/* Background gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-background/80 to-black/60 z-10" />
+          {/* Background with diagonal stripes */}
+          <div 
+            className="absolute inset-0 z-10"
+            style={{
+              background: `repeating-linear-gradient(
+                45deg,
+                rgba(0, 0, 0, 0.7) 0%,
+                rgba(0, 0, 0, 0.7) 10%,
+                rgba(0, 0, 0, 0.4) 10%,
+                rgba(0, 0, 0, 0.4) 20%
+              )`
+            }}
+          />
           
           <img 
             src="/images/projects/nes_emulator.gif" 
