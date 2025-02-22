@@ -13,10 +13,10 @@ const Index = () => {
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.2], [1, 0.95]);
   
-  // New parallax effects for NES section
-  const nesOpacity = useTransform(scrollYProgress, [0.4, 0.5], [0, 1]);
+  // Modified parallax effects for smoother NES section transition
+  const nesOpacity = useTransform(scrollYProgress, [0.3, 0.4], [0, 1]);
   const nesY = useTransform(scrollYProgress, [0.4, 1], [100, -100]);
-  const nesScale = useTransform(scrollYProgress, [0.4, 0.5], [0.9, 1]);
+  const nesScale = useTransform(scrollYProgress, [0.3, 0.4], [0.9, 1]);
   
   const featuredProjects = [
     {
@@ -105,7 +105,7 @@ const Index = () => {
       </div>
 
       <motion.div 
-        className="container max-w-6xl mx-auto px-4 py-20"
+        className="container max-w-6xl mx-auto px-4 py-20 relative z-10"
       >
         <h2 className="text-3xl font-bold mb-10 text-center">Featured Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -140,65 +140,73 @@ const Index = () => {
         </div>
       </motion.div>
 
-      {/* NES Emulator Parallax Section */}
-      <div className="relative min-h-screen flex items-center justify-center">
+      {/* NES Emulator Parallax Section with improved blending */}
+      <div className="relative min-h-screen">
+        {/* Gradient overlay for smooth transition */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-transparent z-10" />
+        
         <motion.div 
           style={{ y: nesY }}
-          className="absolute inset-0 bg-black/60"
+          className="absolute inset-0"
         >
+          {/* Background gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-background/80 to-black/60 z-10" />
+          
           <img 
             src="/images/projects/nes_emulator.gif" 
             alt="NES Emulator"
-            className="w-full h-full object-cover opacity-40"
+            className="w-full h-full object-cover opacity-30"
           />
         </motion.div>
         
         <motion.div 
-          className="container max-w-4xl mx-auto px-4 relative z-10 text-white"
+          className="container max-w-4xl mx-auto px-4 relative z-20 h-screen flex items-center"
           style={{ opacity: nesOpacity, scale: nesScale }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-center">
-            NES Emulator Project
-          </h2>
-          
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="space-y-4">
-              <p className="text-lg leading-relaxed">
-                This NES emulator project represents a deep dive into hardware emulation 
-                and low-level programming. Built from scratch in Java, it demonstrates 
-                the complex interaction between CPU, PPU, and memory management systems.
-              </p>
-              <p className="text-lg leading-relaxed">
-                The emulator features a custom debugger for both CPU and PPU components,
-                allowing real-time inspection of the system's state. This makes it an 
-                invaluable tool for understanding how the original NES hardware worked.
-              </p>
-              <div className="flex justify-start mt-6">
-                <Button asChild size="lg" variant="secondary" className="rounded-full">
-                  <a 
-                    href="https://github.com/ShlomiRex/nes-emulator-java" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                  >
-                    View Project
-                  </a>
-                </Button>
-              </div>
-            </div>
+          <div className="backdrop-blur-sm bg-background/10 p-8 rounded-2xl">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-center text-white">
+              NES Emulator Project
+            </h2>
             
-            <div className="grid grid-cols-2 gap-4">
-              <img 
-                src="/images/projects/nes_emulator.gif" 
-                alt="NES Emulator Demo"
-                className="rounded-lg shadow-lg col-span-2"
-              />
-              <div className="bg-white/10 p-4 rounded-lg backdrop-blur-sm">
-                <h4 className="font-semibold mb-2">6502 CPU</h4>
-                <p className="text-sm">Full implementation of the original NES CPU with cycle-accurate timing</p>
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div className="space-y-4">
+                <p className="text-lg leading-relaxed text-white/90">
+                  This NES emulator project represents a deep dive into hardware emulation 
+                  and low-level programming. Built from scratch in Java, it demonstrates 
+                  the complex interaction between CPU, PPU, and memory management systems.
+                </p>
+                <p className="text-lg leading-relaxed text-white/90">
+                  The emulator features a custom debugger for both CPU and PPU components,
+                  allowing real-time inspection of the system's state. This makes it an 
+                  invaluable tool for understanding how the original NES hardware worked.
+                </p>
+                <div className="flex justify-start mt-6">
+                  <Button asChild size="lg" variant="secondary" className="rounded-full">
+                    <a 
+                      href="https://github.com/ShlomiRex/nes-emulator-java" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                    >
+                      View Project
+                    </a>
+                  </Button>
+                </div>
               </div>
-              <div className="bg-white/10 p-4 rounded-lg backdrop-blur-sm">
-                <h4 className="font-semibold mb-2">PPU</h4>
-                <p className="text-sm">Picture Processing Unit with accurate sprite and background rendering</p>
+              
+              <div className="grid grid-cols-2 gap-4">
+                <img 
+                  src="/images/projects/nes_emulator.gif" 
+                  alt="NES Emulator Demo"
+                  className="rounded-lg shadow-lg col-span-2"
+                />
+                <div className="bg-white/5 backdrop-blur-md p-4 rounded-lg border border-white/10">
+                  <h4 className="font-semibold mb-2 text-white">6502 CPU</h4>
+                  <p className="text-sm text-white/80">Full implementation of the original NES CPU with cycle-accurate timing</p>
+                </div>
+                <div className="bg-white/5 backdrop-blur-md p-4 rounded-lg border border-white/10">
+                  <h4 className="font-semibold mb-2 text-white">PPU</h4>
+                  <p className="text-sm text-white/80">Picture Processing Unit with accurate sprite and background rendering</p>
+                </div>
               </div>
             </div>
           </div>
