@@ -1,6 +1,8 @@
 # Portfolio
 
-My personal portfolio website
+My personal portfolio website. Link:
+
+[My Website](https://www.shlomidom.com)
 
 ![Portfolio](readme_animation.gif)
 
