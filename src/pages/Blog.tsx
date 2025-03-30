@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Eye } from "lucide-react";
 
-type BlogTopic = "Machine Learning" | "Emulator" | "Operating Systems";
+type BlogTopic = "Machine Learning" | "Emulator" | "Operating Systems" | "Cyber";
 
 interface BlogPost {
   title: string;
@@ -17,6 +17,14 @@ interface BlogPost {
 }
 
 const blogPosts: BlogPost[] = [
+  {
+    title: "Traffic Analysis Exercise 2025-01-22: Download From Fake Software Site",
+    topic: "Cyber",
+    publishDate: "March 30, 2025",
+    description: "My solution to the Malware Traffic Analysis Exercise 2025-01-22: Download From Fake Software Site. I showcase my SOC/Security Analyst knowledge and review Wireshark network traffic to answer questions.",
+    imageUrl: "/images/blog/mta-2025-01-22.png",
+    link: "https://blog.shlomidom.com/Malware-Traffic-Analysis-Download-From-Fake-Software-Site"
+  },
   {
     title: "Fixing VAE model reconstructions - training with different loss function: why and why it works",
     topic: "Machine Learning",
@@ -54,7 +62,8 @@ const blogPosts: BlogPost[] = [
 const topics: BlogTopic[] = [
   "Machine Learning",
   "Emulator",
-  "Operating Systems"
+  "Operating Systems",
+  "Cyber"
 ];
 
 const BlogPostCard = ({ post, index }: { post: BlogPost; index: number }) => {
