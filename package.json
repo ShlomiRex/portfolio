@@ -10,8 +10,7 @@
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
-    "gh-pages": "gh-pages -d dist",
-    "publish_gh": "npm run build && npm run gh-pages"
+    "deploy": "npm run build && echo shlomidom.com > dist/CNAME && gh-pages -d dist"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",

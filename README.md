@@ -10,4 +10,4 @@ My personal portfolio website
 
 ## How to publish via Github Actions
 
-`npm run gh-pages`
+`npm run deploy`
