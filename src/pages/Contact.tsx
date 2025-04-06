@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Mail, Phone, Linkedin, Github } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { link } from "fs";
 
 const Contact = () => {
   const contactInfo = [
@@ -26,7 +27,13 @@ const Contact = () => {
       label: "GitHub",
       value: "ShlomiRex",
       link: "https://github.com/ShlomiRex"
-    }
+    },
+    // {
+    //   icon: <Hackerrank className="size-5" />,
+    //   label: "HackerRank",
+    //   value: "vgtvgy",
+    //   link: "https://www.hackerrank.com/vgtvgy"
+    // }
   ];
 
   return (
