@@ -60,10 +60,10 @@ const Navbar = () => {
             
             <div 
               ref={scrollContainerRef}
-              className="flex items-center gap-4 overflow-x-auto scrollbar-hide mx-4"
+              className="flex items-center gap-4 overflow-x-auto scrollbar-hide px-2 py-1 w-full"
               onScroll={checkScroll}
             >
-              <div className="flex items-center gap-4 min-w-max">
+              <div className="flex items-center gap-6 min-w-max mx-auto">
                 <Link 
                   to="/about" 
                   className={`transition-colors whitespace-nowrap ${location.pathname === '/about' ? 'text-primary font-medium' : 'hover:text-primary text-muted-foreground'}`}
