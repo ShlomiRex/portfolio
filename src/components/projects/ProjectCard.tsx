@@ -3,17 +3,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { motion } from "framer-motion";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Eye, Loader } from "lucide-react";
-
-export type ProjectTopic = "Machine Learning" | "Application" | "Operating Systems" | "Emulator" | "Cyber" | "Website";
-
-interface Project {
-  title: string;
-  description: string;
-  topic: ProjectTopic;
-  technologies: string[];
-  imageUrl?: string;
-  githubUrl?: string;
-}
+import { Project, ProjectTopic } from "@/data/projects";
 
 interface ProjectCardProps {
   project: Project;
@@ -59,9 +49,9 @@ export const ProjectCard = ({ project, index }: ProjectCardProps) => {
             <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-t-lg">
               <Eye className="w-8 h-8 text-white" />
             </div>
-            {project.githubUrl && (
+            {project.link && (
               <a 
-                href={project.githubUrl}
+                href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="absolute inset-0"
