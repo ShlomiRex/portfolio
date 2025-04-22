@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Eye, Loader } from "lucide-react";
+import { Eye, Loader, Github } from "lucide-react";
 import { Project, ProjectTopic } from "@/data/projects";
 
 interface ProjectCardProps {
@@ -30,6 +30,7 @@ export const ProjectCard = ({ project, index }: ProjectCardProps) => {
       transition={{ delay: index * 0.1 }}
     >
       <Card className="h-full hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+        {/* Inner card */}
         {project.imageUrl && (
           <div className="relative group">
             {!imageLoaded && (
@@ -37,34 +38,69 @@ export const ProjectCard = ({ project, index }: ProjectCardProps) => {
                 <Loader className="w-6 h-6 animate-spin" />
               </div>
             )}
+
+            {/* Project image */}
             <img
               src={project.imageUrl}
               alt={project.title}
-              className={`w-full h-48 object-cover rounded-t-lg transition-opacity duration-300 ${
-                imageLoaded && !imageError ? 'opacity-100' : 'opacity-0'
-              }`}
+              className={`w-full h-48 object-cover rounded-t-lg transition-opacity duration-300 ${imageLoaded && !imageError ? 'opacity-100' : 'opacity-0'
+                }`}
               onLoad={handleImageLoad}
               onError={handleImageError}
             />
-            <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-t-lg">
-              <Eye className="w-8 h-8 text-white" />
+
+            {/* On hover card, display small animation & show eye/github icon(s) */}
+            <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 duration-300 flex items-center justify-center w-full h-full">
+
+              {project.githubLink ? (
+                // We have github link, show both eye and github icons
+                <div className="flex gap-8 items-center justify-center items-stretch w-full h-full">
+                  {/* Eye icon */}
+                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-full h-full transition-all duration-300 transform hover:scale-150">
+                    <Eye className="w-8 h-8 text-white" />
+                  </a>
+
+                  {/* Vertical divider */}
+                  <div className="flex items-center justify-center h-full">
+                    <div className="w-px h-[80%] bg-white opacity-50" />
+                  </div>
+
+                  {/* Github icon */}
+                  <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-full h-full transition-all duration-300 transform hover:scale-150">
+                    <Github className="w-8 h-8 text-white" />
+                  </a>
+                </div>
+              ) : (
+                // Else, no github link, display regular eye for the link only
+                <div>
+                  {/* Make entire project image as a link */}
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute inset-0"
+                  />
+
+                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="">
+                    <Eye className="w-8 h-8 text-white" />
+                  </a>
+                </div>
+              )}
             </div>
-            {project.link && (
-              <a 
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="absolute inset-0"
-              />
-            )}
+
+
           </div>
         )}
+
+        {/* Title, description */}
         <CardHeader>
           <CardTitle>{project.title}</CardTitle>
           <CardDescription>{project.description}</CardDescription>
         </CardHeader>
+
+        {/* The technologies used in the project */}
         <CardContent>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-0.5">
             {project.technologies.map((tech, index) => (
               <span
                 key={index}
