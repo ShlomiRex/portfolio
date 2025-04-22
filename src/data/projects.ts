@@ -52,7 +52,8 @@ export const projects: Project[] = [
     topic: [topics.Application],
     technologies: ["JavaScript", "HTML", "CSS"],
     imageUrl: "/images/projects/sorting_algo_visualizer.gif",
-    link: "https://shlomirex.github.io/sorting-algo-visualizer/"
+    link: "https://shlomirex.github.io/sorting-algo-visualizer/",
+    githubLink: "https://github.com/ShlomiRex/sorting-algo-visualizer"
   },
   {
     title: "Interactive Digit Classifier",
@@ -92,7 +93,8 @@ export const projects: Project[] = [
     topic: [topics.Website],
     technologies: ["TypeScript", "React", "JavaScript", "Vite", "Tailwind"],
     imageUrl: "/images/projects/portfolio_website.gif",
-    link: "https://github.com/ShlomiRex/portfolio"
+    link: "https://shlomidom.com",
+    githubLink: "https://github.com/ShlomiRex/portfolio"
   },
   {
     title: "Chip-8 Emulator",
