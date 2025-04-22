@@ -11,6 +11,8 @@ const Navbar = () => {
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(false);
 
+  const location = useLocation();
+
   const updateScrollButtons = () => {
     const el = scrollRef.current;
     if (!el) return;
@@ -60,29 +62,18 @@ const Navbar = () => {
         >
 
           {/* Home button */}
-          <Button
-            variant="ghost"
-            size="icon"
-            className="transition-colors shrink-0"
-            onClick={() => {
-              window.location.href = "/";
-            }}
-          >
+          <Link to="/" className={`transition-colors shrink-0 ${location.pathname === `/` ? "text-primary" : "hover:text-primary text-muted-foreground"}`}>
             <Home className="h-5 w-5" />
-          </Button>
+          </Link>
 
           {/* Navigation links */}
           {links.map((link) => (
-            <button
-              key={link}
-              onClick={() => {
-                const path = link === "Home" ? "/" : `/${link.toLowerCase()}`;
-                window.location.href = path;
-              }}
-              className={`transition-colors whitespace-nowrap text-l hover:text-primary text-muted-foreground`}
+            <Link
+              to={`/${link.toLowerCase()}`}
+              className={`transition-colors whitespace-nowrap text-l hover:text-primary text-muted-foreground ${location.pathname === `/${link.toLowerCase()}` ? "text-primary font-medium" : "hover:text-primary text-muted-foreground"}`}
             >
               {link}
-            </button>
+            </Link>
           ))}
 
           {/* Theme toggle button */}
