@@ -1,120 +1,91 @@
-
+import { useRef, useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useTheme } from "@/components/ThemeProvider";
 import { Button } from "@/components/ui/button";
 import { Moon, Sun, Home, ChevronLeft, ChevronRight } from "lucide-react";
-import { useTheme } from "@/components/ThemeProvider";
-import { useIsMobile } from "@/hooks/use-mobile";
-import { useRef, useState, useEffect } from "react";
 
 const Navbar = () => {
+  const links = ["About", "Resume", "Research", "Projects", "Blog", "Contact"];
+  const scrollRef = useRef<HTMLDivElement>(null);
   const { theme, setTheme } = useTheme();
-  const location = useLocation();
-  const isMobile = useIsMobile();
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const [showLeftArrow, setShowLeftArrow] = useState(false);
-  const [showRightArrow, setShowRightArrow] = useState(false);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(false);
 
-  const checkScroll = () => {
-    const container = scrollContainerRef.current;
-    if (container) {
-      setShowLeftArrow(container.scrollLeft > 0);
-      setShowRightArrow(
-        container.scrollLeft < container.scrollWidth - container.clientWidth
-      );
-    }
+  const updateScrollButtons = () => {
+    const el = scrollRef.current;
+    if (!el) return;
+
+    // Check if the scrollable area is overflowing
+    const overflow = el.scrollWidth > el.clientWidth;
+    setIsOverflowing(overflow);
+
+    setCanScrollLeft(el.scrollLeft > 0);
+    setCanScrollRight(el.scrollLeft + el.clientWidth < el.scrollWidth);
   };
 
   useEffect(() => {
-    checkScroll();
-    window.addEventListener('resize', checkScroll);
-    return () => window.removeEventListener('resize', checkScroll);
+    const el = scrollRef.current;
+    if (!el) return;
+    updateScrollButtons();
+    el.addEventListener("scroll", updateScrollButtons);
+    window.addEventListener("resize", updateScrollButtons);
+    return () => {
+      el.removeEventListener("scroll", updateScrollButtons);
+      window.removeEventListener("resize", updateScrollButtons);
+    };
   }, []);
 
-  const scroll = (direction: 'left' | 'right') => {
-    const container = scrollContainerRef.current;
-    if (container) {
-      const scrollAmount = direction === 'left' ? -200 : 200;
-      container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-    }
-  };
+  // const scroll = (dir: "left" | "right") => {
+  //   const el = scrollRef.current;
+  //   if (!el) return;
+  //   const distance = el.clientWidth * 0.6; // how far to scroll
+  //   el.scrollBy({ left: dir === "left" ? -distance : distance, behavior: "smooth" });
+  // };
+
+  // Check for overflow in the navbar
+  const [isOverflowing, setIsOverflowing] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          <Link to="/" className="font-bold text-xl shrink-0">
+    <nav
+      className="w-full border-b bg-background/80 backdrop-blur-md sticky"
+      style={{ top: 0, zIndex: 1000 }}
+    >
+      <div className="relative">
+        {/* Scrollable area */}
+        {/* When on mobile and not overflowing navbar, remove justify-center to view left items, instead of middle items. On browser, set justify center */}
+        <div
+          ref={scrollRef}
+          className={`flex overflow-x-auto no-scrollbar whitespace-nowrap px-4 py-2 gap-4 items-center ${!isOverflowing ? "justify-center" : ""}`}
+          style={{ WebkitOverflowScrolling: "touch" }}
+        >
+
+          {/* Home button */}
+          <Button
+            variant="ghost"
+            size="icon"
+            className="transition-colors shrink-0"
+            onClick={() => {
+              window.location.href = "/";
+            }}
+          >
             <Home className="h-5 w-5" />
-          </Link>
-          
-          <div className="relative flex items-center flex-1 mx-4">
-            {showLeftArrow && (
-              <Button
-                variant="ghost"
-                size="icon"
-                className="absolute left-0 z-10 bg-background/80 backdrop-blur-sm"
-                onClick={() => scroll('left')}
-              >
-                <ChevronLeft className="h-4 w-4" />
-              </Button>
-            )}
-            
-            <div 
-              ref={scrollContainerRef}
-              className="flex items-center gap-4 overflow-x-auto scrollbar-hide px-2 py-1 w-full"
-              onScroll={checkScroll}
+          </Button>
+
+          {/* Navigation links */}
+          {links.map((link) => (
+            <button
+              key={link}
+              onClick={() => {
+                const path = link === "Home" ? "/" : `/${link.toLowerCase()}`;
+                window.location.href = path;
+              }}
+              className={`transition-colors whitespace-nowrap text-l hover:text-primary text-muted-foreground`}
             >
-              <div className="flex items-center gap-6 min-w-max mx-auto">
-                <Link 
-                  to="/about" 
-                  className={`transition-colors whitespace-nowrap ${location.pathname === '/about' ? 'text-primary font-medium' : 'hover:text-primary text-muted-foreground'}`}
-                >
-                  About
-                </Link>
-                <Link 
-                  to="/resume" 
-                  className={`transition-colors whitespace-nowrap ${location.pathname === '/resume' ? 'text-primary font-medium' : 'hover:text-primary text-muted-foreground'}`}
-                >
-                  Resume
-                </Link>
-                <Link 
-                  to="/research" 
-                  className={`transition-colors whitespace-nowrap ${location.pathname === '/research' ? 'text-primary font-medium' : 'hover:text-primary text-muted-foreground'}`}
-                >
-                  Research
-                </Link>
-                <Link 
-                  to="/projects" 
-                  className={`transition-colors whitespace-nowrap ${location.pathname === '/projects' ? 'text-primary font-medium' : 'hover:text-primary text-muted-foreground'}`}
-                >
-                  Projects
-                </Link>
-                <Link 
-                  to="/blog" 
-                  className={`transition-colors whitespace-nowrap ${location.pathname === '/blog' ? 'text-primary font-medium' : 'hover:text-primary text-muted-foreground'}`}
-                >
-                  Blog
-                </Link>
-                <Link 
-                  to="/contact" 
-                  className={`transition-colors whitespace-nowrap ${location.pathname === '/contact' ? 'text-primary font-medium' : 'hover:text-primary text-muted-foreground'}`}
-                >
-                  Contact
-                </Link>
-              </div>
-            </div>
+              {link}
+            </button>
+          ))}
 
-            {showRightArrow && (
-              <Button
-                variant="ghost"
-                size="icon"
-                className="absolute right-0 z-10 bg-background/80 backdrop-blur-sm"
-                onClick={() => scroll('right')}
-              >
-                <ChevronRight className="h-4 w-4" />
-              </Button>
-            )}
-          </div>
-
+          {/* Theme toggle button */}
           <Button
             variant="ghost"
             size="icon"
@@ -128,6 +99,28 @@ const Navbar = () => {
             )}
           </Button>
         </div>
+
+        {/* Left Arrow */}
+        {canScrollLeft && (
+          <button
+            // onClick={() => scroll("left")}
+            className="absolute left-0 top-1/2 -translate-y-1/2 bg-background/80 backdrop-blur p-1 rounded-full shadow-md"
+            aria-label="Scroll left"
+          >
+            <ChevronLeft size={20} />
+          </button>
+        )}
+
+        {/* Right Arrow */}
+        {canScrollRight && (
+          <button
+            // onClick={() => scroll("right")}
+            className="absolute right-0 top-1/2 -translate-y-1/2 bg-background/80 backdrop-blur p-1 rounded-full shadow-md"
+            aria-label="Scroll right"
+          >
+            <ChevronRight size={20} />
+          </button>
+        )}
       </div>
     </nav>
   );
