@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import ConfettiButton from "@/components/ConfettiIButton";
+import ProjectCard from "@/components/projects/ProjectCard";
+import { projects } from "@/data/projects";
 
 const Index = () => {
   const { scrollYProgress } = useScroll();
@@ -15,26 +17,16 @@ const Index = () => {
 
   const featuredProjects = [
     {
-      title: "Interactive VAE Digit Interpolation",
-      description: "A web application that demonstrates digit morphing using Variational Autoencoders (VAE) in real-time",
-      tech: ["Python", "PyTorch", "React"],
-      imageUrl: "/images/projects/interactive_vae_digit_interpolation.gif",
-      link: "https://github.com/ShlomiRex/interactive_vae_digit_interpolation"
+      title: "TinyURL"
     },
     {
-      title: "Sorting Algorithms Visualizer",
-      description: "Interactive visualization of various sorting algorithms to help understand their mechanics",
-      tech: ["JavaScript", "React", "Algorithms"],
-      imageUrl: "/images/projects/sorting_algo_visualizer.gif",
-      link: "https://shlomirex.github.io/sorting-algo-visualizer/"
+      title: "Interactive VAE Digit Interpolation"
     },
+    // {
+    //   title: "Sorting Algorithms Visualizer"
+    // },
     {
-      title: "NES Emulator",
-      description: "Basic NES emulator and debugger written in Java which can run NES games. I learned hardware emulation and optimizations. This emulator comes with a debugger for CPU and PPU and assembly viewer.",
-      topic: "Emulator",
-      technologies: ["Java", "Assembly", "Hardware Emulation"],
-      imageUrl: "/images/projects/nes_emulator.gif",
-      githubUrl: "https://github.com/ShlomiRex/nes-emulator-java"
+      title: "NES Emulator"
     }
   ];
 
@@ -104,37 +96,23 @@ const Index = () => {
       >
         <h2 className="text-3xl font-bold mb-10 text-center">Featured Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* TODO: Fix - index in project card only matters in projects page */}
           {featuredProjects.map((project, index) => (
-            <motion.div
+            <ProjectCard
               key={project.title}
-              initial={{ opacity: 0, y: 50, scale: 0.9 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{
-                duration: 0.5,
-                delay: index * 0.1,
-                type: "spring",
-                stiffness: 100
-              }}
-            >
-              <a href={project.link} target="_blank" rel="noopener noreferrer">
-                <Card className="h-full hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
-                  <img
-                    src={project.imageUrl}
-                    alt={project.title}
-                    className="w-full h-48 object-cover rounded-t-lg"
-                  />
-                  <CardHeader>
-                    <CardTitle className="text-xl mb-2">{project.title}</CardTitle>
-                    <CardDescription>{project.description}</CardDescription>
-                  </CardHeader>
-                </Card>
-              </a>
-            </motion.div>
+              project={projects.find(p => p.title === project.title)}
+              index={index} // The index here doesn't matter.
+            />
           ))}
         </div>
       </motion.div>
 
+      <div className="inline-flex items-center justify-center w-full">
+        <hr className="w-[80%] h-px my-8 border-0 bg-primary" />
+      </div>
+
+
+      {/* Cool confetti button */}
       <div className="container flex items-center justify-center py-20">
         <ConfettiButton
           icon={
