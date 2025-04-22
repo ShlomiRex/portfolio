@@ -2,16 +2,17 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import ConfettiButton from "@/components/ConfettiIButton";
 
 const Index = () => {
   const { scrollYProgress } = useScroll();
-  
+
   // Create multiple transform values for different parallax speeds
   const y1 = useTransform(scrollYProgress, [0, 1], [0, -100]);
   const y2 = useTransform(scrollYProgress, [0, 1], [0, -200]);
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.2], [1, 0.95]);
-  
+
   const featuredProjects = [
     {
       title: "Interactive VAE Digit Interpolation",
@@ -40,12 +41,12 @@ const Index = () => {
   return (
     <div className="min-h-screen w-full overflow-hidden">
       <div className="relative min-h-screen flex items-center justify-center px-4">
-        <motion.div 
+        <motion.div
           style={{ y: y1 }}
-          className="absolute inset-0 bg-gradient-to-b from-secondary/50 to-background/50 -z-10" 
+          className="absolute inset-0 bg-gradient-to-b from-secondary/50 to-background/50 -z-10"
         />
-        
-        <motion.div 
+
+        <motion.div
           style={{ y: y2 }}
           className="absolute inset-0 opacity-30"
         >
@@ -58,7 +59,7 @@ const Index = () => {
             ))}
           </div>
         </motion.div>
-        
+
         <div className="container max-w-4xl mx-auto text-center relative">
           <motion.div
             style={{ opacity, scale }}
@@ -98,7 +99,7 @@ const Index = () => {
         </div>
       </div>
 
-      <motion.div 
+      <motion.div
         className="container max-w-6xl mx-auto px-4 py-20"
       >
         <h2 className="text-3xl font-bold mb-10 text-center">Featured Projects</h2>
@@ -109,8 +110,8 @@ const Index = () => {
               initial={{ opacity: 0, y: 50, scale: 0.9 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ 
-                duration: 0.5, 
+              transition={{
+                duration: 0.5,
                 delay: index * 0.1,
                 type: "spring",
                 stiffness: 100
@@ -118,8 +119,8 @@ const Index = () => {
             >
               <a href={project.link} target="_blank" rel="noopener noreferrer">
                 <Card className="h-full hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
-                  <img 
-                    src={project.imageUrl} 
+                  <img
+                    src={project.imageUrl}
                     alt={project.title}
                     className="w-full h-48 object-cover rounded-t-lg"
                   />
@@ -133,6 +134,17 @@ const Index = () => {
           ))}
         </div>
       </motion.div>
+
+      <div className="container flex items-center justify-center py-20">
+        <ConfettiButton
+          icon={
+            <Button className="rounded-full">
+              I'm awesome 😉
+            </Button>
+          }
+        />
+      </div>
+
     </div>
   );
 };
