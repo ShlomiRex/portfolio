@@ -98,7 +98,7 @@ export const projects: Project[] = [
   },
   {
     title: "Blog Website",
-    description: "A blog website that I created using Ruby and jekyll. The website is responsive and includes a dark mode. The website is hosted on Github Pages. In the blog I write about various topics, including programming, machine learning, and cybersecurity. It lets me share my knowledge and experience with others, especially when more technical details are needed.",
+    description: "A blog website that I created using Ruby and jekyll. The website is hosted on Github Pages. In the blog I write about various topics, including programming, machine learning, and cybersecurity. It lets me share my knowledge and experience with others, especially when more technical details are needed.",
     topic: [topics.Website],
     technologies: ["Ruby", "Jekyll", "HTML", "CSS"],
     imageUrl: "/images/projects/blog_website.gif",
