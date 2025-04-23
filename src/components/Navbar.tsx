@@ -70,6 +70,7 @@ const Navbar = () => {
           {links.map((link) => (
             <Link
               to={`/${link.toLowerCase()}`}
+              key={link}
               className={`transition-colors whitespace-nowrap text-l hover:text-primary text-muted-foreground ${location.pathname === `/${link.toLowerCase()}` ? "text-primary font-medium" : "hover:text-primary text-muted-foreground"}`}
             >
               {link}

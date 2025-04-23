@@ -82,7 +82,7 @@ export const ProjectCard = ({ project, index }: ProjectCardProps) => {
                   />
 
                   <a href={project.link} target="_blank" rel="noopener noreferrer" className="">
-                    <Eye className="w-8 h-8 text-white" />
+                    <Github className="w-8 h-8 text-white" />
                   </a>
                 </div>
               )}
