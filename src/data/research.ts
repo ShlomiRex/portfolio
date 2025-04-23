@@ -36,7 +36,7 @@ export const researchData: ResearchItem[] = [
     reference: "Saharia, C., Chan, W., Saxena, S., Li, L., Whang, J., Denton, E.L., Ghasemipour, K., Gontijo Lopes, R., Karagol Ayan, B., Salimans, T. and Ho, J., 2022. Photorealistic text-to-image diffusion models with deep language understanding. Advances in neural information processing systems, 35, pp.36479-36494."
   },
   {
-    title: "Research Seminar",
+    title: "Research Seminar - Detecting Phishing Websites using Machine Learning",
     date: "2024 January",
     description: "In this research seminar, I was the lecturer. I summarized two main research papers. The topic was \"detecting phishing websites using machine learning\".",
     youtubeUrl: "https://www.youtube.com/embed/IuxDpPn9ptw",
