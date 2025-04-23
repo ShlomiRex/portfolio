@@ -97,6 +97,15 @@ export const projects: Project[] = [
     githubLink: "https://github.com/ShlomiRex/portfolio"
   },
   {
+    title: "Blog Website",
+    description: "A blog website that I created using Ruby and jekyll. The website is responsive and includes a dark mode. The website is hosted on Github Pages. In the blog I write about various topics, including programming, machine learning, and cybersecurity. It lets me share my knowledge and experience with others, especially when more technical details are needed.",
+    topic: [topics.Website],
+    technologies: ["Ruby", "Jekyll", "HTML", "CSS"],
+    imageUrl: "/images/projects/blog_website.gif",
+    link: "https://blog.shlomidom.com/",
+    githubLink: "https://github.com/ShlomiRex/blog"
+  },
+  {
     title: "Chip-8 Emulator",
     description: "A chip-8 emulator written in Java. I wrote it as prerequisites for my Nintendo Entertainment System emulator (NES). CHIP-8 is an interpreted programming language that runs on a virtual machine. It runs on 1802 microprocessor.",
     topic: [topics.Emulator],
