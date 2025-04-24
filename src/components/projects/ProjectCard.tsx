@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { Skeleton } from "@/components/ui/skeleton";
 import { Eye, Loader, Github } from "lucide-react";
-import { Project, ProjectTopic } from "@/data/projects";
+import { Project } from "@/data/projects";
 
 interface ProjectCardProps {
   project: Project;

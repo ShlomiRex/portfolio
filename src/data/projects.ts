@@ -23,9 +23,9 @@ export interface Project {
 export const projects: Project[] = [
   {
     title: "TinyURL",
-    description: "A serverless URL shortener service that allows users to shorten long URLs into short, easy-to-share links. It is available at: https://tinyurl.shlomidom.com. The service is built on AWS Lambdas, API Gateway, MySQL, and S3. The project demonstrates my ability to design and implement serverless architectures, as well as my proficiency in AWS services.",
+    description: "A serverless URL shortener service that allows users to shorten long URLs into short, easy-to-share links. The service is built on AWS Lambdas, API Gateway for Lambda executions, MySQL to store URL mappings, S3 for static hosting, and CloudFront for caching and load balancing. The project demonstrates my ability to design and implement serverless architectures, as well as my proficiency in AWS services.",
     topic: [topics.Cloud, topics.Website],
-    technologies: ["AWS", "Serverless", "MySQL", "API Gateway", "Lambda", "S3", "Python", "TypeScript", "React"],
+    technologies: ["AWS", "Serverless", "MySQL", "API Gateway", "Lambda", "S3", "CloudFront", "Python", "TypeScript", "React"],
     imageUrl: "/images/projects/tinyurl.gif",
     link: "https://tinyurl.shlomidom.com",
     githubLink: "https://github.com/ShlomiRex/url-shortener-frontend"
