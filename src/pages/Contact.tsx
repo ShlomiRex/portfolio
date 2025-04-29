@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { Mail, Phone, Linkedin, Github } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { link } from "fs";
+import ConfettiButton from "@/components/ConfettiIButton";
+import { Button } from "@/components/ui/button";
 
 const Contact = () => {
   const contactInfo = [
@@ -90,6 +92,16 @@ const Contact = () => {
             </motion.div>
           ))}
         </div>
+      </div>
+
+      <div className="container flex items-center justify-center py-20">
+        <ConfettiButton
+          icon={
+            <Button className="rounded-full">
+              I'm awesome 😉
+            </Button>
+          }
+        />
       </div>
     </div>
   );

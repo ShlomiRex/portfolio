@@ -20,15 +20,24 @@ const Index = () => {
       title: "TinyURL"
     },
     {
-      title: "Interactive VAE Digit Interpolation"
+      title: "BlendDigits"
     },
-    // {
-    //   title: "Sorting Algorithms Visualizer"
-    // },
     {
       title: "NES Emulator"
     }
   ];
+
+  // Check if the project title exists in the projects array
+  const isProjectExists = (title: string) => {
+    return projects.some(project => project.title === title);
+  }
+
+  // Check all featuredProjects
+  featuredProjects.forEach(project => {
+    if (!isProjectExists(project.title)) {
+      console.error(`Project with title "${project.title}" does not exist in the featured projects array.`);
+    }
+  });
 
   return (
     <div className="min-h-screen w-full overflow-hidden">
@@ -107,13 +116,14 @@ const Index = () => {
         </div>
       </motion.div>
 
-      <div className="inline-flex items-center justify-center w-full">
+      {/* Divider */}
+      {/* <div className="inline-flex items-center justify-center w-full">
         <hr className="w-[80%] h-px my-8 border-0 bg-primary" />
-      </div>
+      </div> */}
 
 
       {/* Cool confetti button */}
-      <div className="container flex items-center justify-center py-20">
+      {/* <div className="container flex items-center justify-center py-20">
         <ConfettiButton
           icon={
             <Button className="rounded-full">
@@ -121,7 +131,7 @@ const Index = () => {
             </Button>
           }
         />
-      </div>
+      </div> */}
 
     </div>
   );

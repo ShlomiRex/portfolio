@@ -39,12 +39,13 @@ export const projects: Project[] = [
     link: "https://github.com/ShlomiRex/nes-emulator-java"
   },
   {
-    title: "Interactive VAE Digit Interpolation",
-    description: "I implemented and trained variational autoencoder from scratch and used it to interactively interpolate between two images with slider. The model has only 1.1M parameters, which is significantly less than previous autoencoder-only models that I created.",
-    topic: [topics.MachineLearning],
-    technologies: ["Python", "PyTorch", "Neural Networks", "TkInter"],
-    imageUrl: "/images/projects/interactive_vae_digit_interpolation.gif",
-    link: "https://github.com/ShlomiRex/interactive_vae_digit_interpolation"
+    title: "BlendDigits",
+    description: "BlendDigits is an interactive demo that visualizes smooth transitions between two MNIST digits using a Variational Autoencoder (VAE). You select two MNIST images as input, and the model generates an interpolated (generates) image in between them. Everything runs locally in your browser (client side).",
+    topic: [topics.MachineLearning, topics.Application, topics.Website],
+    technologies: ["ONNX", "Python", "PyTorch", "Neural Networks", "TkInter", "TypeScript", "React"],
+    imageUrl: "/images/projects/blend_digits.gif",
+    link: "https://blenddigits.shlomidom.com",
+    githubLink: "https://github.com/ShlomiRex/BlendDigits"
   },
   {
     title: "Sorting Algorithms Visualizer",
