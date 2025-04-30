@@ -1,70 +1,50 @@
-import { GraduationCap, Briefcase, Brain, Target } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import "@/styles/Page.css";
-import { Button } from "@/components/ui/button";
-import { Download } from "lucide-react";
-import { Content } from "vaul";
-
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { ProjectCard } from "@/components/projects/ProjectCard";
+import { TopicFilter } from "@/components/projects/TopicFilter";
+import { projects, topics, ProjectTopic } from "@/data/projects";
 // Test page
 
 const Test = () => {
+  const [selectedTopic, setSelectedTopic] = useState<ProjectTopic | "All">("All");
+
+  const filteredProjects = (selectedTopic === "All")
+    ? projects
+    : projects.filter(
+      project => Array.isArray(project.topic) ? project.topic.includes(selectedTopic) : project.topic === selectedTopic
+    );
 
   return (
     <div className="page-content">
-      <h1>Resume</h1>
+      <h1>Projects</h1>
 
-      {/* Download Button */}
-      <div className="flex justify-center mb-6">
-        <Button variant="outline">
-          <Download className="mr-2" />
-          <a href="/files/pdf/resume.pdf" target="_blank">Download Resume</a>
-        </Button>
-      </div>
+      <div className="space-y-6">
+        <p className="text-lg">
+          Here are some of the projects I have worked on. You can filter the projects by topic.
+        </p>
 
-      {/* PDF */}
-      <div>
-        <object
-          data="/files/pdf/resume.pdf"
-          type="application/pdf"
-          className="w-full h-[calc(100vh-200px)] rounded-lg border bg-white"
-        >
-          <p style={{ color: "black" }}>
-            <h1>Your browser does not support PDFs.</h1>
-            <a href="/files/pdf/resume.pdf" target="_blank" className="ml-2 underline">
-              Download the PDF
-            </a>
-          </p>
-        </object>
-      </div>
+        <TopicFilter
+          selectedTopic={selectedTopic}
+          onTopicChange={setSelectedTopic}
+          topics={Object.values(topics)}
+        />
 
-      {/* Images */}
-      <div className="mt-8">
-        <div className="flex justify-center gap-8 mb-8">
-          <div className="bg-white rounded-lg p-4 border">
-            <img
-              src="/images/work/meta.png"
-              alt="Meta logo"
-              className="h-6 w-auto"
+        {/* Projects grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {filteredProjects.map((project, index) => (
+            <ProjectCard
+              key={index}
+              project={{
+                ...project,
+                topic: Array.isArray(project.topic) ? project.topic : [project.topic],
+              }}
+              index={index}
             />
-          </div>
-          <div className="bg-white rounded-lg p-4 border">
-            <img
-              src="/images/work/bank_hapoalim.png"
-              alt="Bank Hapoalim logo"
-              className="h-6 w-auto"
-            />
-          </div>
-          <div className="bg-white rounded-lg p-4 border">
-            <img
-              src="/images/work/check_point.png"
-              alt="Check Point logo"
-              className="h-6 w-auto"
-            />
-          </div>
+          ))}
         </div>
       </div>
-
     </div>
+
   );
 };
 

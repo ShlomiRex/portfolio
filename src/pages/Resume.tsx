@@ -1,6 +1,3 @@
-import { motion } from "framer-motion";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { useIsMobile } from "@/hooks/use-mobile";
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
 
@@ -9,12 +6,18 @@ const Resume = () => {
     <div className="page-content">
       <h1>Resume</h1>
 
-      {/* Download Button */}
-      <div className="flex justify-center mb-6">
-        <Button variant="outline">
-          <Download className="mr-2" />
-          <a href="/files/pdf/resume.pdf" target="_blank">Download Resume</a>
-        </Button>
+      {/* Top section */}
+      <div className="flex justify-center items-center mb-6 gap-6">
+        <p className="text-lg">
+          Here you can view and download my resume:
+        </p>
+
+        <div>
+          <Button variant="outline">
+            <Download className="mr-2" />
+            <a href="/files/pdf/resume.pdf" target="_blank">Download Resume</a>
+          </Button>
+        </div>
       </div>
 
       {/* PDF */}
@@ -34,7 +37,7 @@ const Resume = () => {
       </div>
 
       {/* Images */}
-      <div className="mt-8">
+      {/* <div className="mt-8">
         <div className="flex justify-center gap-8 mb-8">
           <div className="bg-white rounded-lg p-4 border">
             <img
@@ -58,7 +61,7 @@ const Resume = () => {
             />
           </div>
         </div>
-      </div>
+      </div> */}
 
     </div>
   );

@@ -10,40 +10,39 @@ const Projects = () => {
   console.log("Selected topic:", selectedTopic);
 
   const filteredProjects = (selectedTopic === "All")
-    ? projects 
+    ? projects
     : projects.filter(
       project => Array.isArray(project.topic) ? project.topic.includes(selectedTopic) : project.topic === selectedTopic
     );
 
   return (
-    <div className="min-h-screen w-full">
-      <div className="container max-w-6xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="page-header"
-        >
-          <h1 className="">Projects</h1>
-          
-          <TopicFilter
-            selectedTopic={selectedTopic}
-            onTopicChange={setSelectedTopic}
-            topics={Object.values(topics)}
-          />
+    <div className="page-content">
+      <h1>Projects</h1>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {filteredProjects.map((project, index) => (
-              <ProjectCard
+      <div className="space-y-6">
+        <p className="text-lg">
+          Here are some of the projects I have worked on. You can filter the projects by topic.
+        </p>
+
+        <TopicFilter
+          selectedTopic={selectedTopic}
+          onTopicChange={setSelectedTopic}
+          topics={Object.values(topics)}
+        />
+
+        {/* Projects grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
+          {filteredProjects.map((project, index) => (
+            <ProjectCard
               key={index}
               project={{
                 ...project,
                 topic: Array.isArray(project.topic) ? project.topic : [project.topic],
               }}
               index={index}
-              />
-            ))}
-          </div>
-        </motion.div>
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -7,11 +7,11 @@ const Research = () => {
       <h1>Research</h1>
 
       <div className="space-y-6">
-        <p>
+        <p className="text-lg">
           My main research area revolves around the vision domain. Specifically, image and video synthesis models. I mostly use PyTorch for my research work.
         </p>
 
-        <p>
+        <p className="text-lg">
           Here are some of the research papers and seminars I have presented in my academic career.
         </p>
       </div>
