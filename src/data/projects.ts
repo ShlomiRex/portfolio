@@ -48,13 +48,12 @@ export const projects: Project[] = [
     githubLink: "https://github.com/ShlomiRex/BlendDigits"
   },
   {
-    title: "Sorting Algorithms Visualizer",
-    description: "A website that visualizes sorting algorithms. Written in pure JavaScript, you can see how sorting algorithms work in real time. It also comes with sound effects.",
-    topic: [topics.Application],
-    technologies: ["JavaScript", "HTML", "CSS"],
-    imageUrl: "/images/projects/sorting_algo_visualizer.gif",
-    link: "https://shlomirex.github.io/sorting-algo-visualizer/",
-    githubLink: "https://github.com/ShlomiRex/sorting-algo-visualizer"
+    title: "Interactive Denoiser",
+    description: "Interactively and automatically load image from MNIST, add noise to the image, and the model will automatically denoise the image (run the trained model). Trained a CNN autoencoder with 5.6M parameters.",
+    topic: [topics.MachineLearning],
+    technologies: ["Python", "PyTorch", "Neural Networks", "TkInter"],
+    imageUrl: "/images/projects/interactive_denoiser.gif",
+    link: "https://github.com/ShlomiRex/interactive_denoiser"
   },
   {
     title: "Interactive Digit Classifier",
@@ -65,12 +64,12 @@ export const projects: Project[] = [
     link: "https://github.com/ShlomiRex/interactive_digit_classifier"
   },
   {
-    title: "OS From Scratch",
-    description: "A basic bootloader written in assembly and basic kernel written in C++. I was always fascinated with the linux kernel, and I wanted to learn how to write one completely from scratch. This projects allows me to write full kernel with memory management, process management, and drivers.",
-    topic: [topics.OperatingSystems],
-    technologies: ["Assembly", "C++", "Operating Systems"],
-    imageUrl: "/images/projects/os_from_scratch.png",
-    link: "https://github.com/ShlomiRex/shlomios"
+    title: "OpenCV Demos",
+    description: "An OpenCV demonstration of various computer vision algorithms. The project is written in Python and OpenCV. The project includes the following algorithms: Canny edge detection, color tracking, stereo depth (convert images to 3D objects), fast fourier transform, filters, gradients, noise and histogram normalization.",
+    topic: [topics.MachineLearning, topics.Application],
+    technologies: ["Python", "OpenCV", "Computer Vision", "Image Processing"],
+    imageUrl: "/images/projects/opencv_demos.gif",
+    link: "https://github.com/ShlomiRex/opencv-demos"
   },
   {
     title: "SeeFood Android App",
@@ -81,12 +80,53 @@ export const projects: Project[] = [
     link: "https://github.com/ShlomiRex/seefood-app"
   },
   {
+    title: "OCR Font Classifier",
+    description: "An OCR (optical character recognition) font classifier. It detects the font of the text in the image. The model is trained on 5 different fonts. It can predict correctly the font in 96% accuracy. The model was trained on 1684 images which contain 46,503 samples (characters and their font). I used Python and Tensorflow.",
+    topic: [topics.MachineLearning],
+    technologies: ["Python", "TensorFlow", "OCR", "Machine Learning"],
+    imageUrl: "/images/projects/ocr_font_classifier.png",
+    link: "https://github.com/ShlomiRex/ocr-font-classifier-model"
+  },
+  {
+    title: "MNIST Classifier",
+    description: "I built a CNN classifier to recognize handwritten digits using the MNIST dataset with 98% accuracy. This project demonstrates my ability to design, train, and evaluate CNN models for image classification tasks.",
+    topic: [topics.MachineLearning],
+    technologies: ["Python", "PyTorch", "CNN", "Deep Learning"],
+    imageUrl: "/images/projects/mnist_classifier.png",
+    link: "https://github.com/ShlomiRex/mnist_classifier"
+  },
+  {
+    title: "Sorting Algorithms Visualizer",
+    description: "A website that visualizes sorting algorithms. Written in pure JavaScript, you can see how sorting algorithms work in real time. It also comes with sound effects.",
+    topic: [topics.Application],
+    technologies: ["JavaScript", "HTML", "CSS"],
+    imageUrl: "/images/projects/sorting_algo_visualizer.gif",
+    link: "https://shlomirex.github.io/sorting-algo-visualizer/",
+    githubLink: "https://github.com/ShlomiRex/sorting-algo-visualizer"
+  },
+  {
     title: "EvilTwin Wifi Attack",
     description: "Create wifi AP that enables users to browse the internet, but in reality, the attacker can sniff all the traffic. This attack also creates evil-portal that can be used to steal credentials from users. For example, if the user tries to connect to Facebook, the user will be redirected to fake Facebook login page, and their credentials will be stolen.",
     topic: [topics.Cyber],
     technologies: ["Wifi", "Network Security", "Social Engineering"],
     imageUrl: "/images/projects/wifi_evil_twin.jpg",
     link: "https://github.com/ShlomiRex/WiFi-EvilTwin"
+  },
+  {
+    title: "OS From Scratch",
+    description: "A basic bootloader written in assembly and basic kernel written in C++. I was always fascinated with the linux kernel, and I wanted to learn how to write one completely from scratch. This projects allows me to write full kernel with memory management, process management, and drivers.",
+    topic: [topics.OperatingSystems],
+    technologies: ["Assembly", "C++", "Operating Systems"],
+    imageUrl: "/images/projects/os_from_scratch.png",
+    link: "https://github.com/ShlomiRex/shlomios"
+  },
+  {
+    title: "Typing Bot",
+    description: "A bot that uses OCR (Optical Character Recognition) to read text from images and type it automatically. The bot is written in Python and uses Tesseract OCR engine. It can be used to automatically type text from images, making it useful for transcription tasks.",
+    topic: [topics.Application, topics.MachineLearning],
+    technologies: ["Python", "Tesseract OCR", "PyAutoGUI", "OpenCV"],
+    imageUrl: "/images/projects/typing_bot_ocr.gif",
+    link: "https://github.com/ShlomiRex/TypingBOT-OCR"
   },
   {
     title: "Portfolio Website",
@@ -120,15 +160,7 @@ export const projects: Project[] = [
     topic: [topics.Cyber],
     technologies: ["Python", "Raspberry Pi", "GPS", "Wifi", "Hardware"],
     imageUrl: "/images/projects/raspberrypi_wardrive.png",
-    link: "https://github.com/ShlomiRex/raspberry-pi-wardrive"
-  },
-  {
-    title: "Typing Bot",
-    description: "A bot that uses OCR (Optical Character Recognition) to read text from images and type it automatically. The bot is written in Python and uses Tesseract OCR engine. It can be used to automatically type text from images, making it useful for transcription tasks.",
-    topic: [topics.Application, topics.MachineLearning],
-    technologies: ["Python", "Tesseract OCR", "PyAutoGUI", "OpenCV"],
-    imageUrl: "/images/projects/typing_bot_ocr.gif",
-    link: "https://github.com/ShlomiRex/TypingBOT-OCR"
+    link: "https://github.com/ShlomiRex/wifi-deauth-rpi-wardrive"
   },
   {
     title: "Screen Cropper",
@@ -139,28 +171,12 @@ export const projects: Project[] = [
     link: "https://github.com/ShlomiRex/screencropper"
   },
   {
-    title: "OCR Font Classifier",
-    description: "An OCR (optical character recognition) font classifier. It detects the font of the text in the image. The model is trained on 5 different fonts. It can predict correctly the font in 96% accuracy. The model was trained on 1684 images which contain 46,503 samples (characters and their font). I used Python and Tensorflow.",
-    topic: [topics.MachineLearning],
-    technologies: ["Python", "TensorFlow", "OCR", "Machine Learning"],
-    imageUrl: "/images/projects/ocr_font_classifier.png",
-    link: "https://github.com/ShlomiRex/ocr-font-classifier-model"
-  },
-  {
     title: "Kaminsky Attack",
     description: "The kaminsky-attack is a DNS cache poisoning attack - my implementation is written in pure C with extremely high performance. We attack the nameservers of the target domain, and inject malicious DNS records into the cache of the nameserver. The attack was first presented in blackhat 2008, and allows the attacker to redirect traffic to malicious servers. The attack is based on the fact that DNS uses UDP protocol, and is vulnerable to spoofing.",
     topic: [topics.Cyber],
     technologies: ["C", "DNS", "Network Security"],
     imageUrl: "/images/projects/kaminsky_attack.png",
     link: "https://github.com/ShlomiRex/kaminsky-attack"
-  },
-  {
-    title: "Interactive Denoiser",
-    description: "Interactively and automatically load image from MNIST, add noise to the image, and the model will automatically denoise the image (run the trained model). Trained a CNN autoencoder with 5.6M parameters.",
-    topic: [topics.MachineLearning],
-    technologies: ["Python", "PyTorch", "Neural Networks", "TkInter"],
-    imageUrl: "/images/projects/interactive_denoiser.gif",
-    link: "https://github.com/ShlomiRex/interactive_denoiser"
   },
   {
     title: "e-xterm",
@@ -177,22 +193,6 @@ export const projects: Project[] = [
     technologies: ["Python", "Cellular Automaton", "Simulation"],
     imageUrl: "/images/projects/game_of_life.gif",
     link: "https://github.com/ShlomiRex/GameOfLife_Python"
-  },
-  {
-    title: "OpenCV Demos",
-    description: "An OpenCV demonstration of various computer vision algorithms. The project is written in Python and OpenCV. The project includes the following algorithms: Canny edge detection, color tracking, stereo depth (convert images to 3D objects), fast fourier transform, filters, gradients, noise and histogram normalization.",
-    topic: [topics.MachineLearning, topics.Application],
-    technologies: ["Python", "OpenCV", "Computer Vision", "Image Processing"],
-    imageUrl: "/images/projects/opencv_demos.gif",
-    link: "https://github.com/ShlomiRex/opencv-demos"
-  },
-  {
-    title: "MNIST Classifier",
-    description: "I built a CNN classifier to recognize handwritten digits using the MNIST dataset with 98% accuracy. This project demonstrates my ability to design, train, and evaluate CNN models for image classification tasks.",
-    topic: [topics.MachineLearning],
-    technologies: ["Python", "PyTorch", "CNN", "Deep Learning"],
-    imageUrl: "/images/projects/mnist_classifier.png",
-    link: "https://github.com/ShlomiRex/mnist_classifier"
   },
   {
     title: "Command Line Text Editor",
