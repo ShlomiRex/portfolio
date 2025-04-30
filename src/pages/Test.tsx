@@ -1,82 +1,69 @@
 import { GraduationCap, Briefcase, Brain, Target } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import "@/styles/Page.css";
+import { Button } from "@/components/ui/button";
+import { Download } from "lucide-react";
+import { Content } from "vaul";
 
 // Test page
 
 const Test = () => {
 
-  const cards = [
-    {
-      icon: <Briefcase className="size-8" />,
-      title: "Network Infrastructure Scaling",
-      description: "Scaled Meta's network infrastructure across 14 regions globally, supporting 500M+ users"
-    },
-    {
-      icon: <Brain className="size-8" />,
-      title: "Cybersecurity Expert",
-      description: "Deep expertise in firewalls and networking, keeping those pesky hackers at bay"
-    },
-    {
-      icon: <GraduationCap className="size-8" />,
-      title: "Continuous Learner",
-      description: "Always exploring new technologies and sharing knowledge with others"
-    },
-    {
-      icon: <Target className="size-8" />,
-      title: "Results Driven",
-      description: "Focused on delivering high-impact solutions that make a real difference"
-    }
-  ];
-
   return (
     <div className="page-content">
-      <h1>About Me</h1>
+      <h1>Resume</h1>
 
-      <p className="text-xl text-muted-foreground text-center">
-        <b className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">Software engineer by day, code wizard by night</b>
-      </p>
-
-      <p className="mt-6 text-lg">
-        I'm a passionate code warrior who loves tackling complex challenges and turning them into elegant solutions. With a track record of successful projects, I've been crafting digital experiences that make a real impact, not just fancy presentations.
-      </p>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 py-8">
-        {cards.map((card, index) => {
-          return (
-            <Card className="hover:shadow-lg transition-shadow duration-300">
-              <CardContent className="flex flex-col items-center text-center space-y-4 p-6">
-                <div>
-                  {card.icon}
-                </div>
-
-                <div className="text-lg">
-                  <b>{card.title}</b>
-                </div>
-
-                <div className="text-muted-foreground">
-                  {card.description}
-                </div>
-              </CardContent>
-            </Card>
-          )
-        })}
+      {/* Download Button */}
+      <div className="flex justify-center mb-6">
+        <Button variant="outline">
+          <Download className="mr-2" />
+          <a href="/files/pdf/resume.pdf" target="_blank">Download Resume</a>
+        </Button>
       </div>
 
-      <div className="relative w-40 mx-auto transition-all duration-300 hover:scale-110">
-        <img
-          src="/images/me.jpg"
-          alt="Image of me"
-          className="w-full rounded-3xl"
-        />
-        <div className="absolute bottom-0 left-0 right-0 bg-black/50 text-white py-1 text-center text-sm rounded-b-3xl ">
-          Me in Japan
+      {/* PDF */}
+      <div>
+        <object
+          data="/files/pdf/resume.pdf"
+          type="application/pdf"
+          className="w-full h-[calc(100vh-200px)] rounded-lg border bg-white"
+        >
+          <p style={{ color: "black" }}>
+            <h1>Your browser does not support PDFs.</h1>
+            <a href="/files/pdf/resume.pdf" target="_blank" className="ml-2 underline">
+              Download the PDF
+            </a>
+          </p>
+        </object>
+      </div>
+
+      {/* Images */}
+      <div className="mt-8">
+        <div className="flex justify-center gap-8 mb-8">
+          <div className="bg-white rounded-lg p-4 border">
+            <img
+              src="/images/work/meta.png"
+              alt="Meta logo"
+              className="h-6 w-auto"
+            />
+          </div>
+          <div className="bg-white rounded-lg p-4 border">
+            <img
+              src="/images/work/bank_hapoalim.png"
+              alt="Bank Hapoalim logo"
+              className="h-6 w-auto"
+            />
+          </div>
+          <div className="bg-white rounded-lg p-4 border">
+            <img
+              src="/images/work/check_point.png"
+              alt="Check Point logo"
+              className="h-6 w-auto"
+            />
+          </div>
         </div>
       </div>
 
-      <p className="pt-6">
-        When I'm not coding or debugging, I'm sharing knowledge and helping others level up their skills. I'm all about delivering results that exceed expectations and make clients go "Wow!"
-      </p>
     </div>
   );
 };
