@@ -7,8 +7,6 @@ import { projects, topics, ProjectTopic } from "@/data/projects";
 const Projects = () => {
   const [selectedTopic, setSelectedTopic] = useState<ProjectTopic | "All">("All");
 
-  console.log("Selected topic:", selectedTopic);
-
   const filteredProjects = (selectedTopic === "All")
     ? projects
     : projects.filter(

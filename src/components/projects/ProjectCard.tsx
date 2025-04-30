@@ -22,6 +22,18 @@ export const ProjectCard = ({ project, index }: ProjectCardProps) => {
     setImageLoaded(true); // Remove skeleton on error
   };
 
+  const handleIconMouseEnter = (e) => {
+    const icon = e.currentTarget.children[0];
+    icon.style.transition = "transform 300ms ease";
+    icon.style.transform = "scale(1.5)";
+  }
+
+  const handleIconMouseLeave = (e) => {
+    const icon = e.currentTarget.children[0];
+    icon.style.transition = "transform 300ms ease";
+    icon.style.transform = "scale(1)";
+  }
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -55,9 +67,13 @@ export const ProjectCard = ({ project, index }: ProjectCardProps) => {
                 // We have github link, show both eye and github icons
                 <div className="flex gap-8 items-center justify-center items-stretch w-full h-full">
                   {/* Eye icon */}
-                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-full h-full transition-all duration-300 transform hover:scale-150">
-                    <Eye className="w-8 h-8 text-white" />
-                  </a>
+                  <div
+                    className="group flex items-center justify-center w-full h-full cursor-pointer"
+                    onClick={() => window.open(project.link, "_blank")}
+                    onMouseEnter={handleIconMouseEnter}
+                    onMouseLeave={handleIconMouseLeave}>
+                    <Eye className="w-8 h-8 text-white "></Eye>
+                  </div>
 
                   {/* Vertical divider */}
                   <div className="flex items-center justify-center h-full">
@@ -65,9 +81,13 @@ export const ProjectCard = ({ project, index }: ProjectCardProps) => {
                   </div>
 
                   {/* Github icon */}
-                  <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-full h-full transition-all duration-300 transform hover:scale-150">
-                    <Github className="w-8 h-8 text-white" />
-                  </a>
+                  <div
+                    className="flex items-center justify-center w-full h-full cursor-pointer"
+                    onClick={() => window.open(project.githubLink, "_blank")}
+                    onMouseEnter={handleIconMouseEnter}
+                    onMouseLeave={handleIconMouseLeave}>
+                    <Github className="w-8 h-8 text-white"></Github>
+                  </div>
                 </div>
               ) : (
                 // Else, no github link, display regular eye for the link only
@@ -111,7 +131,7 @@ export const ProjectCard = ({ project, index }: ProjectCardProps) => {
           </div>
         </CardContent>
       </Card>
-    </motion.div>
+    </motion.div >
   );
 };
 
