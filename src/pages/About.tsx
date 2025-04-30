@@ -44,21 +44,36 @@ const About = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 py-8">
         {cards.map((card, index) => {
           return (
-            <Card className="hover:shadow-lg transition-shadow duration-300">
-              <CardContent className="flex flex-col items-center text-center space-y-4 p-6">
-                <div>
-                  {card.icon}
-                </div>
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                delay: 0.1 * index,
+                duration: 0.3
+              }}
+              whileHover={{
+                scale: 1.02,
+                y: -5,
+                transition: { duration: 0.2 }
+              }}
+            >
+              <Card className="hover:shadow-lg transition-shadow duration-300">
+                <CardContent className="flex flex-col items-center text-center space-y-4 p-6">
+                  <div>
+                    {card.icon}
+                  </div>
 
-                <div className="text-lg">
-                  <b>{card.title}</b>
-                </div>
+                  <div className="text-lg">
+                    <b>{card.title}</b>
+                  </div>
 
-                <div className="text-muted-foreground">
-                  {card.description}
-                </div>
-              </CardContent>
-            </Card>
+                  <div className="text-muted-foreground">
+                    {card.description}
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
           )
         })}
       </div>
