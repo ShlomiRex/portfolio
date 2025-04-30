@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { GraduationCap, Briefcase, Brain, Target } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import "@/styles/Page.css";
+import ConfettiButton from "@/components/ConfettiIButton";
+import { Button } from "@/components/ui/button";
 
 const About = () => {
   const cards = [
@@ -61,20 +63,34 @@ const About = () => {
         })}
       </div>
 
-      <div className="relative w-40 mx-auto transition-all duration-300 hover:scale-110">
-        <img
-          src="/images/me.jpg"
-          alt="Image of me"
-          className="w-full rounded-3xl"
-        />
-        <div className="absolute bottom-0 left-0 right-0 bg-black/50 text-white py-1 text-center text-sm rounded-b-3xl ">
-          Me in Japan
+      <div className="space-y-6">
+        <p>
+          When I'm not coding or debugging, I'm sharing knowledge and helping others level up their skills. I'm all about delivering results that exceed expectations and make clients go "Wow!"
+        </p>
+
+        {/* My image */}
+        <div className="relative w-40 mx-auto transition-all duration-300 hover:scale-110">
+          <img
+            src="/images/me.jpg"
+            alt="Image of me"
+            className="w-full rounded-3xl"
+          />
+          <div className="absolute bottom-0 left-0 right-0 bg-black/50 text-white py-1 text-center text-sm rounded-b-3xl ">
+            Me in Japan
+          </div>
+        </div>
+
+        {/* Confetti button */}
+        <div className="container flex items-center justify-center">
+          <ConfettiButton
+            icon={
+              <Button className="rounded-full">
+                I'm awesome 😉
+              </Button>
+            }
+          />
         </div>
       </div>
-
-      <p className="pt-6">
-        When I'm not coding or debugging, I'm sharing knowledge and helping others level up their skills. I'm all about delivering results that exceed expectations and make clients go "Wow!"
-      </p>
     </div>
   );
 };

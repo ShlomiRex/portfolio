@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, Phone, Linkedin, Github } from "lucide-react";
+import { Mail, Phone, Linkedin, Github, ExternalLink } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { link } from "fs";
 import ConfettiButton from "@/components/ConfettiIButton";
@@ -38,16 +38,28 @@ const Contact = () => {
     // }
   ];
 
+  function ContactCard({ info }) {
+    return (
+      <Card className="transition-all duration-300 hover:shadow-lg">
+        <CardContent className="p-6 flex items-center space-x-3">
+          <span className="text-primary">{info.icon}</span>
+          <div>
+            <p className="text-sm text-muted-foreground">{info.label}</p>
+            <p className="font-medium">{info.value}</p>
+          </div>
+        </CardContent>
+      </Card>
+    )
+  }
+
   return (
-    <div className="min-h-screen w-full">
-      <div className="container max-w-2xl mx-auto">
-        <motion.h1 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-4xl font-bold mb-12 text-center"
-        >
-          Contact Me
-        </motion.h1>
+    <div className="page-content">
+      <div className="space-y-6">
+        <h1>Contact</h1>
+
+        <p className="text-center">
+          Please feel free to contact me 😋
+        </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {contactInfo.map((info, index) => (
@@ -56,52 +68,29 @@ const Contact = () => {
               className="block"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ 
+              transition={{
                 delay: 0.1 * index,
                 duration: 0.3
               }}
-              whileHover={{ 
+              whileHover={{
                 scale: 1.02,
                 y: -5,
                 transition: { duration: 0.2 }
               }}
             >
+
               {info.link ? (
                 <a href={info.link} target="_blank" rel="noopener noreferrer">
-                  <Card className="transition-all duration-300 hover:shadow-lg">
-                    <CardContent className="p-6 flex items-center space-x-3">
-                      <span className="text-primary">{info.icon}</span>
-                      <div>
-                        <p className="text-sm text-muted-foreground">{info.label}</p>
-                        <p className="font-medium">{info.value}</p>
-                      </div>
-                    </CardContent>
-                  </Card>
+                  <ContactCard info={info} />
                 </a>
               ) : (
-                <Card className="transition-all duration-300 hover:shadow-lg">
-                  <CardContent className="p-6 flex items-center space-x-3">
-                    <span className="text-primary">{info.icon}</span>
-                    <div>
-                      <p className="text-sm text-muted-foreground">{info.label}</p>
-                      <p className="font-medium">{info.value}</p>
-                    </div>
-                  </CardContent>
-                </Card>
+                <ContactCard info={info} />
               )}
+
+
             </motion.div>
           ))}
         </div>
-      </div>
-
-      <div className="container flex items-center justify-center py-20">
-        <ConfettiButton
-          icon={
-            <Button className="rounded-full">
-              I'm awesome 😉
-            </Button>
-          }
-        />
       </div>
     </div>
   );
