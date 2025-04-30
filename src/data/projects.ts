@@ -128,7 +128,7 @@ export const projects: Project[] = [
     topic: [topics.Application, topics.MachineLearning],
     technologies: ["Python", "Tesseract OCR", "PyAutoGUI", "OpenCV"],
     imageUrl: "/images/projects/typing_bot_ocr.gif",
-    link: "https://github.com/ShlomiRex/TypingBot"
+    link: "https://github.com/ShlomiRex/TypingBOT-OCR"
   },
   {
     title: "Screen Cropper",
