@@ -2,7 +2,8 @@ import { useRef, useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useTheme } from "@/components/ThemeProvider";
 import { Button } from "@/components/ui/button";
-import { Moon, Sun, Home, ChevronLeft, ChevronRight } from "lucide-react";
+import { Moon, Sun, Home } from "lucide-react";
+import ScrollArrow from "./navbar/ScrollArrow";
 
 const Navbar = () => {
   const links = ["About", "Resume", "Research", "Projects", "Blog", "Contact"];
@@ -37,13 +38,6 @@ const Navbar = () => {
     };
   }, []);
 
-  // const scroll = (dir: "left" | "right") => {
-  //   const el = scrollRef.current;
-  //   if (!el) return;
-  //   const distance = el.clientWidth * 0.6; // how far to scroll
-  //   el.scrollBy({ left: dir === "left" ? -distance : distance, behavior: "smooth" });
-  // };
-
   // Check for overflow in the navbar
   const [isOverflowing, setIsOverflowing] = useState(false);
 
@@ -53,7 +47,7 @@ const Navbar = () => {
       style={{ top: 0, zIndex: 1000 }}
     >
       <div className="relative">
-        {/* Scrollable area */}
+        {/* Scrollable area - center items on non-mobile, align left on mobile */}
         {/* When on mobile and not overflowing navbar, remove justify-center to view left items, instead of middle items. On browser, set justify center */}
         <div
           ref={scrollRef}
@@ -94,24 +88,12 @@ const Navbar = () => {
 
         {/* Left Arrow */}
         {canScrollLeft && (
-          <button
-            // onClick={() => scroll("left")}
-            className="absolute left-0 top-1/2 -translate-y-1/2 bg-background/80 backdrop-blur p-1 rounded-full shadow-md"
-            aria-label="Scroll left"
-          >
-            <ChevronLeft size={20} />
-          </button>
+          <ScrollArrow direction="left" />
         )}
 
         {/* Right Arrow */}
         {canScrollRight && (
-          <button
-            // onClick={() => scroll("right")}
-            className="absolute right-0 top-1/2 -translate-y-1/2 bg-background/80 backdrop-blur p-1 rounded-full shadow-md"
-            aria-label="Scroll right"
-          >
-            <ChevronRight size={20} />
-          </button>
+          <ScrollArrow direction="right" />
         )}
       </div>
     </nav>

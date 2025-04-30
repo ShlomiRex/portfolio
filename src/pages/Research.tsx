@@ -4,7 +4,7 @@ import { researchData } from "@/data/research";
 
 const Research = () => {
   return (
-    <div className="min-h-screen w-full py-20 px-4">
+    <div className="min-h-screen w-full py-20">
       <div className="container max-w-4xl mx-auto">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}

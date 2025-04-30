@@ -27,7 +27,7 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen w-full py-20 px-4 bg-gradient-to-b from-background to-secondary/20">
+    <div className="min-h-screen w-full py-20 bg-gradient-to-b from-background to-secondary/20">
       <div className="container max-w-4xl mx-auto space-y-12">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
