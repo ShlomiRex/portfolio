@@ -9,7 +9,7 @@
     }
 
     p {
-      @apply text-muted-foreground
+      @apply text-foreground
     }
   }
 }

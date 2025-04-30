@@ -2,8 +2,9 @@ import { motion } from "framer-motion";
 import { GraduationCap, Briefcase, Brain, Target } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import "@/styles/Page.css";
+
 const About = () => {
-  const highlights = [
+  const cards = [
     {
       icon: <Briefcase className="size-8" />,
       title: "Network Infrastructure Scaling",
@@ -27,68 +28,53 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen w-full bg-gradient-to-b from-background to-secondary/20 py-5">
-      <div className="container max-w-4xl mx-auto space-y-12">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="page-header"
-        >
-          About Me
-          <motion.p 
-            className="text-xl text-muted-foreground"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-          >
-            Software engineer by day, code wizard by night
-          </motion.p>
-        </motion.div>
+    <div className="page-content">
+      <h1>About Me</h1>
 
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          className="prose dark:prose-invert max-w-none space-y-6"
-        >
-          <p className="text-lg leading-relaxed">
-            I'm a passionate code warrior who loves tackling complex challenges and turning them into elegant solutions. With a track record of successful projects, I've been crafting digital experiences that make a real impact, not just fancy presentations.
-          </p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 py-8">
-            {highlights.map((highlight, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 + index * 0.1 }}
-              >
-                <Card className="hover:shadow-lg transition-shadow duration-300">
-                  <CardContent className="p-6 flex flex-col items-center text-center space-y-4">
-                    <motion.div
-                      whileHover={{ scale: 1.1 }}
-                      className="text-primary"
-                    >
-                      {highlight.icon}
-                    </motion.div>
-                    <h3 className="font-semibold text-lg">{highlight.title}</h3>
-                    <p className="text-muted-foreground">{highlight.description}</p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-          
-          <motion.p 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8 }}
-            className="text-lg leading-relaxed"
-          >
-            When I'm not coding or debugging, I'm sharing knowledge and helping others level up their skills. I'm all about delivering results that exceed expectations and make clients go "Wow!"
-          </motion.p>
-        </motion.div>
+      <p className="text-xl text-muted-foreground text-center">
+        <b className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">Software engineer by day, code wizard by night</b>
+      </p>
+
+      <p className="mt-6 text-lg">
+        I'm a passionate code warrior who loves tackling complex challenges and turning them into elegant solutions. With a track record of successful projects, I've been crafting digital experiences that make a real impact, not just fancy presentations.
+      </p>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 py-8">
+        {cards.map((card, index) => {
+          return (
+            <Card className="hover:shadow-lg transition-shadow duration-300">
+              <CardContent className="flex flex-col items-center text-center space-y-4 p-6">
+                <div>
+                  {card.icon}
+                </div>
+
+                <div className="text-lg">
+                  <b>{card.title}</b>
+                </div>
+
+                <div className="text-muted-foreground">
+                  {card.description}
+                </div>
+              </CardContent>
+            </Card>
+          )
+        })}
       </div>
+
+      <div className="relative w-40 mx-auto transition-all duration-300 hover:scale-110">
+        <img
+          src="/images/me.jpg"
+          alt="Image of me"
+          className="w-full rounded-3xl"
+        />
+        <div className="absolute bottom-0 left-0 right-0 bg-black/50 text-white py-1 text-center text-sm rounded-b-3xl ">
+          Me in Japan
+        </div>
+      </div>
+
+      <p className="pt-6">
+        When I'm not coding or debugging, I'm sharing knowledge and helping others level up their skills. I'm all about delivering results that exceed expectations and make clients go "Wow!"
+      </p>
     </div>
   );
 };
