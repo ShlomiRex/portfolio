@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Eye } from "lucide-react";
 import { BlogPost, BlogTopic, blogPosts, blogTopics } from "@/data/blog";
+import { TopicFilter } from "@/components/blog/TopicFilter";
 
 const BlogPostCard = ({ post, index }: { post: BlogPost; index: number }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -31,7 +32,7 @@ const BlogPostCard = ({ post, index }: { post: BlogPost; index: number }) => {
           <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
             <Eye className="w-8 h-8 text-white" />
           </div>
-          <a 
+          <a
             href={post.link}
             target="_blank"
             rel="noopener noreferrer"
@@ -59,51 +60,30 @@ const BlogPostCard = ({ post, index }: { post: BlogPost; index: number }) => {
 const Blog = () => {
   const [selectedTopic, setSelectedTopic] = useState<BlogTopic | "All">("All");
 
-  const filteredPosts = selectedTopic === "All" 
-    ? blogPosts 
+  const filteredPosts = selectedTopic === "All"
+    ? blogPosts
     : blogPosts.filter(post => post.topic === selectedTopic);
 
   return (
-    <div className="page-container">
-      <div className="mb-8 text-center">
-        <h1 className="page-header">Blog Posts</h1>
-        <p className="text-muted-foreground">
-          Visit my blog at{" "}
-          <a 
-            href="https://blog.shlomidom.com" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="text-primary/90 font-medium px-2 py-1 rounded-md bg-primary/5 hover:bg-primary/10 transition-colors duration-200 border border-primary/20 hover:border-primary/40"
-          >
-            blog.shlomidom.com
-          </a>
+    <div className="page-content">
+      <h1>Blog</h1>
+
+      <div className="space-y-6">
+        <p>
+          My blog posts showcase my thoughts and ideas on various topics on a more technical detail.
         </p>
-      </div>
 
-      <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-6 sm:mb-8">
-        <Button
-          variant={selectedTopic === "All" ? "default" : "outline"}
-          onClick={() => setSelectedTopic("All")}
-          className="transition-colors text-sm sm:text-base"
-        >
-          All
-        </Button>
-        {blogTopics.map((topic) => (
-          <Button
-            key={topic}
-            variant={selectedTopic === topic ? "default" : "outline"}
-            onClick={() => setSelectedTopic(topic)}
-            className="transition-colors text-sm sm:text-base"
-          >
-            {topic}
-          </Button>
-        ))}
-      </div>
+        <TopicFilter
+          selectedTopic={selectedTopic}
+          onTopicChange={setSelectedTopic}
+          topics={blogTopics}
+        />
 
-      <div className="space-y-8">
-        {filteredPosts.map((post, index) => (
-          <BlogPostCard key={index} post={post} index={index} />
-        ))}
+        <div className="space-y-8">
+          {filteredPosts.map((post, index) => (
+            <BlogPostCard key={index} post={post} index={index} />
+          ))}
+        </div>
       </div>
     </div>
   );

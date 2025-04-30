@@ -41,7 +41,7 @@ export const projects: Project[] = [
   {
     title: "BlendDigits",
     description: "BlendDigits is an interactive demo that visualizes smooth transitions between two MNIST digits using a Variational Autoencoder (VAE). You select two MNIST images as input, and the model generates an interpolated (generates) image in between them. Everything runs locally in your browser (client side).",
-    topic: [topics.MachineLearning, topics.Application, topics.Website],
+    topic: [topics.MachineLearning, topics.Application, topics.Website, topics.Cloud],
     technologies: ["ONNX", "Python", "PyTorch", "Neural Networks", "TkInter", "TypeScript", "React"],
     imageUrl: "/images/projects/blend_digits.gif",
     link: "https://blenddigits.shlomidom.com",
