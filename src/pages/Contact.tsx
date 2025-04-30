@@ -1,6 +1,7 @@
 import { Mail, Phone, Linkedin, Github } from "lucide-react";
 import CardHoverMotion from "@/components/motion/CardHoverMotion";
 import ContactCard from "@/components/contact/ContactCard";
+import AppearMotion from "@/components/motion/AppearMotion";
 
 const Contact = () => {
   const contactInfo = [
@@ -37,27 +38,29 @@ const Contact = () => {
 
   return (
     <div className="page-content">
-      <div className="space-y-6">
-        <h1>Contact</h1>
+      <AppearMotion>
+        <div className="space-y-6">
+          <h1>Contact</h1>
 
-        <p className="text-center">
-          Please feel free to contact me 😋
-        </p>
+          <p className="text-center">
+            Please feel free to contact me 😋
+          </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {contactInfo.map((info) => (
-            <CardHoverMotion>
-              {info.link ? (
-                <a href={info.link} target="_blank" rel="noopener noreferrer">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {contactInfo.map((info) => (
+              <CardHoverMotion>
+                {info.link ? (
+                  <a href={info.link} target="_blank" rel="noopener noreferrer">
+                    <ContactCard info={info} />
+                  </a>
+                ) : (
                   <ContactCard info={info} />
-                </a>
-              ) : (
-                <ContactCard info={info} />
-              )}
-            </CardHoverMotion>
-          ))}
+                )}
+              </CardHoverMotion>
+            ))}
+          </div>
         </div>
-      </div>
+      </AppearMotion>
     </div>
   );
 };

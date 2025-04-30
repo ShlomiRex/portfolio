@@ -1,43 +1,40 @@
+import AppearMotion from "@/components/motion/AppearMotion";
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
 
 const Resume = () => {
   return (
     <div className="page-content">
-      <h1>Resume</h1>
+      <AppearMotion>
+        <h1>Resume</h1>
 
-      {/* Top section */}
-      <div className="flex justify-center items-center mb-6 gap-6">
-        <p className="text-lg">
-          Here you can view and download my resume:
-        </p>
-
-        <div>
-          <Button variant="outline">
-            <Download className="mr-2" />
-            <a href="/files/pdf/resume.pdf" target="_blank">Download Resume</a>
-          </Button>
-        </div>
-      </div>
-
-      {/* PDF */}
-      <div>
-        <object
-          data="/files/pdf/resume.pdf"
-          type="application/pdf"
-          className="w-full h-[calc(100vh-200px)] rounded-lg border bg-white"
-        >
-          <p style={{ color: "black" }}>
-            <h1>Your browser does not support PDFs.</h1>
-            <a href="/files/pdf/resume.pdf" target="_blank" className="ml-2 underline">
-              Download the PDF
-            </a>
+        {/* Top section */}
+        <div className="flex flex-col sm:flex-row justify-center items-center mb-6 gap-4 text-center">
+          <p className="text-lg">
+            Here you can view and download my resume:
           </p>
-        </object>
-      </div>
 
-      {/* Images */}
-      {/* <div className="mt-8">
+          <div>
+            <Button variant="outline">
+              <Download className="mr-2" />
+              <a href="/files/pdf/resume.pdf" target="_blank">Download Resume</a>
+            </Button>
+          </div>
+        </div>
+
+        {/* PDF */}
+        <div>
+          <object
+            data="/files/pdf/resume.pdf"
+            type="application/pdf"
+            className="w-full h-[calc(100vh-200px)] rounded-lg border bg-white"
+          >
+            <p style={{ color: "black", padding: "20px" }}>Your browser does not support PDFs. Download the resume above instead.</p>
+          </object>
+        </div>
+
+        {/* Images */}
+        {/* <div className="mt-8">
         <div className="flex justify-center gap-8 mb-8">
           <div className="bg-white rounded-lg p-4 border">
             <img
@@ -62,7 +59,7 @@ const Resume = () => {
           </div>
         </div>
       </div> */}
-
+      </AppearMotion>
     </div>
   );
 };

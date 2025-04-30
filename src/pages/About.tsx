@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { GraduationCap, Briefcase, Brain, Target } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import "@/styles/Page.css";
@@ -33,9 +32,8 @@ const About = () => {
 
   return (
     <div className="page-content">
-      <h1>About Me</h1>
-
       <AppearMotion>
+        <h1>About Me</h1>
 
         <p className="text-xl text-muted-foreground text-center">
           <b className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">Software engineer by day, code wizard by night</b>

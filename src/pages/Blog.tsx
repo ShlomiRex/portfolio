@@ -2,6 +2,7 @@ import { useState } from "react";
 import { BlogTopic, blogPosts, blogTopics } from "@/data/blog";
 import { TopicFilter } from "@/components/blog/TopicFilter";
 import BlogPostCard from "@/components/blog/BlogPostCard";
+import AppearMotion from "@/components/motion/AppearMotion";
 
 const Blog = () => {
   const [selectedTopic, setSelectedTopic] = useState<BlogTopic | "All">("All");
@@ -12,25 +13,27 @@ const Blog = () => {
 
   return (
     <div className="page-content">
-      <h1>Blog</h1>
+      <AppearMotion>
+        <h1>Blog</h1>
 
-      <div className="space-y-6">
-        <p>
-          My blog posts showcase my thoughts and ideas on various topics on a more technical detail.
-        </p>
+        <div className="space-y-6">
+          <p>
+            My blog posts showcase my thoughts and ideas on various topics on a more technical detail.
+          </p>
 
-        <TopicFilter
-          selectedTopic={selectedTopic}
-          onTopicChange={setSelectedTopic}
-          topics={blogTopics}
-        />
+          <TopicFilter
+            selectedTopic={selectedTopic}
+            onTopicChange={setSelectedTopic}
+            topics={blogTopics}
+          />
 
-        <div className="space-y-8">
-          {filteredPosts.map((post, index) => (
-            <BlogPostCard key={index} post={post} index={index} />
-          ))}
+          <div className="space-y-8">
+            {filteredPosts.map((post, index) => (
+              <BlogPostCard key={index} post={post} index={index} />
+            ))}
+          </div>
         </div>
-      </div>
+      </AppearMotion>
     </div>
   );
 };

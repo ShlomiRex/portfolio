@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { GraduationCap, Briefcase, Brain, Target } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import "@/styles/Page.css";
