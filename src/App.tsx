@@ -13,6 +13,7 @@ import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
 import Navbar from "./components/Navbar";
+import Test from "./pages/Test";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const App = () => (
           <Navbar />
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/test" element={<Test />} />
             <Route path="/about" element={<About />} />
             <Route path="/resume" element={<Resume />} />
             <Route path="/research" element={<Research />} />

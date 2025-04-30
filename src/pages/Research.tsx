@@ -4,12 +4,12 @@ import { researchData } from "@/data/research";
 
 const Research = () => {
   return (
-    <div className="min-h-screen w-full py-20">
+    <div className="min-h-screen w-full py-5">
       <div className="container max-w-4xl mx-auto">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-4xl font-bold mb-8"
+          className="page-header"
         >
           Research
         </motion.h1>

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { GraduationCap, Briefcase, Brain, Target } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-
+import "@/styles/Page.css";
 const About = () => {
   const highlights = [
     {
@@ -27,18 +27,14 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen w-full py-20 bg-gradient-to-b from-background to-secondary/20">
+    <div className="min-h-screen w-full bg-gradient-to-b from-background to-secondary/20 py-5">
       <div className="container max-w-4xl mx-auto space-y-12">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="space-y-6 text-center"
+          className="page-header"
         >
-          <motion.h1 
-            className="text-4xl md:text-5xl font-bold text-primary"
-          >
-            About Me
-          </motion.h1>
+          About Me
           <motion.p 
             className="text-xl text-muted-foreground"
             initial={{ opacity: 0 }}

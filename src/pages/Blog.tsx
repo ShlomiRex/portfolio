@@ -64,9 +64,9 @@ const Blog = () => {
     : blogPosts.filter(post => post.topic === selectedTopic);
 
   return (
-    <div className="container max-w-4xl mx-auto py-24">
+    <div className="page-container">
       <div className="mb-8 text-center">
-        <h1 className="text-4xl font-bold mb-4">Blog Posts</h1>
+        <h1 className="page-header">Blog Posts</h1>
         <p className="text-muted-foreground">
           Visit my blog at{" "}
           <a 

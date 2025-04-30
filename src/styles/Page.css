@@ -1,0 +1,15 @@
+@tailwind components;
+
+@layer components {
+  .page-content {
+    @apply container max-w-4xl mx-auto py-5;
+
+    h1 {
+      @apply text-center text-4xl font-bold py-4
+    }
+
+    p {
+      @apply text-muted-foreground
+    }
+  }
+}
