@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ProjectTopic } from "./ProjectCard";
+import { ProjectTopic } from "@/data/projects";
 
 interface TopicFilterProps {
   selectedTopic: ProjectTopic | "All";
