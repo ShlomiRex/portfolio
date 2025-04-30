@@ -1,10 +1,9 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import ConfettiButton from "@/components/ConfettiIButton";
 import ProjectCard from "@/components/projects/ProjectCard";
 import { projects } from "@/data/projects";
+import AppearMotion from "@/components/motion/AppearMotion";
 
 const Index = () => {
   const { scrollYProgress } = useScroll();
@@ -66,13 +65,11 @@ const Index = () => {
             style={{ opacity, scale }}
             className="space-y-8"
           >
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4"
-            >
-              Welcome to My Portfolio
-            </motion.h1>
+            <AppearMotion>
+              <div className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4">
+                Welcome to My Portfolio
+              </div>
+            </AppearMotion>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -115,24 +112,6 @@ const Index = () => {
           ))}
         </div>
       </motion.div>
-
-      {/* Divider */}
-      {/* <div className="inline-flex items-center justify-center w-full">
-        <hr className="w-[80%] h-px my-8 border-0 bg-primary" />
-      </div> */}
-
-
-      {/* Cool confetti button */}
-      {/* <div className="container flex items-center justify-center py-20">
-        <ConfettiButton
-          icon={
-            <Button className="rounded-full">
-              I'm awesome 😉
-            </Button>
-          }
-        />
-      </div> */}
-
     </div>
   );
 };
