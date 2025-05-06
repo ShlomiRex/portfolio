@@ -1,7 +1,24 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function ZoomableImage({ src }: { src: string }) {
     const [isOpen, setIsOpen] = useState(false);
+
+    // Close on Escape key
+    useEffect(() => {
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if (e.key === "Escape") {
+                setIsOpen(false);
+            }
+        };
+
+        if (isOpen) {
+            window.addEventListener("keydown", handleKeyDown);
+        }
+
+        return () => {
+            window.removeEventListener("keydown", handleKeyDown);
+        };
+    }, [isOpen]);
 
     return (
         <>
