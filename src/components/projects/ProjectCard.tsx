@@ -62,7 +62,7 @@ export const ProjectCard = ({ project, index }: ProjectCardProps) => {
             />
 
             {/* On hover card, display small animation & show eye/github icon(s) */}
-            <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 duration-300 flex items-center justify-center w-full h-full">
+            <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 duration-300 flex items-center justify-center w-full h-full rounded-t-lg">
 
               {project.githubLink ? (
                 // We have github link, show both eye and github icons
