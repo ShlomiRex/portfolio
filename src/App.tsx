@@ -14,6 +14,7 @@ import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
 import Navbar from "./components/Navbar";
 import Test from "./pages/Test";
+import Conferences from "./pages/Conferences";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +35,7 @@ const App = () => (
             <Route path="/research" element={<Research />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/conferences" element={<Conferences />} />
             <Route path="/blog" element={<Blog />} />
           </Routes>
         </BrowserRouter>
