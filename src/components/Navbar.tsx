@@ -65,9 +65,16 @@ const Navbar = () => {
             <Link
               to={`/${link.toLowerCase()}`}
               key={link}
-              className={`transition-colors whitespace-nowrap text-l hover:text-primary text-muted-foreground ${location.pathname === `/${link.toLowerCase()}` ? "text-primary font-medium" : "hover:text-primary text-muted-foreground"}`}
+              className={`transition-colors whitespace-nowrap text-l px-2 py-1 text-muted-foreground hover:text-primary`}
             >
-              {link}
+              <span
+                className={`${location.pathname === `/${link.toLowerCase()}`
+                  ? "border-b-2 border-primary text-primary font-medium"
+                  : ""
+                  }`}
+              >
+                {link}
+              </span>
             </Link>
           ))}
 
