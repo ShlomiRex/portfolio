@@ -3,6 +3,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { motion } from "framer-motion";
 import { Eye, Loader, Github } from "lucide-react";
 import { Project } from "@/data/projects";
+import "../../styles/Card.css";
 
 interface ProjectCardProps {
   project: Project;
@@ -40,7 +41,7 @@ export const ProjectCard = ({ project, index }: ProjectCardProps) => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1 }}
     >
-      <Card className="h-full hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+      <Card className="h-full transform hover:-translate-y-1 card-hover-shadow">
         {/* Inner card */}
         {project.imageUrl && (
           <div className="relative group">

@@ -5,6 +5,7 @@ import ConfettiButton from "@/components/ConfettiIButton";
 import { Button } from "@/components/ui/button";
 import CardHoverMotion from "@/components/motion/CardHoverMotion";
 import AppearMotion from "@/components/motion/AppearMotion";
+import "../styles/Card.css";
 
 const About = () => {
   const cards = [
@@ -47,7 +48,7 @@ const About = () => {
           {cards.map((card, index) => {
             return (
               <CardHoverMotion>
-                <Card className="hover:shadow-lg transition-shadow duration-300">
+                <Card className="card-hover-shadow">
                   <CardContent className="flex flex-col items-center text-center space-y-4 p-6">
                     <div>
                       {card.icon}
