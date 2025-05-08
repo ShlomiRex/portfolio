@@ -11,9 +11,36 @@ const Conferences = () => {
                 <div className="space-y-4">
                     <p className="mt-6 text-lg">
                         I love attending conferences to learn about the latest trends in
-                        technology and share my own experiences with others. Here are some of
-                        the conferences I've attended:
+                        technology and share my own experiences with others. <br />
+
+                        I mostly enjoy the free food and gifts they give away 😁<br />
+
+                        Here are some of the conferences I've attended:
                     </p>
+
+                    <ConferenceCard
+                        name="Elastic: Next Gen Security Summit"
+                        date="7 May, 2025"
+                        location="Riverside Expo, Tel Aviv"
+                    >
+                        Agenda:
+                        <ul className="list-disc pl-6">
+                            <li>How elastic can be integrated into SIEM and other security solutions to better understand attacks and digest the most important data (i.e. process 100 alerts and the SOC will only focus on a few)</li>
+                            <li>AI and Generative AI in security: ML Agents, analytics-driven investigations, and finding threats missing by others</li>
+                            <li>Elastic Attack Discovery: a short summary of all the alerts, without SOC analyst needing to analyze them all</li>
+                            <li>Attack Discovery which uses LLM to analyze SIEM alerts and automatically generate summary for which alerts are relevant and returns visual analytics showing the attack timeline, type of attack, who or what was affected, when, and even suggest mitigations.</li>
+                        </ul>
+
+                        <div className="flex col gap-4 flex-wrap justify-center">
+                            <ZoomableImage src="/images/conferences/elastic next gen summit/IMG_3505.jpeg" />
+                            <ZoomableImage src="/images/conferences/elastic next gen summit/IMG_3528.jpeg" />
+                            <ZoomableImage src="/images/conferences/elastic next gen summit/IMG_3506.jpeg" />
+                            <ZoomableImage src="/images/conferences/elastic next gen summit/IMG_3520.jpeg" />
+                            <ZoomableImage src="/images/conferences/elastic next gen summit/IMG_3510.jpeg" />
+                            <ZoomableImage src="/images/conferences/elastic next gen summit/IMG_3514.jpeg" />
+                        </div>
+                    </ConferenceCard>
+
                     <ConferenceCard
                         name="AWS Experience"
                         date="18 March, 2025"
@@ -32,7 +59,7 @@ const Conferences = () => {
                             <li>Personal Q&A with AWS employees about any question regarding AWS services</li>
                         </ul>
                         I also got free AI generated magnet images of my face 😊
-                        <div className="flex col gap-4 flex-wrap">
+                        <div className="flex col gap-4 flex-wrap justify-center">
                             <ZoomableImage src="/images/conferences/aws experience jerusalem/IMG_3328.jpeg" />
                             <ZoomableImage src="/images/conferences/aws experience jerusalem/IMG_3329.jpeg" />
                             <ZoomableImage src="/images/conferences/aws experience jerusalem/IMG_3326.jpeg" />
