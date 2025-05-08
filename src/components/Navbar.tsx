@@ -6,7 +6,7 @@ import { Moon, Sun, Home } from "lucide-react";
 import ScrollArrow from "./navbar/ScrollArrow";
 
 const Navbar = () => {
-  const links = ["About", "Resume", "Research", "Projects", "Conferences", "Blog", "Contact"];
+  const links = ["About", "Resume", "Research", "Projects", "Conferences", "Blog", "Volunteering", "Contact"];
   const scrollRef = useRef<HTMLDivElement>(null);
   const { theme, setTheme } = useTheme();
   const [canScrollLeft, setCanScrollLeft] = useState(false);

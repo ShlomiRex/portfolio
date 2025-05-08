@@ -15,6 +15,7 @@ import Blog from "./pages/Blog";
 import Navbar from "./components/Navbar";
 import Test from "./pages/Test";
 import Conferences from "./pages/Conferences";
+import Volunteering from "./pages/Volunteering";
 
 const queryClient = new QueryClient();
 
@@ -37,6 +38,7 @@ const App = () => (
             <Route path="/contact" element={<Contact />} />
             <Route path="/conferences" element={<Conferences />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/volunteering" element={<Volunteering/>} />
           </Routes>
         </BrowserRouter>
       </TooltipProvider>
