@@ -42,7 +42,7 @@ const Conferences = () => {
                     </CardWithDateLocationTitle>
 
                     <CardWithDateLocationTitle
-                        name="AWS Experience"
+                        title="AWS Experience"
                         date="18 March, 2025"
                         location="Azrieli College of Engineering, Jerusalem"
                     >
