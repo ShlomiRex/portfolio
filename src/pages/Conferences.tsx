@@ -66,6 +66,24 @@ const Conferences = () => {
                             <ZoomableImage src="/images/conferences/aws experience jerusalem/IMG_3317.jpeg" />
                         </div>
                     </CardWithDateLocationTitle>
+
+                    <CardWithDateLocationTitle
+                        title="Hack-AU - Ariel University Hackathon"
+                        date="April 2018"
+                        location="Ariel University, Ariel">
+                        I learned a lot about how to work in a team and how to navigate difficult tasks. As a team leader, although I didn't win, my team came in second, about 3 minutes after the first team!
+
+                        Our task was to navigate cyber attacks and find secret messages and navigate clues to get to the correct answer.
+
+                        <div className="flex col gap-4 flex-wrap justify-center">
+                            <ZoomableImage src="/images/conferences/hack-au/20180502_050714.jpg" />
+                            <ZoomableImage src="/images/conferences/hack-au/IMG-20180316-WA0048.jpeg" />
+                            <ZoomableImage src="/images/conferences/hack-au/IMG-20180316-WA0042.jpg" />
+                            <ZoomableImage src="/images/conferences/hack-au/20180502_070040.jpg" />
+                            <ZoomableImage src="/images/conferences/hack-au/20180317_193700.jpg" />
+                            <ZoomableImage src="/images/conferences/hack-au/20180317_193630.jpg" />
+                        </div>
+                    </CardWithDateLocationTitle>
                 </div>
             </AppearMotion>
         </div>
