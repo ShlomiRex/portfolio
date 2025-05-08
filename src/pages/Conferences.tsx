@@ -1,5 +1,5 @@
+import CardWithDateLocationTitle from "@/components/CardWithDateLocationTitle";
 import AppearMotion from "@/components/motion/AppearMotion";
-import ConferenceCard from "@/components/conferences/ConferenceCard";
 import ZoomableImage from "@/components/ZoomableImage";
 
 const Conferences = () => {
@@ -18,8 +18,8 @@ const Conferences = () => {
                         Here are some of the conferences I've attended:
                     </p>
 
-                    <ConferenceCard
-                        name="Elastic: Next Gen Security Summit"
+                    <CardWithDateLocationTitle
+                        title="Elastic: Next Gen Security Summit"
                         date="7 May, 2025"
                         location="Riverside Expo, Tel Aviv"
                     >
@@ -39,9 +39,9 @@ const Conferences = () => {
                             <ZoomableImage src="/images/conferences/elastic next gen summit/IMG_3510.jpeg" />
                             <ZoomableImage src="/images/conferences/elastic next gen summit/IMG_3514.jpeg" />
                         </div>
-                    </ConferenceCard>
+                    </CardWithDateLocationTitle>
 
-                    <ConferenceCard
+                    <CardWithDateLocationTitle
                         name="AWS Experience"
                         date="18 March, 2025"
                         location="Azrieli College of Engineering, Jerusalem"
@@ -65,7 +65,7 @@ const Conferences = () => {
                             <ZoomableImage src="/images/conferences/aws experience jerusalem/IMG_3326.jpeg" />
                             <ZoomableImage src="/images/conferences/aws experience jerusalem/IMG_3317.jpeg" />
                         </div>
-                    </ConferenceCard>
+                    </CardWithDateLocationTitle>
                 </div>
             </AppearMotion>
         </div>

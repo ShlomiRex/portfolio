@@ -1,5 +1,5 @@
+import CardWithDateLocationTitle from "@/components/CardWithDateLocationTitle";
 import AppearMotion from "@/components/motion/AppearMotion";
-import VolunteeringCard from "@/components/volunteering/VolunteeringCard";
 
 const Volunteering = () => {
     return (
@@ -13,12 +13,18 @@ const Volunteering = () => {
                         I have volunteered for various organizations, including:
                     </p>
 
-                    <VolunteeringCard 
-                        name="Scholar Website at the Open University Volunteering"
+                    <CardWithDateLocationTitle 
+                        title="Scholar Website at the Open University"
                         date="April 2025 - Now"
                         location="Remote">
-                        I am volunteering as a web developer for the Open University, where I am helping to maintain their website for their students. This involves Wordpress, Monday and Elementor.
-                    </VolunteeringCard>
+                        I am volunteering as a web developer for the Open University, where I am helping to maintain their website for their students. This involves:
+                        
+                        <ul className="list-disc pl-6">
+                            <li>Wordpress - the basis of the website</li>
+                            <li>Monday for task managment</li>
+                            <li>Elementor - wordpress plugin</li>
+                        </ul>
+                    </CardWithDateLocationTitle>
                 </div>
 
 
