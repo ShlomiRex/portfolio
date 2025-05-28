@@ -19,6 +19,22 @@ const Conferences = () => {
                     </p>
 
                     <CardWithDateLocationTitle
+                        title="AWS Summit"
+                        date="28 May, 2025"
+                        location="EXPO Tel Aviv, Tel Aviv"
+                        >
+                            I explored the latest in AWS cloud and AI technologies, such as biomedical research (protein folding), AI agents (for example in DATADOG and other companies), Generative AI, and I also visited my old employer (Check Point) and took a photo home 😊
+                            <div className="flex col gap-4 flex-wrap justify-center">
+                                <ZoomableImage src="/images/conferences/aws summit/IMG_3595.jpeg" />
+                                <ZoomableImage src="/images/conferences/aws summit/IMG_3601.jpeg" />
+                                <ZoomableImage src="/images/conferences/aws summit/IMG_3609.jpeg" />
+                                <ZoomableImage src="/images/conferences/aws summit/IMG_3614.jpeg" />
+                                <ZoomableImage src="/images/conferences/aws summit/IMG_3618.jpeg" />
+                                <ZoomableImage src="/images/conferences/aws summit/IMG_3613.jpeg" />
+                            </div>
+                        </CardWithDateLocationTitle>
+
+                    <CardWithDateLocationTitle
                         title="Elastic: Next Gen Security Summit"
                         date="7 May, 2025"
                         location="Riverside Expo, Tel Aviv"
