@@ -2,6 +2,26 @@ import "@/styles/Page.css";
 import ResearchCard from "@/components/ResearchCard";
 import AppearMotion from "@/components/motion/AppearMotion";
 
+export function FinalPaper() {
+  return (
+    <ResearchCard
+      title="Final Paper - An Overview of Deep Learning Techniques for Image and Video Generation"
+      date="March 2025"
+      description='My final paper, titled "An Overview of Deep Learning Techniques for Image and Video Generation" provides a comprehensive overview of the current state-of-the-art in image and video synthesis models, including GANs, VAEs, and diffusion models. The paper also discusses the challenges and future directions in this rapidly evolving field.'
+    >
+      <iframe
+        src={"https://drive.google.com/file/d/1Z7N9Yj06gE7qZ2OSIo-xOaPxGw53X9oN/preview"}
+        title={"An Overview of Deep Learning Techniques for Image and Video Generation"}
+        width="100%"
+        height="600"
+        style={{ border: 0 }}
+        className="rounded-3xl"
+        allow="autoplay">
+      </iframe>
+    </ResearchCard>
+  )
+}
+
 const Research = () => {
   return (
     <div className="page-content">
@@ -17,24 +37,8 @@ const Research = () => {
             Here are some of the research papers and seminars I have presented in my academic career.
           </p>
         </div>
-
-        <div className="space-y-6 mt-6">
-          <ResearchCard
-            title="Final Paper - An Overview of Deep Learning Techniques for Image and Video Generation"
-            date="March 2025"
-            description='My final paper, titled "An Overview of Deep Learning Techniques for Image and Video Generation" provides a comprehensive overview of the current state-of-the-art in image and video synthesis models, including GANs, VAEs, and diffusion models. The paper also discusses the challenges and future directions in this rapidly evolving field.'
-          >
-            <iframe
-              src={"https://drive.google.com/file/d/1ET-7XS6SbQeIffXx0BdRKkO3XOwpNPZW/preview"}
-              title={"An Overview of Deep Learning Techniques for Image and Video Generation"}
-              width="100%"
-              height="600"
-              style={{ border: 0 }}
-              className="rounded-3xl"
-              allow="autoplay">
-            </iframe>
-          </ResearchCard>
-
+        < div className="space-y-6 mt-6" >
+          <FinalPaper />
           <ResearchCard
             title="Final Paper - Lecture 8 - Make-a-Video"
             date="December 2024"
@@ -73,9 +77,9 @@ const Research = () => {
             description='In this research seminar, I was the lecturer. I summarized two main research papers. The topic was "detecting phishing websites using machine learning".'
             youtubeUrl="https://www.youtube.com/embed/IuxDpPn9ptw"
             references={["Koide, T., Fukushi, N., Nakano, H. and Chiba, D., 2023. Detecting Phishing Sites Using ChatGPT. arXiv preprint arXiv:2306.05816.", "Xiang, G., Hong, J., Rose, C.P. and Cranor, L., 2011. Cantina+ a feature-rich machine learning framework for detecting phishing web sites. ACM Transactions on Information and System Security (TISSEC), 14(2), pp.1-28."]} />
-        </div>
+        </div >
       </AppearMotion>
-    </div>
+    </div >
   );
 };
 

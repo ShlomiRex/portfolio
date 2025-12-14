@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 import ProjectCard from "@/components/projects/ProjectCard";
 import { projects } from "@/data/projects";
 import AppearMotion from "@/components/motion/AppearMotion";
+import { FinalPaper } from "./Research";
+import { blogPosts } from "@/data/blog";
+import BlogPostCard from "@/components/blog/BlogPostCard";
 
 const Index = () => {
   const { scrollYProgress } = useScroll();
@@ -37,6 +40,9 @@ const Index = () => {
       console.error(`Project with title "${project.title}" does not exist in the featured projects array.`);
     }
   });
+
+  const latestBlogPost = blogPosts[0]; // The first blog post is shown first, so its the latest in terms of date of publication
+  console.log("latest blog post:", latestBlogPost)
 
   return (
     <div className="min-h-screen w-full overflow-hidden">
@@ -100,16 +106,31 @@ const Index = () => {
       <motion.div
         className="container max-w-6xl mx-auto px-4 py-20"
       >
-        <h2 className="text-3xl font-bold mb-10 text-center">Featured Projects</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* TODO: Fix - index in project card only matters in projects page */}
-          {featuredProjects.map((project, index) => (
-            <ProjectCard
-              key={project.title}
-              project={projects.find(p => p.title === project.title)}
-              index={index} // The index here doesn't matter.
-            />
-          ))}
+        <div>
+          <h2 className="text-3xl font-bold mb-10 text-center">Featured Projects</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* TODO: Fix - index in project card only matters in projects page */}
+            {featuredProjects.map((project, index) => (
+              <ProjectCard
+                key={project.title}
+                project={projects.find(p => p.title === project.title)}
+                index={index} // The index here doesn't matter.
+              />
+            ))}
+          </div>
+        </div>
+        <div className="page-content">
+          <div className="mt-6">
+            <h2 className="text-3xl font-bold mb-10 text-center">Research</h2>
+            <FinalPaper />
+          </div>
+          <div className="mt-6">
+            <h2 className="text-3xl font-bold mb-10 text-center">Latest blog post</h2>
+            <BlogPostCard post={latestBlogPost} index={1} />
+          </div>
+          <div className="mt-6">
+            <h4 className="text-2xl font-bold text-center">Liked what you saw? Check out my projects, blogs,  research and more in the menu above.</h4>
+          </div>
         </div>
       </motion.div>
     </div>

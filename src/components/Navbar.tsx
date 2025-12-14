@@ -56,7 +56,7 @@ const Navbar = () => {
         >
 
           {/* Home button */}
-          <Link to="/" className={`transition-colors shrink-0 ${location.pathname === `/` ? "text-primary" : "hover:text-primary text-muted-foreground"}`}>
+          <Link to="/" className={`transition-colors shrink-0 ${location.pathname === `/` ? "text-primary stroke-3" : "hover:text-primary text-muted-foreground"}`}>
             <Home className="h-5 w-5" />
           </Link>
 
@@ -65,11 +65,11 @@ const Navbar = () => {
             <Link
               to={`/${link.toLowerCase()}`}
               key={link}
-              className={`transition-colors whitespace-nowrap text-l px-2 py-1 text-muted-foreground hover:text-primary`}
+              className={`transition-colors whitespace-nowrap text-l px-2 py-1 text-foreground hover:text-primary`}
             >
               <span
                 className={`${location.pathname === `/${link.toLowerCase()}`
-                  ? "border-b-2 border-primary text-primary font-medium"
+                  ? "border-b-2 border-primary text-foreground font-bold"
                   : ""
                   }`}
               >
