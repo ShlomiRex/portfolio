@@ -7,6 +7,7 @@ export interface BlogPost {
     description: string;
     imageUrl: string;
     link: string;
+    overlayImage?: string;
 }
 
 export const blogPosts: BlogPost[] = [
@@ -16,7 +17,8 @@ export const blogPosts: BlogPost[] = [
         publishDate: "November 4, 2025",
         description: "When GitHub Copilot suggested a seemingly innocuous example domain that turned out to be a live phishing endpoint, it revealed a blind spot in relying on AI for code. This issue was uncovered during my day-to-day work with AI systems at AIdome, highlighting real-world risks and how to mitigate them.",
         imageUrl: "/images/blog/aidome_copilot_phishing.png",
-        link: "https://www.aidome.co/post/when-github-copilot-placeholder-turns-into-a-phishing-hook-aidome-uncovers-a-hidden-risk-in-ai-g"
+        link: "https://www.aidome.co/post/when-github-copilot-placeholder-turns-into-a-phishing-hook-aidome-uncovers-a-hidden-risk-in-ai-g",
+        overlayImage: "/images/work/Aidome.png"
     },
     {
         title: "Traffic Analysis Exercise 2025-01-22: Download From Fake Software Site",

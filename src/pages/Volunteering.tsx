@@ -15,7 +15,7 @@ const Volunteering = () => {
 
                     <CardWithDateLocationTitle 
                         title="Scholar Website at the Open University"
-                        date="April 2025 - Now"
+                        date="April 2025 - July 2025"
                         location="Remote, Raanana (Open University Campus)">
                         I am volunteering as a web developer for the Open University, where I am helping to maintain their website for their students. This involves:
                         

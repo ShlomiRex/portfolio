@@ -19,6 +19,15 @@ function BlogPostCard({ post, index }: { post: BlogPost; index: number }) {
                     className={`w-full h-full object-cover transition-opacity duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
                     onLoad={() => setImageLoaded(true)}
                 />
+                {/* Overlay image if present */}
+                {post.overlayImage && (
+                    <img
+                        src={post.overlayImage}
+                        alt="Overlay"
+                        className="absolute top-2 left-2 object-contain bg-white rounded shadow-md p-0.5"
+                        style={{ maxWidth: '8rem', maxHeight: '8rem', width: 'auto', height: 'auto', pointerEvents: 'none' }}
+                    />
+                )}
                 <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <Eye className="w-16 h-16 text-white" />
                 </div>
