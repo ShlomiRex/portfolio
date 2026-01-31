@@ -1,6 +1,14 @@
 import { useEffect, useState } from "react";
 
-export default function ZoomableImage({ src }: { src: string }) {
+export default function ZoomableImage({
+    src,
+    keepAspect = false,
+    wide = false,
+}: {
+    src: string;
+    keepAspect?: boolean;
+    wide?: boolean;
+}) {
     const [isOpen, setIsOpen] = useState(false);
 
     // Close on Escape key
@@ -25,7 +33,11 @@ export default function ZoomableImage({ src }: { src: string }) {
             {/* Thumbnail */}
             <img
                 src={src}
-                className="rounded-lg mt-4 w-[200px] h-auto cursor-zoom-in"
+                className={
+                    (keepAspect
+                        ? `rounded-lg mt-4 ${wide ? "w-[300px]" : "w-[200px]"} h-auto cursor-zoom-in`
+                        : `rounded-lg mt-4 ${wide ? "w-[300px]" : "w-[200px]"} h-[200px] object-cover cursor-zoom-in`)
+                }
                 onClick={() => setIsOpen(true)}
             />
 

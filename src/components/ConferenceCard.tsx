@@ -16,7 +16,12 @@ function ConferenceCard({ conference }: ConferenceCardProps) {
             <div className="whitespace-pre-line">{conference.description}</div>
             <div className="flex col gap-4 flex-wrap justify-center mt-4">
                 {conference.images.map((image, index) => (
-                    <ZoomableImage key={index} src={image} />
+                    <ZoomableImage
+                        key={index}
+                        src={image.src}
+                        keepAspect={image.keepAspect}
+                        wide={image.wide}
+                    />
                 ))}
             </div>
         </CardWithDateLocationTitle>
