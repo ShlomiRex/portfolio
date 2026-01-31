@@ -7,10 +7,10 @@ export function FinalPaper() {
     <ResearchCard
       title="Final Paper - An Overview of Deep Learning Techniques for Image and Video Generation"
       date="March 2025"
-      description='My final paper, titled "An Overview of Deep Learning Techniques for Image and Video Generation" provides a comprehensive overview of the current state-of-the-art in image and video synthesis models, including GANs, VAEs, and diffusion models. The paper also discusses the challenges and future directions in this rapidly evolving field.'
+      description='My final paper (which I got a grade of 96), titled "An Overview of Deep Learning Techniques for Image and Video Generation" provides a comprehensive overview of the current state-of-the-art in image and video synthesis models, including GANs, VAEs, and diffusion models. The paper also discusses the challenges and future directions in this rapidly evolving field.'
     >
       <iframe
-        src={"https://drive.google.com/file/d/1Z7N9Yj06gE7qZ2OSIo-xOaPxGw53X9oN/preview"}
+        src={"https://drive.google.com/file/d/1tpo0yWxIypa01DpAcVkIKsv1aSBrxMMI/preview"}
         title={"An Overview of Deep Learning Techniques for Image and Video Generation"}
         width="100%"
         height="600"
