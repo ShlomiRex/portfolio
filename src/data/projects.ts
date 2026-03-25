@@ -22,6 +22,24 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: "Prompt2Face: Stable Diffusion CelebA",
+    description: "As part of my research and final MSc project, I built Prompt2Face, a Stable Diffusion-based text-to-image system trained on WikiArt and CelebA. The latest CelebA experiment was trained in PyTorch for 500 epochs and generates high-quality human face images from natural language prompts. The project demonstrates my end-to-end generative AI workflow, from data preparation and large-scale training to evaluation.",
+    topic: [topics.MachineLearning],
+    technologies: [
+      "Generative AI",
+      "Text-to-Image",
+      "Image Synthesis",
+      "PyTorch",
+      "Stable Diffusion",
+      "Diffusers",
+      "Hugging Face",
+      "CUDA",
+      "Python"
+    ],
+    imageUrl: "/images/projects/celeba.png",
+    link: "https://github.com/ShlomiRex/final_project",
+  },
+  {
     title: "TinyURL",
     description: "A serverless URL shortener service that allows users to shorten long URLs into short, easy-to-share links. The service is built on AWS Lambdas, API Gateway for Lambda executions, MySQL to store URL mappings, S3 for static hosting, CloudFront for caching & load balancing, CloudWatch for monitoring, and ACM for certificate management. The project demonstrates my ability to design and implement serverless architectures, as well as my proficiency in AWS services.",
     topic: [topics.Cloud, topics.Website],

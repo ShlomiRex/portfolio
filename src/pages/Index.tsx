@@ -19,6 +19,10 @@ const Index = () => {
 
   const featuredProjects = [
     {
+      title: "Prompt2Face: Stable Diffusion CelebA",
+      highlighted: true
+    },
+    {
       title: "TinyURL"
     },
     {
@@ -28,6 +32,9 @@ const Index = () => {
       title: "NES Emulator"
     }
   ];
+
+  const highlightedProject = featuredProjects.find(project => project.highlighted);
+  const regularFeaturedProjects = featuredProjects.filter(project => !project.highlighted);
 
   // Check if the project title exists in the projects array
   const isProjectExists = (title: string) => {
@@ -108,13 +115,25 @@ const Index = () => {
       >
         <div>
           <h2 className="text-3xl font-bold mb-10 text-center">Featured Projects</h2>
+          {highlightedProject && (
+            <div className="mb-6 flex justify-center">
+              <div className="w-full max-w-md">
+                <ProjectCard
+                  key={highlightedProject.title}
+                  project={projects.find(p => p.title === highlightedProject.title)}
+                  index={0}
+                />
+              </div>
+            </div>
+          )}
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* TODO: Fix - index in project card only matters in projects page */}
-            {featuredProjects.map((project, index) => (
+            {regularFeaturedProjects.map((project, index) => (
               <ProjectCard
                 key={project.title}
                 project={projects.find(p => p.title === project.title)}
-                index={index} // The index here doesn't matter.
+                index={index + (highlightedProject ? 1 : 0)} // The index here doesn't matter.
               />
             ))}
           </div>
