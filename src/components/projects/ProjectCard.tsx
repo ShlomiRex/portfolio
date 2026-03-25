@@ -1,16 +1,17 @@
 import { useState } from "react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { Eye, Loader, Github } from "lucide-react";
+import { Eye, Loader, Github, Star } from "lucide-react";
 import { Project } from "@/data/projects";
 import "../../styles/Card.css";
 
 interface ProjectCardProps {
   project: Project;
   index: number;
+  stars?: 1 | 2 | 3;
 }
 
-export const ProjectCard = ({ project, index }: ProjectCardProps) => {
+export const ProjectCard = ({ project, index, stars }: ProjectCardProps) => {
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
 
@@ -115,6 +116,15 @@ export const ProjectCard = ({ project, index }: ProjectCardProps) => {
         {/* Title, description */}
         <CardHeader>
           <CardTitle>{project.title}</CardTitle>
+
+          {stars && (
+            <div className="flex items-center gap-1 text-amber-500" aria-label={`${stars} star project`}>
+              {Array.from({ length: stars }).map((_, starIndex) => (
+                <Star key={starIndex} className="w-4 h-4 fill-current" />
+              ))}
+            </div>
+          )}
+
           <CardDescription>{project.description}</CardDescription>
         </CardHeader>
 

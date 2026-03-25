@@ -8,6 +8,12 @@ import { FinalPaper } from "./Research";
 import { blogPosts } from "@/data/blog";
 import BlogPostCard from "@/components/blog/BlogPostCard";
 
+interface FeaturedProject {
+  title: string;
+  stars: 1 | 2 | 3;
+  highlighted?: boolean;
+}
+
 const Index = () => {
   const { scrollYProgress } = useScroll();
 
@@ -17,19 +23,23 @@ const Index = () => {
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.2], [1, 0.95]);
 
-  const featuredProjects = [
+  const featuredProjects: FeaturedProject[] = [
     {
       title: "Prompt2Face: Stable Diffusion CelebA",
+      stars: 3,
       highlighted: true
     },
     {
-      title: "TinyURL"
+      title: "TinyURL",
+      stars: 3
     },
     {
-      title: "BlendDigits"
+      title: "BlendDigits",
+      stars: 2
     },
     {
-      title: "NES Emulator"
+      title: "NES Emulator",
+      stars: 2
     }
   ];
 
@@ -122,6 +132,7 @@ const Index = () => {
                   key={highlightedProject.title}
                   project={projects.find(p => p.title === highlightedProject.title)}
                   index={0}
+                  stars={highlightedProject.stars}
                 />
               </div>
             </div>
@@ -134,6 +145,7 @@ const Index = () => {
                 key={project.title}
                 project={projects.find(p => p.title === project.title)}
                 index={index + (highlightedProject ? 1 : 0)} // The index here doesn't matter.
+                stars={project.stars}
               />
             ))}
           </div>
