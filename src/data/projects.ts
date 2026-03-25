@@ -9,9 +9,11 @@ export const topics = {
 } as const;
 
 export type ProjectTopic = typeof topics[keyof typeof topics];
+export type ProjectStars = 1 | 2 | 3;
 
 export interface Project {
   title: string;
+  stars: ProjectStars;
   description: string;
   topic: ProjectTopic[];
   technologies: string[];
@@ -23,6 +25,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     title: "Prompt2Face: Stable Diffusion CelebA",
+    stars: 3,
     description: "As part of my research and final MSc project, I built Prompt2Face, a Stable Diffusion-based text-to-image system trained on WikiArt and CelebA. The latest CelebA experiment was trained in PyTorch for 500 epochs and generates high-quality human face images from natural language prompts. The project demonstrates my end-to-end generative AI workflow, from data preparation and large-scale training to evaluation.",
     topic: [topics.MachineLearning],
     technologies: [
@@ -41,6 +44,7 @@ export const projects: Project[] = [
   },
   {
     title: "TinyURL",
+    stars: 2,
     description: "A serverless URL shortener service that allows users to shorten long URLs into short, easy-to-share links. The service is built on AWS Lambdas, API Gateway for Lambda executions, MySQL to store URL mappings, S3 for static hosting, CloudFront for caching & load balancing, CloudWatch for monitoring, and ACM for certificate management. The project demonstrates my ability to design and implement serverless architectures, as well as my proficiency in AWS services.",
     topic: [topics.Cloud, topics.Website],
     technologies: ["AWS", "Serverless", "MySQL", "API Gateway", "Lambda", "S3", "CloudFront", "CloudWatch", "ACM", "Python", "TypeScript", "React"],
@@ -50,6 +54,7 @@ export const projects: Project[] = [
   },
   {
     title: "NES Emulator",
+    stars: 3,
     description: "This is my attempt to create basic NES emulator in Java. My goal is to run NES games (particularly Super Mario Bros), and learn how to write emulators. I learned 6502 assembly, hardware emulation and optimizations. This emulator comes with a debugger for CPU and PPU and assembly viewer.",
     topic: [topics.Emulator],
     technologies: ["Java", "Assembly", "Hardware Emulation"],
@@ -58,6 +63,7 @@ export const projects: Project[] = [
   },
   {
     title: "BlendDigits",
+    stars: 2,
     description: "BlendDigits is an interactive demo that visualizes smooth transitions between two MNIST digits using a Variational Autoencoder (VAE). You select two MNIST images as input, and the model generates an interpolated (generates) image in between them. Everything runs locally in your browser (client side).",
     topic: [topics.MachineLearning, topics.Application, topics.Website, topics.Cloud],
     technologies: ["ONNX", "Python", "PyTorch", "Neural Networks", "TkInter", "TypeScript", "React"],
@@ -67,6 +73,7 @@ export const projects: Project[] = [
   },
   {
     title: "Interactive Denoiser",
+    stars: 1,
     description: "Interactively and automatically load image from MNIST, add noise to the image, and the model will automatically denoise the image (run the trained model). Trained a CNN autoencoder with 5.6M parameters.",
     topic: [topics.MachineLearning],
     technologies: ["Python", "PyTorch", "Neural Networks", "TkInter"],
@@ -75,6 +82,7 @@ export const projects: Project[] = [
   },
   {
     title: "Interactive Digit Classifier",
+    stars: 1,
     description: "Draw on a canvas digit and the CNN model will predict the digit interactively. The model has 421k parameters and trained on MNIST dataset. The interactive program is uses TkInter.",
     topic: [topics.MachineLearning],
     technologies: ["Python", "PyTorch", "TkInter", "Neural Networks"],
@@ -83,6 +91,7 @@ export const projects: Project[] = [
   },
   {
     title: "OpenCV Demos",
+    stars: 1,
     description: "An OpenCV demonstration of various computer vision algorithms. The project is written in Python and OpenCV. The project includes the following algorithms: Canny edge detection, color tracking, stereo depth (convert images to 3D objects), fast fourier transform, filters, gradients, noise and histogram normalization.",
     topic: [topics.MachineLearning, topics.Application],
     technologies: ["Python", "OpenCV", "Computer Vision", "Image Processing"],
@@ -91,6 +100,7 @@ export const projects: Project[] = [
   },
   {
     title: "SeeFood Android App",
+    stars: 2,
     description: "A silicon valley parody app that tells you if your food is a hotdog or not a hotdog, using state of the art machine learning. The app is built using Android SDK and Java. The app communicates with a server that runs the machine learning model (ResNet-50) with simple REST API. The server that runs the machine learning model is built using Flask and Python.",
     topic: [topics.Application, topics.MachineLearning],
     technologies: ["Android", "Java", "Python", "Flask", "Machine Learning"],
@@ -99,6 +109,7 @@ export const projects: Project[] = [
   },
   {
     title: "OCR Font Classifier",
+    stars: 2,
     description: "An OCR (optical character recognition) font classifier. It detects the font of the text in the image. The model is trained on 5 different fonts. It can predict correctly the font in 96% accuracy. The model was trained on 1684 images which contain 46,503 samples (characters and their font). I used Python and Tensorflow.",
     topic: [topics.MachineLearning],
     technologies: ["Python", "TensorFlow", "OCR", "Machine Learning"],
@@ -107,6 +118,7 @@ export const projects: Project[] = [
   },
   {
     title: "MNIST Classifier",
+    stars: 1,
     description: "I built a CNN classifier to recognize handwritten digits using the MNIST dataset with 98% accuracy. This project demonstrates my ability to design, train, and evaluate CNN models for image classification tasks.",
     topic: [topics.MachineLearning],
     technologies: ["Python", "PyTorch", "CNN", "Deep Learning"],
@@ -115,6 +127,7 @@ export const projects: Project[] = [
   },
   {
     title: "Sorting Algorithms Visualizer",
+    stars: 2,
     description: "A website that visualizes sorting algorithms. Written in pure JavaScript, you can see how sorting algorithms work in real time. It also comes with sound effects.",
     topic: [topics.Application],
     technologies: ["JavaScript", "HTML", "CSS"],
@@ -124,6 +137,7 @@ export const projects: Project[] = [
   },
   {
     title: "EvilTwin Wifi Attack",
+    stars: 1,
     description: "Create wifi AP that enables users to browse the internet, but in reality, the attacker can sniff all the traffic. This attack also creates evil-portal that can be used to steal credentials from users. For example, if the user tries to connect to Facebook, the user will be redirected to fake Facebook login page, and their credentials will be stolen.",
     topic: [topics.Cyber],
     technologies: ["Wifi", "Network Security", "Social Engineering"],
@@ -132,6 +146,7 @@ export const projects: Project[] = [
   },
   {
     title: "OS From Scratch",
+    stars: 3,
     description: "A basic bootloader written in assembly and basic kernel written in C++. I was always fascinated with the linux kernel, and I wanted to learn how to write one completely from scratch. This projects allows me to write full kernel with memory management, process management, and drivers.",
     topic: [topics.OperatingSystems],
     technologies: ["Assembly", "C++", "Operating Systems"],
@@ -140,6 +155,7 @@ export const projects: Project[] = [
   },
   {
     title: "Typing Bot",
+    stars: 1,
     description: "A bot that uses OCR (Optical Character Recognition) to read text from images and type it automatically. The bot is written in Python and uses Tesseract OCR engine. It can be used to automatically type text from images, making it useful for transcription tasks.",
     topic: [topics.Application, topics.MachineLearning],
     technologies: ["Python", "Tesseract OCR", "PyAutoGUI", "OpenCV"],
@@ -148,6 +164,7 @@ export const projects: Project[] = [
   },
   {
     title: "Portfolio Website",
+    stars: 2,
     description: "This project is this website that you are currently on. Created using TypeScript, React, Vite, and Tailwind CSS. The website is responsive and includes a dark mode.",
     topic: [topics.Website],
     technologies: ["TypeScript", "React", "JavaScript", "Vite", "Tailwind"],
@@ -157,6 +174,7 @@ export const projects: Project[] = [
   },
   {
     title: "Blog Website",
+    stars: 1,
     description: "A blog website that I created using Ruby and jekyll. The website is hosted on Github Pages. In the blog I write about various topics, including programming, machine learning, and cybersecurity. It lets me share my knowledge and experience with others, especially when more technical details are needed.",
     topic: [topics.Website],
     technologies: ["Ruby", "Jekyll", "HTML", "CSS"],
@@ -166,6 +184,7 @@ export const projects: Project[] = [
   },
   {
     title: "Chip-8 Emulator",
+    stars: 2,
     description: "A chip-8 emulator written in Java. I wrote it as prerequisites for my Nintendo Entertainment System emulator (NES). CHIP-8 is an interpreted programming language that runs on a virtual machine. It runs on 1802 microprocessor.",
     topic: [topics.Emulator],
     technologies: ["Java", "Emulation", "Virtual Machine"],
@@ -174,6 +193,7 @@ export const projects: Project[] = [
   },
   {
     title: "Raspberry Pi Wardrive",
+    stars: 1,
     description: "A wardriving project using Raspberry Pi. The project includes GPS module, external wifi adapter, and power bank. The project is used to collect data about wifi networks in the area. The data is then analyzed and visualized on a map.",
     topic: [topics.Cyber],
     technologies: ["Python", "Raspberry Pi", "GPS", "Wifi", "Hardware"],
@@ -182,6 +202,7 @@ export const projects: Project[] = [
   },
   {
     title: "Screen Cropper",
+    stars: 1,
     description: "A simple screen cropping tool that allows you to crop any part of your screen and save it as an image. The tool is written in Python and uses PyQt5 for the GUI. It also includes a feature to automatically upload the cropped image to Imgur.",
     topic: [topics.Application],
     technologies: ["Python", "PyQt5", "GUI", "Imgur API"],
@@ -190,6 +211,7 @@ export const projects: Project[] = [
   },
   {
     title: "Kaminsky Attack",
+    stars: 1,
     description: "The kaminsky-attack is a DNS cache poisoning attack - my implementation is written in pure C with extremely high performance. We attack the nameservers of the target domain, and inject malicious DNS records into the cache of the nameserver. The attack was first presented in blackhat 2008, and allows the attacker to redirect traffic to malicious servers. The attack is based on the fact that DNS uses UDP protocol, and is vulnerable to spoofing.",
     topic: [topics.Cyber],
     technologies: ["C", "DNS", "Network Security"],
@@ -198,6 +220,7 @@ export const projects: Project[] = [
   },
   {
     title: "e-xterm",
+    stars: 2,
     description: "Cross-platform (Windows, Mac, Linux) electron based SSH client, with managed bookmarks, and tab system for managing sessions. Written in Electron framework, Typescript, and React. Also comes with SFTP support and drag-and-drop remote file explorer, and remote monitoring tools.",
     topic: [topics.Application],
     technologies: ["Electron", "TypeScript", "React", "SSH", "SFTP"],
@@ -206,6 +229,7 @@ export const projects: Project[] = [
   },
   {
     title: "Game of Life",
+    stars: 1,
     description: "Game of Life game written in Python. Game of life is a cellular automaton devised by the British mathematician John Horton Conway in 1970. The game is a zero-player game, meaning that its evolution is determined by its initial state, requiring no further input. The result is interesting evolution patterns over time.",
     topic: [topics.Application],
     technologies: ["Python", "Cellular Automaton", "Simulation"],
@@ -214,6 +238,7 @@ export const projects: Project[] = [
   },
   {
     title: "Command Line Text Editor",
+    stars: 1,
     description: "This is a command-line based text editor. Just like 'vi'. A user can view and edit files in the command line. The user can print lines and delete lines. The functionality is simillar to 'ed' - a text applicatiton for the terminal.",
     topic: [topics.Application],
     technologies: ["Command Line", "Text Editor", "Terminal", "File I/O"],
@@ -222,6 +247,7 @@ export const projects: Project[] = [
   },
   {
     title: "MessageU",
+    stars: 1,
     description: "This applications allow users to send and received end-to-end encrypted messages and files. Using RSA for key exchange and AES CBS for encryption. Plain text is also supported.",
     topic: [topics.Application],
     technologies: ["End-to-End Encryption", "RSA", "AES", "File Transfer", "Messaging"],

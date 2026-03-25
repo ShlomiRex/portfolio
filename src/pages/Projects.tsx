@@ -39,6 +39,7 @@ const Projects = () => {
                   topic: Array.isArray(project.topic) ? project.topic : [project.topic],
                 }}
                 index={index}
+                stars={project.stars}
               />
             ))}
           </div>

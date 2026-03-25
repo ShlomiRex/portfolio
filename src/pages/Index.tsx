@@ -10,7 +10,6 @@ import BlogPostCard from "@/components/blog/BlogPostCard";
 
 interface FeaturedProject {
   title: string;
-  stars: 1 | 2 | 3;
   highlighted?: boolean;
 }
 
@@ -26,20 +25,16 @@ const Index = () => {
   const featuredProjects: FeaturedProject[] = [
     {
       title: "Prompt2Face: Stable Diffusion CelebA",
-      stars: 3,
       highlighted: true
     },
     {
-      title: "TinyURL",
-      stars: 2
+      title: "TinyURL"
     },
     {
-      title: "BlendDigits",
-      stars: 2
+      title: "BlendDigits"
     },
     {
-      title: "NES Emulator",
-      stars: 3
+      title: "NES Emulator"
     }
   ];
 
@@ -132,7 +127,7 @@ const Index = () => {
                   key={highlightedProject.title}
                   project={projects.find(p => p.title === highlightedProject.title)}
                   index={0}
-                  stars={highlightedProject.stars}
+                  stars={projects.find(p => p.title === highlightedProject.title)?.stars}
                 />
               </div>
             </div>
@@ -145,7 +140,7 @@ const Index = () => {
                 key={project.title}
                 project={projects.find(p => p.title === project.title)}
                 index={index + (highlightedProject ? 1 : 0)} // The index here doesn't matter.
-                stars={project.stars}
+                stars={projects.find(p => p.title === project.title)?.stars}
               />
             ))}
           </div>

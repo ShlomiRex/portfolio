@@ -1,14 +1,15 @@
 import { useState } from "react";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { Eye, Loader, Github, Star } from "lucide-react";
+import { Eye, Loader, Github } from "lucide-react";
 import { Project } from "@/data/projects";
+import StarRating, { StarCount } from "@/components/StarRating";
 import "../../styles/Card.css";
 
 interface ProjectCardProps {
   project: Project;
   index: number;
-  stars?: 1 | 2 | 3;
+  stars?: StarCount;
 }
 
 export const ProjectCard = ({ project, index, stars }: ProjectCardProps) => {
@@ -118,18 +119,7 @@ export const ProjectCard = ({ project, index, stars }: ProjectCardProps) => {
           <CardTitle>{project.title}</CardTitle>
 
           {stars && (
-            <div className="flex items-center gap-1" role="img" aria-label={`${stars} out of 3 stars`}>
-              {Array.from({ length: 3 }).map((_, starIndex) => {
-                const isFilled = starIndex < stars;
-
-                return (
-                  <Star
-                    key={`rating-${starIndex}`}
-                    className={`w-4 h-4 ${isFilled ? "text-amber-500 fill-current" : "text-amber-500/30 fill-transparent"}`}
-                  />
-                );
-              })}
-            </div>
+            <StarRating rating={stars} />
           )}
 
           <CardDescription>{project.description}</CardDescription>
