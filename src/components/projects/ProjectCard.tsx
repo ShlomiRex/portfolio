@@ -118,10 +118,17 @@ export const ProjectCard = ({ project, index, stars }: ProjectCardProps) => {
           <CardTitle>{project.title}</CardTitle>
 
           {stars && (
-            <div className="flex items-center gap-1 text-amber-500" aria-label={`${stars} star project`}>
-              {Array.from({ length: stars }).map((_, starIndex) => (
-                <Star key={starIndex} className="w-4 h-4 fill-current" />
-              ))}
+            <div className="flex items-center gap-1" role="img" aria-label={`${stars} out of 3 stars`}>
+              {Array.from({ length: 3 }).map((_, starIndex) => {
+                const isFilled = starIndex < stars;
+
+                return (
+                  <Star
+                    key={`rating-${starIndex}`}
+                    className={`w-4 h-4 ${isFilled ? "text-amber-500 fill-current" : "text-amber-500/30 fill-transparent"}`}
+                  />
+                );
+              })}
             </div>
           )}
 

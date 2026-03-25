@@ -31,7 +31,7 @@ const Index = () => {
     },
     {
       title: "TinyURL",
-      stars: 3
+      stars: 2
     },
     {
       title: "BlendDigits",
@@ -39,7 +39,7 @@ const Index = () => {
     },
     {
       title: "NES Emulator",
-      stars: 2
+      stars: 3
     }
   ];
 
