@@ -18,6 +18,7 @@ export const conferences: Conference[] = [
             { src: "/images/conferences/cybertech jan 2026/img1.jpeg", keepAspect: true, wide: false },
             { src: "/images/conferences/cybertech jan 2026/img5.jpeg", keepAspect: false, wide: false },
             { src: "/images/conferences/cybertech jan 2026/img8.jpeg", keepAspect: false, wide: true },
+            { src: "/images/conferences/cybertech jan 2026/img9.jpeg", keepAspect: true, wide: false },
         ]
     },
     {
